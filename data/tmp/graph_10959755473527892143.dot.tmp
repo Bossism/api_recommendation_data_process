@@ -1,0 +1,109 @@
+digraph G {
+  9976 [ label="0-Class
+CORSTest" shape="oval" line="8" fontname="helvetica" ];
+  9977 [ label="1-Entry
+testFoo" shape="oval" line="10" fontname="helvetica" ];
+  9978 [ label="2-Call
+url('cors/foo').options()" shape="oval" line="12" fontname="helvetica" ];
+  9979 [ label="3-Call
+checkHeader(ACCESS_CONTROL_ALLOW_ORIGIN, CORSTestBed.FOO_ALLOW_ORIGIN)" shape="oval" line="13" fontname="helvetica" ];
+  9980 [ label="4-Actual-in
+ACCESS_CONTROL_ALLOW_ORIGIN" shape="oval" line="13" fontname="helvetica" ];
+  9981 [ label="5-Actual-in
+CORSTestBed.FOO_ALLOW_ORIGIN" shape="oval" line="13" fontname="helvetica" ];
+  9982 [ label="6-Call
+checkHeader(ACCESS_CONTROL_ALLOW_HEADERS, CORSTestBed.ALLOW_HEADERS)" shape="oval" line="14" fontname="helvetica" ];
+  9983 [ label="7-Actual-in
+ACCESS_CONTROL_ALLOW_HEADERS" shape="oval" line="14" fontname="helvetica" ];
+  9984 [ label="8-Actual-in
+CORSTestBed.ALLOW_HEADERS" shape="oval" line="14" fontname="helvetica" ];
+  9985 [ label="9-Call
+checkHeader(ACCESS_CONTROL_ALLOW_METHODS, 'GET')" shape="oval" line="15" fontname="helvetica" ];
+  9986 [ label="10-Actual-in
+ACCESS_CONTROL_ALLOW_METHODS" shape="oval" line="15" fontname="helvetica" ];
+  9987 [ label="11-Actual-in
+'GET'" shape="oval" line="15" fontname="helvetica" ];
+  9988 [ label="12-Call
+checkHeader(ACCESS_CONTROL_MAX_AGE, MAX_AGE)" shape="oval" line="16" fontname="helvetica" ];
+  9989 [ label="13-Actual-in
+ACCESS_CONTROL_MAX_AGE" shape="oval" line="16" fontname="helvetica" ];
+  9990 [ label="14-Actual-in
+MAX_AGE" shape="oval" line="16" fontname="helvetica" ];
+  9991 [ label="15-Call
+checkHeader(ACCESS_CONTROL_EXPOSE_HEADERS, EXPOSE_HEADER)" shape="oval" line="17" fontname="helvetica" ];
+  9992 [ label="16-Actual-in
+ACCESS_CONTROL_EXPOSE_HEADERS" shape="oval" line="17" fontname="helvetica" ];
+  9993 [ label="17-Actual-in
+EXPOSE_HEADER" shape="oval" line="17" fontname="helvetica" ];
+  9994 [ label="18-Entry
+testFooWithGetRequest" shape="oval" line="20" fontname="helvetica" ];
+  9995 [ label="19-Call
+url('cors/foo')" shape="oval" line="22" fontname="helvetica" ];
+  9996 [ label="20-Actual-in
+'cors/foo'" shape="oval" line="22" fontname="helvetica" ];
+  9997 [ label="21-Call
+checkHeader(ACCESS_CONTROL_ALLOW_ORIGIN, CORSTestBed.FOO_ALLOW_ORIGIN)" shape="oval" line="23" fontname="helvetica" ];
+  9998 [ label="22-Actual-in
+ACCESS_CONTROL_ALLOW_ORIGIN" shape="oval" line="23" fontname="helvetica" ];
+  9999 [ label="23-Actual-in
+CORSTestBed.FOO_ALLOW_ORIGIN" shape="oval" line="23" fontname="helvetica" ];
+  10000 [ label="24-Entry
+testBar" shape="oval" line="26" fontname="helvetica" ];
+  10001 [ label="25-Call
+url('cors/bar').options()" shape="oval" line="28" fontname="helvetica" ];
+  10002 [ label="26-Call
+assertNoHeader(ACCESS_CONTROL_ALLOW_ORIGIN)" shape="oval" line="29" fontname="helvetica" ];
+  10003 [ label="27-Actual-in
+ACCESS_CONTROL_ALLOW_ORIGIN" shape="oval" line="29" fontname="helvetica" ];
+  10004 [ label="28-Call
+assertNoHeader(ACCESS_CONTROL_ALLOW_HEADERS)" shape="oval" line="30" fontname="helvetica" ];
+  10005 [ label="29-Actual-in
+ACCESS_CONTROL_ALLOW_HEADERS" shape="oval" line="30" fontname="helvetica" ];
+  10006 [ label="30-Call
+assertNoHeader(ACCESS_CONTROL_EXPOSE_HEADERS)" shape="oval" line="31" fontname="helvetica" ];
+  10007 [ label="31-Actual-in
+ACCESS_CONTROL_EXPOSE_HEADERS" shape="oval" line="31" fontname="helvetica" ];
+  10008 [ label="32-Call
+assertNoHeader(ACCESS_CONTROL_MAX_AGE)" shape="oval" line="32" fontname="helvetica" ];
+  10009 [ label="33-Actual-in
+ACCESS_CONTROL_MAX_AGE" shape="oval" line="32" fontname="helvetica" ];
+  10010 [ label="34-Call
+assertNoHeader(ACCESS_CONTROL_ALLOW_METHODS)" shape="oval" line="33" fontname="helvetica" ];
+  10011 [ label="35-Actual-in
+ACCESS_CONTROL_ALLOW_METHODS" shape="oval" line="33" fontname="helvetica" ];
+  9979 -> 9980 [ label="Ctrl-true" ];
+  9979 -> 9981 [ label="Ctrl-true" ];
+  9982 -> 9983 [ label="Ctrl-true" ];
+  9982 -> 9984 [ label="Ctrl-true" ];
+  9985 -> 9986 [ label="Ctrl-true" ];
+  9985 -> 9987 [ label="Ctrl-true" ];
+  9988 -> 9989 [ label="Ctrl-true" ];
+  9988 -> 9990 [ label="Ctrl-true" ];
+  9991 -> 9992 [ label="Ctrl-true" ];
+  9991 -> 9993 [ label="Ctrl-true" ];
+  9977 -> 9978 [ label="Ctrl-true" ];
+  9977 -> 9979 [ label="Ctrl-true" ];
+  9977 -> 9982 [ label="Ctrl-true" ];
+  9977 -> 9985 [ label="Ctrl-true" ];
+  9977 -> 9988 [ label="Ctrl-true" ];
+  9977 -> 9991 [ label="Ctrl-true" ];
+  9995 -> 9996 [ label="Ctrl-true" ];
+  9997 -> 9998 [ label="Ctrl-true" ];
+  9997 -> 9999 [ label="Ctrl-true" ];
+  9994 -> 9995 [ label="Ctrl-true" ];
+  9994 -> 9997 [ label="Ctrl-true" ];
+  10002 -> 10003 [ label="Ctrl-true" ];
+  10004 -> 10005 [ label="Ctrl-true" ];
+  10006 -> 10007 [ label="Ctrl-true" ];
+  10008 -> 10009 [ label="Ctrl-true" ];
+  10010 -> 10011 [ label="Ctrl-true" ];
+  10000 -> 10001 [ label="Ctrl-true" ];
+  10000 -> 10002 [ label="Ctrl-true" ];
+  10000 -> 10004 [ label="Ctrl-true" ];
+  10000 -> 10006 [ label="Ctrl-true" ];
+  10000 -> 10008 [ label="Ctrl-true" ];
+  10000 -> 10010 [ label="Ctrl-true" ];
+  9976 -> 9977 [ label="Member-of" ];
+  9976 -> 9994 [ label="Member-of" ];
+  9976 -> 10000 [ label="Member-of" ];
+}

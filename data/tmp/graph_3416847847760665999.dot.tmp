@@ -1,0 +1,155 @@
+digraph G {
+  2764 [ label="0-Class
+NetworkClient" shape="oval" line="15" fontname="helvetica" ];
+  2765 [ label="1-Entry
+getRetrofitClient" shape="oval" line="19" fontname="helvetica" ];
+  2766 [ label="2-Formal-out
+" shape="oval" line="19" fontname="helvetica" ];
+  2767 [ label="3-Formal-in
+zip" shape="oval" line="19" fontname="helvetica" ];
+  2768 [ label="4-Formal-in
+isExecutor" shape="oval" line="19" fontname="helvetica" ];
+  2769 [ label="5-Formal-in
+shouldUseSSL" shape="oval" line="19" fontname="helvetica" ];
+  2770 [ label="6-Formal-in
+baseURLOverride" shape="oval" line="19" fontname="helvetica" ];
+  2771 [ label="7-Return
+return getRetrofitClient(zip, isExecutor, shouldUseSSL, baseURLOverride, true)" shape="oval" line="20" fontname="helvetica" ];
+  2772 [ label="8-Entry
+getRetrofitClient" shape="oval" line="28" fontname="helvetica" ];
+  2773 [ label="9-Formal-out
+" shape="oval" line="28" fontname="helvetica" ];
+  2774 [ label="10-Formal-in
+zip" shape="oval" line="28" fontname="helvetica" ];
+  2775 [ label="11-Formal-in
+isExecutor" shape="oval" line="28" fontname="helvetica" ];
+  2776 [ label="12-Formal-in
+shouldUseSSL" shape="oval" line="28" fontname="helvetica" ];
+  2777 [ label="13-Formal-in
+baseURLOverride" shape="oval" line="28" fontname="helvetica" ];
+  2778 [ label="14-Formal-in
+needsAuthenticator" shape="oval" line="29" fontname="helvetica" ];
+  2779 [ label="15-Assign
+logging = new HttpLoggingInterceptor()" shape="oval" line="32" fontname="helvetica" ];
+  2780 [ label="16-Call
+logging.setLevel(HttpLoggingInterceptor.Level.BODY)" shape="oval" line="33" fontname="helvetica" ];
+  2781 [ label="17-Actual-in
+HttpLoggingInterceptor.Level.BODY" shape="oval" line="33" fontname="helvetica" ];
+  2782 [ label="18-Assign
+httpClient = new OkHttpClient.Builder()" shape="oval" line="35" fontname="helvetica" ];
+  2783 [ label="19-Ctrl
+zip" shape="oval" line="36" fontname="helvetica" ];
+  2784 [ label="20-Call
+httpClient.addInterceptor(new GzipRequestInterceptor())" shape="oval" line="37" fontname="helvetica" ];
+  2785 [ label="21-Actual-in
+new GzipRequestInterceptor()" shape="oval" line="37" fontname="helvetica" ];
+  2786 [ label="22-Ctrl
+BuildConfig.DEBUG" shape="oval" line="39" fontname="helvetica" ];
+  2787 [ label="23-Call
+httpClient.addInterceptor(logging)" shape="oval" line="40" fontname="helvetica" ];
+  2788 [ label="24-Actual-in
+logging" shape="oval" line="40" fontname="helvetica" ];
+  2789 [ label="25-Ctrl
+shouldUseSSL" shape="oval" line="43" fontname="helvetica" ];
+  2790 [ label="26-Assign
+certPinner = new CertificatePinner.Builder().add(BuildConfig.HOST_URL, BuildConfig.SSL_PUBLIC_KEY, BuildConfig.SSL_BACKUP_KEY).add(BuildConfig.AUTH_HOST_URL, BuildConfig.SSL_AUTH_KEY, BuildConfig.SSL_AUTH_BACKUP_KEY).build()" shape="oval" line="44" fontname="helvetica" ];
+  2791 [ label="27-Call
+new CertificatePinner.Builder().add(BuildConfig.HOST_URL, BuildConfig.SSL_PUBLIC_KEY, BuildConfig.SSL_BACKUP_KEY).add(BuildConfig.AUTH_HOST_URL, BuildConfig.SSL_AUTH_KEY, BuildConfig.SSL_AUTH_BACKUP_KEY).build()" shape="oval" line="44" fontname="helvetica" ];
+  2792 [ label="28-Call
+httpClient.certificatePinner(certPinner)" shape="oval" line="48" fontname="helvetica" ];
+  2793 [ label="29-Actual-in
+certPinner" shape="oval" line="48" fontname="helvetica" ];
+  2794 [ label="30-Call
+httpClient.addInterceptor(new SupportInterceptor())" shape="oval" line="50" fontname="helvetica" ];
+  2795 [ label="31-Actual-in
+new SupportInterceptor()" shape="oval" line="50" fontname="helvetica" ];
+  2796 [ label="32-Ctrl
+needsAuthenticator" shape="oval" line="51" fontname="helvetica" ];
+  2797 [ label="33-Call
+httpClient.authenticator(new SupportInterceptor())" shape="oval" line="52" fontname="helvetica" ];
+  2798 [ label="34-Actual-in
+new SupportInterceptor()" shape="oval" line="52" fontname="helvetica" ];
+  2799 [ label="35-Assign
+finalBaseURL = TextUtils.isEmpty(baseURLOverride) ? BASE_URL : baseURLOverride" shape="oval" line="55" fontname="helvetica" ];
+  2800 [ label="36-Assign
+retrofitbuilder = new Retrofit.Builder().baseUrl(finalBaseURL).client(httpClient.build()).addConverterFactory(GsonConverterFactory.create())" shape="oval" line="56" fontname="helvetica" ];
+  2801 [ label="37-Call
+new Retrofit.Builder().baseUrl(finalBaseURL).client(httpClient.build()).addConverterFactory(GsonConverterFactory.create())" shape="oval" line="56" fontname="helvetica" ];
+  2802 [ label="38-Actual-in
+GsonConverterFactory.create()" shape="oval" line="59" fontname="helvetica" ];
+  2803 [ label="39-Call
+GsonConverterFactory.create()" shape="oval" line="59" fontname="helvetica" ];
+  2804 [ label="40-Actual-in
+GsonConverterFactory.create()" shape="oval" line="59" fontname="helvetica" ];
+  2805 [ label="41-Ctrl
+isExecutor" shape="oval" line="60" fontname="helvetica" ];
+  2806 [ label="42-Call
+retrofitbuilder.callbackExecutor(Executors.newSingleThreadExecutor())" shape="oval" line="61" fontname="helvetica" ];
+  2807 [ label="43-Actual-in
+Executors.newSingleThreadExecutor()" shape="oval" line="61" fontname="helvetica" ];
+  2808 [ label="44-Assign
+retrofit = retrofitbuilder.build()" shape="oval" line="63" fontname="helvetica" ];
+  2809 [ label="45-Return
+return retrofit" shape="oval" line="64" fontname="helvetica" ];
+  2771 -> 2766 [ label="Data" ];
+  2765 -> 2766 [ label="Ctrl-true" ];
+  2765 -> 2767 [ label="Ctrl-true" ];
+  2765 -> 2768 [ label="Ctrl-true" ];
+  2765 -> 2769 [ label="Ctrl-true" ];
+  2765 -> 2770 [ label="Ctrl-true" ];
+  2765 -> 2771 [ label="Ctrl-true" ];
+  2780 -> 2781 [ label="Ctrl-true" ];
+  2784 -> 2785 [ label="Ctrl-true" ];
+  2783 -> 2784 [ label="Ctrl-true" ];
+  2787 -> 2788 [ label="Ctrl-true" ];
+  2786 -> 2787 [ label="Ctrl-true" ];
+  2790 -> 2791 [ label="Call" ];
+  2792 -> 2793 [ label="Ctrl-true" ];
+  2789 -> 2790 [ label="Ctrl-true" ];
+  2789 -> 2792 [ label="Ctrl-true" ];
+  2794 -> 2795 [ label="Ctrl-true" ];
+  2797 -> 2798 [ label="Ctrl-true" ];
+  2796 -> 2797 [ label="Ctrl-true" ];
+  2801 -> 2802 [ label="Ctrl-true" ];
+  2800 -> 2801 [ label="Call" ];
+  2800 -> 2803 [ label="Call" ];
+  2800 -> 2804 [ label="Ctrl-true" ];
+  2806 -> 2807 [ label="Ctrl-true" ];
+  2805 -> 2806 [ label="Ctrl-true" ];
+  2809 -> 2773 [ label="Data" ];
+  2772 -> 2773 [ label="Ctrl-true" ];
+  2772 -> 2774 [ label="Ctrl-true" ];
+  2772 -> 2775 [ label="Ctrl-true" ];
+  2772 -> 2776 [ label="Ctrl-true" ];
+  2772 -> 2777 [ label="Ctrl-true" ];
+  2772 -> 2778 [ label="Ctrl-true" ];
+  2772 -> 2779 [ label="Ctrl-true" ];
+  2772 -> 2780 [ label="Ctrl-true" ];
+  2772 -> 2782 [ label="Ctrl-true" ];
+  2772 -> 2783 [ label="Ctrl-true" ];
+  2772 -> 2786 [ label="Ctrl-true" ];
+  2772 -> 2789 [ label="Ctrl-true" ];
+  2772 -> 2794 [ label="Ctrl-true" ];
+  2772 -> 2796 [ label="Ctrl-true" ];
+  2772 -> 2799 [ label="Ctrl-true" ];
+  2772 -> 2800 [ label="Ctrl-true" ];
+  2772 -> 2805 [ label="Ctrl-true" ];
+  2772 -> 2808 [ label="Ctrl-true" ];
+  2772 -> 2809 [ label="Ctrl-true" ];
+  2764 -> 2765 [ label="Member-of" ];
+  2764 -> 2772 [ label="Member-of" ];
+  2767 -> 2771 [ label="Data" ];
+  2768 -> 2771 [ label="Data" ];
+  2770 -> 2771 [ label="Data" ];
+  2769 -> 2771 [ label="Data" ];
+  2774 -> 2783 [ label="Data" ];
+  2780 -> 2788 [ label="Data" ];
+  2776 -> 2789 [ label="Data" ];
+  2778 -> 2796 [ label="Data" ];
+  2777 -> 2799 [ label="Data" ];
+  2775 -> 2805 [ label="Data" ];
+  2806 -> 2808 [ label="Data" ];
+  2790 -> 2793 [ label="Data" ];
+  2800 -> 2808 [ label="Data" ];
+  2808 -> 2809 [ label="Data" ];
+}

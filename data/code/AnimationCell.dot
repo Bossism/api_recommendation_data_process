@@ -1,0 +1,105 @@
+digraph G {
+  1 [ label="0-Class
+AnimationCell" shape="oval" line="3" fontname="helvetica" ];
+  2 [ label="1-Init
+AnimationCell" shape="oval" line="10" fontname="helvetica" ];
+  3 [ label="2-Formal-in
+x" shape="oval" line="10" fontname="helvetica" ];
+  4 [ label="3-Formal-in
+y" shape="oval" line="10" fontname="helvetica" ];
+  5 [ label="4-Formal-in
+animationType" shape="oval" line="10" fontname="helvetica" ];
+  6 [ label="5-Formal-in
+length" shape="oval" line="10" fontname="helvetica" ];
+  7 [ label="6-Formal-in
+delay" shape="oval" line="10" fontname="helvetica" ];
+  8 [ label="7-Formal-in
+extras" shape="oval" line="10" fontname="helvetica" ];
+  9 [ label="8-Call
+super(x, y);" shape="oval" line="11" fontname="helvetica" ];
+  10 [ label="9-Actual-in
+x" shape="oval" line="11" fontname="helvetica" ];
+  11 [ label="10-Actual-in
+y" shape="oval" line="11" fontname="helvetica" ];
+  12 [ label="11-Assign
+this.animationType = animationType" shape="oval" line="12" fontname="helvetica" ];
+  13 [ label="12-Assign
+animationTime = length" shape="oval" line="13" fontname="helvetica" ];
+  14 [ label="13-Assign
+delayTime = delay" shape="oval" line="14" fontname="helvetica" ];
+  15 [ label="14-Assign
+this.extras = extras" shape="oval" line="15" fontname="helvetica" ];
+  16 [ label="15-Entry
+getAnimationType" shape="oval" line="18" fontname="helvetica" ];
+  17 [ label="16-Formal-out
+" shape="oval" line="18" fontname="helvetica" ];
+  18 [ label="17-Return
+return animationType" shape="oval" line="19" fontname="helvetica" ];
+  19 [ label="18-Entry
+tick" shape="oval" line="22" fontname="helvetica" ];
+  20 [ label="19-Formal-in
+timeElapsed" shape="oval" line="22" fontname="helvetica" ];
+  21 [ label="20-Assign
+this.timeElapsed = this.timeElapsed + timeElapsed" shape="oval" line="23" fontname="helvetica" ];
+  22 [ label="21-Entry
+animationDone" shape="oval" line="26" fontname="helvetica" ];
+  23 [ label="22-Formal-out
+" shape="oval" line="26" fontname="helvetica" ];
+  24 [ label="23-Return
+return animationTime + delayTime < timeElapsed" shape="oval" line="27" fontname="helvetica" ];
+  25 [ label="24-Entry
+getPercentageDone" shape="oval" line="30" fontname="helvetica" ];
+  26 [ label="25-Formal-out
+" shape="oval" line="30" fontname="helvetica" ];
+  27 [ label="26-Return
+return Math.max(0, 1.0 * (timeElapsed - delayTime) / animationTime)" shape="oval" line="31" fontname="helvetica" ];
+  28 [ label="27-Entry
+isActive" shape="oval" line="34" fontname="helvetica" ];
+  29 [ label="28-Formal-out
+" shape="oval" line="34" fontname="helvetica" ];
+  30 [ label="29-Return
+return (timeElapsed >= delayTime)" shape="oval" line="35" fontname="helvetica" ];
+  9 -> 10 [ label="Ctrl-true" ];
+  9 -> 11 [ label="Ctrl-true" ];
+  2 -> 3 [ label="Ctrl-true" ];
+  2 -> 4 [ label="Ctrl-true" ];
+  2 -> 5 [ label="Ctrl-true" ];
+  2 -> 6 [ label="Ctrl-true" ];
+  2 -> 7 [ label="Ctrl-true" ];
+  2 -> 8 [ label="Ctrl-true" ];
+  2 -> 9 [ label="Ctrl-true" ];
+  2 -> 12 [ label="Ctrl-true" ];
+  2 -> 13 [ label="Ctrl-true" ];
+  2 -> 14 [ label="Ctrl-true" ];
+  2 -> 15 [ label="Ctrl-true" ];
+  18 -> 17 [ label="Data" ];
+  16 -> 17 [ label="Ctrl-true" ];
+  16 -> 18 [ label="Ctrl-true" ];
+  19 -> 20 [ label="Ctrl-true" ];
+  19 -> 21 [ label="Ctrl-true" ];
+  24 -> 23 [ label="Data" ];
+  22 -> 23 [ label="Ctrl-true" ];
+  22 -> 24 [ label="Ctrl-true" ];
+  27 -> 26 [ label="Data" ];
+  25 -> 26 [ label="Ctrl-true" ];
+  25 -> 27 [ label="Ctrl-true" ];
+  30 -> 29 [ label="Data" ];
+  28 -> 29 [ label="Ctrl-true" ];
+  28 -> 30 [ label="Ctrl-true" ];
+  1 -> 2 [ label="Member-of" ];
+  1 -> 16 [ label="Member-of" ];
+  1 -> 19 [ label="Member-of" ];
+  1 -> 22 [ label="Member-of" ];
+  1 -> 25 [ label="Member-of" ];
+  1 -> 28 [ label="Member-of" ];
+  3 -> 10 [ label="Data" ];
+  4 -> 11 [ label="Data" ];
+  5 -> 12 [ label="Data" ];
+  6 -> 13 [ label="Data" ];
+  7 -> 14 [ label="Data" ];
+  8 -> 15 [ label="Data" ];
+  20 -> 21 [ label="Data" ];
+  5 -> 12 [ label="Output" ];
+  8 -> 15 [ label="Output" ];
+  20 -> 21 [ label="Output" ];
+}

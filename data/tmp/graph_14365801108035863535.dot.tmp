@@ -1,0 +1,647 @@
+digraph G {
+  3255 [ label="0-Class
+SecureUtil" shape="oval" line="47" fontname="helvetica" ];
+  3256 [ label="1-Entry
+initCipherForLessThanM" shape="oval" line="60" fontname="helvetica" ];
+  3257 [ label="2-Formal-out
+" shape="oval" line="60" fontname="helvetica" ];
+  3258 [ label="3-Formal-in
+isEncryptMode" shape="oval" line="60" fontname="helvetica" ];
+  3259 [ label="4-Try
+try" shape="oval" line="64" fontname="helvetica" ];
+  3260 [ label="5-Assign
+secretKeyAPILessThanM = getSecretKeyAPILessThanM()" shape="oval" line="65" fontname="helvetica" ];
+  3261 [ label="6-Call
+getSecretKeyAPILessThanM()" shape="oval" line="65" fontname="helvetica" ];
+  3262 [ label="7-Return
+return initCipherForLessThanM(secretKeyAPILessThanM, isEncryptMode)" shape="oval" line="66" fontname="helvetica" ];
+  3263 [ label="8-Catch
+InvalidKeyException | IOException | IllegalArgumentException | BadPaddingException | IllegalBlockSizeException e" shape="oval" line="67" fontname="helvetica" ];
+  3264 [ label="9-Call
+removeKeys()" shape="oval" line="71" fontname="helvetica" ];
+  3265 [ label="10-Throw
+e" shape="oval" line="72" fontname="helvetica" ];
+  3266 [ label="11-Entry
+initCipherForLessThanM" shape="oval" line="76" fontname="helvetica" ];
+  3267 [ label="12-Formal-out
+" shape="oval" line="76" fontname="helvetica" ];
+  3268 [ label="13-Formal-in
+secretKeyAPILessThanM" shape="oval" line="76" fontname="helvetica" ];
+  3269 [ label="14-Formal-in
+isEncryptMode" shape="oval" line="76" fontname="helvetica" ];
+  3270 [ label="15-Assign
+cipher = Cipher.getInstance(AES_MODE_LESS_THAN_M, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_AES)" shape="oval" line="80" fontname="helvetica" ];
+  3271 [ label="16-Call
+Cipher.getInstance(AES_MODE_LESS_THAN_M, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_AES)" shape="oval" line="80" fontname="helvetica" ];
+  3272 [ label="17-Actual-in
+AES_MODE_LESS_THAN_M" shape="oval" line="80" fontname="helvetica" ];
+  3273 [ label="18-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_AES" shape="oval" line="80" fontname="helvetica" ];
+  3274 [ label="19-Actual-in
+AES_MODE_LESS_THAN_M" shape="oval" line="80" fontname="helvetica" ];
+  3275 [ label="20-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_AES" shape="oval" line="80" fontname="helvetica" ];
+  3276 [ label="21-Try
+try" shape="oval" line="81" fontname="helvetica" ];
+  3277 [ label="22-Ctrl
+isEncryptMode" shape="oval" line="82" fontname="helvetica" ];
+  3278 [ label="23-Call
+cipher.init(Cipher.ENCRYPT_MODE, secretKeyAPILessThanM)" shape="oval" line="83" fontname="helvetica" ];
+  3279 [ label="24-Actual-in
+Cipher.ENCRYPT_MODE" shape="oval" line="83" fontname="helvetica" ];
+  3280 [ label="25-Actual-in
+secretKeyAPILessThanM" shape="oval" line="83" fontname="helvetica" ];
+  3281 [ label="26-Call
+cipher.init(Cipher.DECRYPT_MODE, secretKeyAPILessThanM)" shape="oval" line="85" fontname="helvetica" ];
+  3282 [ label="27-Actual-in
+Cipher.DECRYPT_MODE" shape="oval" line="85" fontname="helvetica" ];
+  3283 [ label="28-Actual-in
+secretKeyAPILessThanM" shape="oval" line="85" fontname="helvetica" ];
+  3284 [ label="29-Catch
+InvalidKeyException | IllegalArgumentException e" shape="oval" line="87" fontname="helvetica" ];
+  3285 [ label="30-Call
+removeKeys()" shape="oval" line="90" fontname="helvetica" ];
+  3286 [ label="31-Throw
+e" shape="oval" line="91" fontname="helvetica" ];
+  3287 [ label="32-Return
+return cipher" shape="oval" line="93" fontname="helvetica" ];
+  3288 [ label="33-Entry
+removeKeys" shape="oval" line="96" fontname="helvetica" ];
+  3289 [ label="34-Entry
+removeKeys" shape="oval" line="104" fontname="helvetica" ];
+  3290 [ label="35-Formal-in
+keyStore" shape="oval" line="104" fontname="helvetica" ];
+  3291 [ label="36-Entry
+removeSavedSharedPreferences" shape="oval" line="111" fontname="helvetica" ];
+  3292 [ label="37-Assign
+sharedPreferences = CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="113" fontname="helvetica" ];
+  3293 [ label="38-Call
+CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="113" fontname="helvetica" ];
+  3294 [ label="39-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="113" fontname="helvetica" ];
+  3295 [ label="40-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="113" fontname="helvetica" ];
+  3296 [ label="41-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="113" fontname="helvetica" ];
+  3297 [ label="42-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="113" fontname="helvetica" ];
+  3298 [ label="43-Call
+sharedPreferences.edit().clear().commit()" shape="oval" line="114" fontname="helvetica" ];
+  3299 [ label="44-Entry
+getSecretKey" shape="oval" line="117" fontname="helvetica" ];
+  3300 [ label="45-Formal-out
+" shape="oval" line="117" fontname="helvetica" ];
+  3301 [ label="46-Assign
+keyStore = KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="119" fontname="helvetica" ];
+  3302 [ label="47-Call
+KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="119" fontname="helvetica" ];
+  3303 [ label="48-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="119" fontname="helvetica" ];
+  3304 [ label="49-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="119" fontname="helvetica" ];
+  3305 [ label="50-Call
+keyStore.load(null)" shape="oval" line="120" fontname="helvetica" ];
+  3306 [ label="51-Actual-in
+null" shape="oval" line="120" fontname="helvetica" ];
+  3307 [ label="52-Ctrl
+!keyStore.containsAlias(BuildConfig.ALIAS)" shape="oval" line="121" fontname="helvetica" ];
+  3308 [ label="53-Ctrl
+Build.VERSION.SDK_INT >= Build.VERSION_CODES.M" shape="oval" line="122" fontname="helvetica" ];
+  3309 [ label="54-Assign
+keyGenerator = KeyGenerator.getInstance(KEY_ALGORITHM_AES, BuildConfig.KEYSTORE)" shape="oval" line="123" fontname="helvetica" ];
+  3310 [ label="55-Call
+KeyGenerator.getInstance(KEY_ALGORITHM_AES, BuildConfig.KEYSTORE)" shape="oval" line="123" fontname="helvetica" ];
+  3311 [ label="56-Actual-in
+KEY_ALGORITHM_AES" shape="oval" line="123" fontname="helvetica" ];
+  3312 [ label="57-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="123" fontname="helvetica" ];
+  3313 [ label="58-Actual-in
+KEY_ALGORITHM_AES" shape="oval" line="123" fontname="helvetica" ];
+  3314 [ label="59-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="123" fontname="helvetica" ];
+  3315 [ label="60-Call
+keyGenerator.init(new KeyGenParameterSpec.Builder(BuildConfig.ALIAS, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT).setBlockModes(KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE).build())" shape="oval" line="124" fontname="helvetica" ];
+  3316 [ label="61-Actual-in
+new KeyGenParameterSpec.Builder(BuildConfig.ALIAS, KeyProperties.PURPOSE_ENCRYPT | KeyProperties.PURPOSE_DECRYPT).setBlockModes(KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE).build()" shape="oval" line="124" fontname="helvetica" ];
+  3317 [ label="62-Return
+return keyGenerator.generateKey()" shape="oval" line="128" fontname="helvetica" ];
+  3318 [ label="63-Return
+return ((KeyStore.SecretKeyEntry) keyStore.getEntry(BuildConfig.ALIAS, null)).getSecretKey()" shape="oval" line="132" fontname="helvetica" ];
+  3319 [ label="64-Return
+return null" shape="oval" line="134" fontname="helvetica" ];
+  3320 [ label="65-Entry
+generateKeysForAPILessThanM" shape="oval" line="137" fontname="helvetica" ];
+  3321 [ label="66-Assign
+keyStore = KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="139" fontname="helvetica" ];
+  3322 [ label="67-Call
+KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="139" fontname="helvetica" ];
+  3323 [ label="68-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="139" fontname="helvetica" ];
+  3324 [ label="69-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="139" fontname="helvetica" ];
+  3325 [ label="70-Call
+keyStore.load(null)" shape="oval" line="140" fontname="helvetica" ];
+  3326 [ label="71-Actual-in
+null" shape="oval" line="140" fontname="helvetica" ];
+  3327 [ label="72-Ctrl
+!keyStore.containsAlias(BuildConfig.ALIAS)" shape="oval" line="141" fontname="helvetica" ];
+  3328 [ label="73-Assign
+start = Calendar.getInstance()" shape="oval" line="142" fontname="helvetica" ];
+  3329 [ label="74-Call
+Calendar.getInstance()" shape="oval" line="142" fontname="helvetica" ];
+  3330 [ label="75-Assign
+end = Calendar.getInstance()" shape="oval" line="143" fontname="helvetica" ];
+  3331 [ label="76-Call
+Calendar.getInstance()" shape="oval" line="143" fontname="helvetica" ];
+  3332 [ label="77-Call
+end.add(Calendar.YEAR, 30)" shape="oval" line="144" fontname="helvetica" ];
+  3333 [ label="78-Actual-in
+Calendar.YEAR" shape="oval" line="144" fontname="helvetica" ];
+  3334 [ label="79-Actual-in
+30" shape="oval" line="144" fontname="helvetica" ];
+  3335 [ label="80-Assign
+spec = new KeyPairGeneratorSpec.Builder(CoronaApplication.getInstance().getContext()).setAlias(BuildConfig.ALIAS).setSubject(new X500Principal('CN=' + BuildConfig.ALIAS)).setSerialNumber(BigInteger.TEN).setStartDate(start.getTime()).setEndDate(end.getTime()).setKeySize(1024).build()" shape="oval" line="145" fontname="helvetica" ];
+  3336 [ label="81-Call
+new KeyPairGeneratorSpec.Builder(CoronaApplication.getInstance().getContext()).setAlias(BuildConfig.ALIAS).setSubject(new X500Principal('CN=' + BuildConfig.ALIAS)).setSerialNumber(BigInteger.TEN).setStartDate(start.getTime()).setEndDate(end.getTime()).setKeySize(1024).build()" shape="oval" line="145" fontname="helvetica" ];
+  3337 [ label="82-Assign
+kpg = KeyPairGenerator.getInstance(RSA_ALGORITHM_NAME, BuildConfig.KEYSTORE)" shape="oval" line="153" fontname="helvetica" ];
+  3338 [ label="83-Call
+KeyPairGenerator.getInstance(RSA_ALGORITHM_NAME, BuildConfig.KEYSTORE)" shape="oval" line="153" fontname="helvetica" ];
+  3339 [ label="84-Actual-in
+RSA_ALGORITHM_NAME" shape="oval" line="153" fontname="helvetica" ];
+  3340 [ label="85-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="153" fontname="helvetica" ];
+  3341 [ label="86-Actual-in
+RSA_ALGORITHM_NAME" shape="oval" line="153" fontname="helvetica" ];
+  3342 [ label="87-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="153" fontname="helvetica" ];
+  3343 [ label="88-Call
+kpg.initialize(spec)" shape="oval" line="154" fontname="helvetica" ];
+  3344 [ label="89-Actual-in
+spec" shape="oval" line="154" fontname="helvetica" ];
+  3345 [ label="90-Call
+kpg.generateKeyPair()" shape="oval" line="155" fontname="helvetica" ];
+  3346 [ label="91-Call
+saveEncryptedKey()" shape="oval" line="158" fontname="helvetica" ];
+  3347 [ label="92-Entry
+saveEncryptedKey" shape="oval" line="161" fontname="helvetica" ];
+  3348 [ label="93-Assign
+pref = CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="162" fontname="helvetica" ];
+  3349 [ label="94-Call
+CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="162" fontname="helvetica" ];
+  3350 [ label="95-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="162" fontname="helvetica" ];
+  3351 [ label="96-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="162" fontname="helvetica" ];
+  3352 [ label="97-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="162" fontname="helvetica" ];
+  3353 [ label="98-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="162" fontname="helvetica" ];
+  3354 [ label="99-Assign
+encryptedKeyBase64encoded = pref.getString(ENCRYPTED_KEY_NAME, null)" shape="oval" line="163" fontname="helvetica" ];
+  3355 [ label="100-Call
+pref.getString(ENCRYPTED_KEY_NAME, null)" shape="oval" line="163" fontname="helvetica" ];
+  3356 [ label="101-Actual-in
+ENCRYPTED_KEY_NAME" shape="oval" line="163" fontname="helvetica" ];
+  3357 [ label="102-Actual-in
+null" shape="oval" line="163" fontname="helvetica" ];
+  3358 [ label="103-Actual-in
+ENCRYPTED_KEY_NAME" shape="oval" line="163" fontname="helvetica" ];
+  3359 [ label="104-Actual-in
+null" shape="oval" line="163" fontname="helvetica" ];
+  3360 [ label="105-Ctrl
+encryptedKeyBase64encoded == null" shape="oval" line="164" fontname="helvetica" ];
+  3361 [ label="106-Assign
+key = new byte[16]" shape="oval" line="165" fontname="helvetica" ];
+  3362 [ label="107-Assign
+secureRandom = new SecureRandom()" shape="oval" line="166" fontname="helvetica" ];
+  3363 [ label="108-Call
+secureRandom.nextBytes(key)" shape="oval" line="167" fontname="helvetica" ];
+  3364 [ label="109-Actual-in
+key" shape="oval" line="167" fontname="helvetica" ];
+  3365 [ label="110-Assign
+encryptedKey = rsaEncryptKey(key)" shape="oval" line="168" fontname="helvetica" ];
+  3366 [ label="111-Call
+rsaEncryptKey(key)" shape="oval" line="168" fontname="helvetica" ];
+  3367 [ label="112-Actual-in
+key" shape="oval" line="168" fontname="helvetica" ];
+  3368 [ label="113-Actual-in
+key" shape="oval" line="168" fontname="helvetica" ];
+  3369 [ label="114-Assign
+encryptedKeyBase64encoded = Base64.encodeToString(encryptedKey, Base64.DEFAULT)" shape="oval" line="169" fontname="helvetica" ];
+  3370 [ label="115-Actual-in
+encryptedKey" shape="oval" line="169" fontname="helvetica" ];
+  3371 [ label="116-Actual-in
+Base64.DEFAULT" shape="oval" line="169" fontname="helvetica" ];
+  3372 [ label="117-Assign
+edit = pref.edit()" shape="oval" line="170" fontname="helvetica" ];
+  3373 [ label="118-Call
+pref.edit()" shape="oval" line="170" fontname="helvetica" ];
+  3374 [ label="119-Call
+edit.putString(ENCRYPTED_KEY_NAME, encryptedKeyBase64encoded)" shape="oval" line="171" fontname="helvetica" ];
+  3375 [ label="120-Actual-in
+ENCRYPTED_KEY_NAME" shape="oval" line="171" fontname="helvetica" ];
+  3376 [ label="121-Actual-in
+encryptedKeyBase64encoded" shape="oval" line="171" fontname="helvetica" ];
+  3377 [ label="122-Call
+edit.commit()" shape="oval" line="172" fontname="helvetica" ];
+  3378 [ label="123-Entry
+rsaEncryptKey" shape="oval" line="177" fontname="helvetica" ];
+  3379 [ label="124-Formal-out
+" shape="oval" line="177" fontname="helvetica" ];
+  3380 [ label="125-Formal-in
+secret" shape="oval" line="177" fontname="helvetica" ];
+  3381 [ label="126-Assign
+keyStore = KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="179" fontname="helvetica" ];
+  3382 [ label="127-Call
+KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="179" fontname="helvetica" ];
+  3383 [ label="128-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="179" fontname="helvetica" ];
+  3384 [ label="129-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="179" fontname="helvetica" ];
+  3385 [ label="130-Call
+keyStore.load(null)" shape="oval" line="180" fontname="helvetica" ];
+  3386 [ label="131-Actual-in
+null" shape="oval" line="180" fontname="helvetica" ];
+  3387 [ label="132-Assign
+privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(BuildConfig.ALIAS, null)" shape="oval" line="182" fontname="helvetica" ];
+  3388 [ label="133-Assign
+inputCipher = Cipher.getInstance(RSA_MODE, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA)" shape="oval" line="183" fontname="helvetica" ];
+  3389 [ label="134-Call
+Cipher.getInstance(RSA_MODE, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA)" shape="oval" line="183" fontname="helvetica" ];
+  3390 [ label="135-Actual-in
+RSA_MODE" shape="oval" line="183" fontname="helvetica" ];
+  3391 [ label="136-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA" shape="oval" line="183" fontname="helvetica" ];
+  3392 [ label="137-Actual-in
+RSA_MODE" shape="oval" line="183" fontname="helvetica" ];
+  3393 [ label="138-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA" shape="oval" line="183" fontname="helvetica" ];
+  3394 [ label="139-Call
+inputCipher.init(Cipher.ENCRYPT_MODE, privateKeyEntry.getCertificate().getPublicKey())" shape="oval" line="184" fontname="helvetica" ];
+  3395 [ label="140-Actual-in
+Cipher.ENCRYPT_MODE" shape="oval" line="184" fontname="helvetica" ];
+  3396 [ label="141-Actual-in
+privateKeyEntry.getCertificate().getPublicKey()" shape="oval" line="184" fontname="helvetica" ];
+  3397 [ label="142-Assign
+outputStream = new ByteArrayOutputStream()" shape="oval" line="186" fontname="helvetica" ];
+  3398 [ label="143-Assign
+cipherOutputStream = new CipherOutputStream(outputStream, inputCipher)" shape="oval" line="187" fontname="helvetica" ];
+  3399 [ label="144-Call
+cipherOutputStream.write(secret)" shape="oval" line="188" fontname="helvetica" ];
+  3400 [ label="145-Actual-in
+secret" shape="oval" line="188" fontname="helvetica" ];
+  3401 [ label="146-Call
+cipherOutputStream.close()" shape="oval" line="189" fontname="helvetica" ];
+  3402 [ label="147-Return
+return outputStream.toByteArray()" shape="oval" line="191" fontname="helvetica" ];
+  3403 [ label="148-Entry
+getSecretKeyAPILessThanM" shape="oval" line="194" fontname="helvetica" ];
+  3404 [ label="149-Formal-out
+" shape="oval" line="194" fontname="helvetica" ];
+  3405 [ label="150-Assign
+encryptedKeyBase64Encoded = getSecretKeyFromSharedPreferences()" shape="oval" line="195" fontname="helvetica" ];
+  3406 [ label="151-Call
+getSecretKeyFromSharedPreferences()" shape="oval" line="195" fontname="helvetica" ];
+  3407 [ label="152-Ctrl
+TextUtils.isEmpty(encryptedKeyBase64Encoded)" shape="oval" line="196" fontname="helvetica" ];
+  3408 [ label="153-Throw
+new InvalidKeyException('Saved key missing from shared preferences')" shape="oval" line="197" fontname="helvetica" ];
+  3409 [ label="154-Assign
+encryptedKey = Base64.decode(encryptedKeyBase64Encoded, Base64.DEFAULT)" shape="oval" line="199" fontname="helvetica" ];
+  3410 [ label="155-Call
+Base64.decode(encryptedKeyBase64Encoded, Base64.DEFAULT)" shape="oval" line="199" fontname="helvetica" ];
+  3411 [ label="156-Actual-in
+encryptedKeyBase64Encoded" shape="oval" line="199" fontname="helvetica" ];
+  3412 [ label="157-Actual-in
+Base64.DEFAULT" shape="oval" line="199" fontname="helvetica" ];
+  3413 [ label="158-Actual-in
+encryptedKeyBase64Encoded" shape="oval" line="199" fontname="helvetica" ];
+  3414 [ label="159-Actual-in
+Base64.DEFAULT" shape="oval" line="199" fontname="helvetica" ];
+  3415 [ label="160-Assign
+key = rsaDecryptKey(encryptedKey)" shape="oval" line="200" fontname="helvetica" ];
+  3416 [ label="161-Call
+rsaDecryptKey(encryptedKey)" shape="oval" line="200" fontname="helvetica" ];
+  3417 [ label="162-Actual-in
+encryptedKey" shape="oval" line="200" fontname="helvetica" ];
+  3418 [ label="163-Actual-in
+encryptedKey" shape="oval" line="200" fontname="helvetica" ];
+  3419 [ label="164-Return
+return new SecretKeySpec(key, 'AES')" shape="oval" line="201" fontname="helvetica" ];
+  3420 [ label="165-Entry
+rsaDecryptKey" shape="oval" line="204" fontname="helvetica" ];
+  3421 [ label="166-Formal-out
+" shape="oval" line="204" fontname="helvetica" ];
+  3422 [ label="167-Formal-in
+encrypted" shape="oval" line="204" fontname="helvetica" ];
+  3423 [ label="168-Assign
+keyStore = KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="206" fontname="helvetica" ];
+  3424 [ label="169-Call
+KeyStore.getInstance(BuildConfig.KEYSTORE)" shape="oval" line="206" fontname="helvetica" ];
+  3425 [ label="170-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="206" fontname="helvetica" ];
+  3426 [ label="171-Actual-in
+BuildConfig.KEYSTORE" shape="oval" line="206" fontname="helvetica" ];
+  3427 [ label="172-Call
+keyStore.load(null)" shape="oval" line="207" fontname="helvetica" ];
+  3428 [ label="173-Actual-in
+null" shape="oval" line="207" fontname="helvetica" ];
+  3429 [ label="174-Assign
+privateKeyEntry = (KeyStore.PrivateKeyEntry) keyStore.getEntry(BuildConfig.ALIAS, null)" shape="oval" line="209" fontname="helvetica" ];
+  3430 [ label="175-Assign
+output = Cipher.getInstance(RSA_MODE, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA)" shape="oval" line="210" fontname="helvetica" ];
+  3431 [ label="176-Call
+Cipher.getInstance(RSA_MODE, CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA)" shape="oval" line="210" fontname="helvetica" ];
+  3432 [ label="177-Actual-in
+RSA_MODE" shape="oval" line="210" fontname="helvetica" ];
+  3433 [ label="178-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA" shape="oval" line="210" fontname="helvetica" ];
+  3434 [ label="179-Actual-in
+RSA_MODE" shape="oval" line="210" fontname="helvetica" ];
+  3435 [ label="180-Actual-in
+CIPHER_PROVIDER_NAME_ENCRYPTION_DECRYPTION_RSA" shape="oval" line="210" fontname="helvetica" ];
+  3436 [ label="181-Call
+output.init(Cipher.DECRYPT_MODE, privateKeyEntry.getPrivateKey())" shape="oval" line="211" fontname="helvetica" ];
+  3437 [ label="182-Actual-in
+Cipher.DECRYPT_MODE" shape="oval" line="211" fontname="helvetica" ];
+  3438 [ label="183-Actual-in
+privateKeyEntry.getPrivateKey()" shape="oval" line="211" fontname="helvetica" ];
+  3439 [ label="184-Return
+return output.doFinal(encrypted)" shape="oval" line="212" fontname="helvetica" ];
+  3440 [ label="185-Entry
+getSecretKeyFromSharedPreferences" shape="oval" line="215" fontname="helvetica" ];
+  3441 [ label="186-Formal-out
+" shape="oval" line="215" fontname="helvetica" ];
+  3442 [ label="187-Assign
+sharedPreferences = CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="216" fontname="helvetica" ];
+  3443 [ label="188-Call
+CoronaApplication.getInstance().getContext().getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)" shape="oval" line="216" fontname="helvetica" ];
+  3444 [ label="189-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="216" fontname="helvetica" ];
+  3445 [ label="190-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="216" fontname="helvetica" ];
+  3446 [ label="191-Actual-in
+SHARED_PREFERENCE_NAME" shape="oval" line="216" fontname="helvetica" ];
+  3447 [ label="192-Actual-in
+Context.MODE_PRIVATE" shape="oval" line="216" fontname="helvetica" ];
+  3448 [ label="193-Return
+return sharedPreferences.getString(ENCRYPTED_KEY_NAME, null)" shape="oval" line="217" fontname="helvetica" ];
+  3260 -> 3261 [ label="Call" ];
+  3262 -> 3257 [ label="Data" ];
+  3263 -> 3264 [ label="Ctrl-true" ];
+  3263 -> 3265 [ label="Ctrl-true" ];
+  3259 -> 3260 [ label="Ctrl-true" ];
+  3259 -> 3262 [ label="Ctrl-true" ];
+  3259 -> 3263 [ label="Ctrl-true" ];
+  3256 -> 3257 [ label="Ctrl-true" ];
+  3256 -> 3258 [ label="Ctrl-true" ];
+  3256 -> 3259 [ label="Ctrl-true" ];
+  3271 -> 3272 [ label="Ctrl-true" ];
+  3271 -> 3273 [ label="Ctrl-true" ];
+  3270 -> 3271 [ label="Call" ];
+  3270 -> 3274 [ label="Ctrl-true" ];
+  3270 -> 3275 [ label="Ctrl-true" ];
+  3278 -> 3279 [ label="Ctrl-true" ];
+  3278 -> 3280 [ label="Ctrl-true" ];
+  3277 -> 3278 [ label="Ctrl-true" ];
+  3281 -> 3282 [ label="Ctrl-true" ];
+  3281 -> 3283 [ label="Ctrl-true" ];
+  3277 -> 3281 [ label="Ctrl-false" ];
+  3284 -> 3285 [ label="Ctrl-true" ];
+  3284 -> 3286 [ label="Ctrl-true" ];
+  3276 -> 3277 [ label="Ctrl-true" ];
+  3276 -> 3284 [ label="Ctrl-true" ];
+  3287 -> 3267 [ label="Data" ];
+  3266 -> 3267 [ label="Ctrl-true" ];
+  3266 -> 3268 [ label="Ctrl-true" ];
+  3266 -> 3269 [ label="Ctrl-true" ];
+  3266 -> 3270 [ label="Ctrl-true" ];
+  3266 -> 3276 [ label="Ctrl-true" ];
+  3266 -> 3287 [ label="Ctrl-true" ];
+  3289 -> 3290 [ label="Ctrl-true" ];
+  3293 -> 3294 [ label="Ctrl-true" ];
+  3293 -> 3295 [ label="Ctrl-true" ];
+  3292 -> 3293 [ label="Call" ];
+  3292 -> 3296 [ label="Ctrl-true" ];
+  3292 -> 3297 [ label="Ctrl-true" ];
+  3291 -> 3292 [ label="Ctrl-true" ];
+  3291 -> 3298 [ label="Ctrl-true" ];
+  3302 -> 3303 [ label="Ctrl-true" ];
+  3301 -> 3302 [ label="Call" ];
+  3301 -> 3304 [ label="Ctrl-true" ];
+  3305 -> 3306 [ label="Ctrl-true" ];
+  3310 -> 3311 [ label="Ctrl-true" ];
+  3310 -> 3312 [ label="Ctrl-true" ];
+  3309 -> 3310 [ label="Call" ];
+  3309 -> 3313 [ label="Ctrl-true" ];
+  3309 -> 3314 [ label="Ctrl-true" ];
+  3315 -> 3316 [ label="Ctrl-true" ];
+  3317 -> 3300 [ label="Data" ];
+  3308 -> 3309 [ label="Ctrl-true" ];
+  3308 -> 3315 [ label="Ctrl-true" ];
+  3308 -> 3317 [ label="Ctrl-true" ];
+  3307 -> 3308 [ label="Ctrl-true" ];
+  3318 -> 3300 [ label="Data" ];
+  3307 -> 3318 [ label="Ctrl-false" ];
+  3319 -> 3300 [ label="Data" ];
+  3299 -> 3300 [ label="Ctrl-true" ];
+  3299 -> 3301 [ label="Ctrl-true" ];
+  3299 -> 3305 [ label="Ctrl-true" ];
+  3299 -> 3307 [ label="Ctrl-true" ];
+  3299 -> 3319 [ label="Ctrl-true" ];
+  3322 -> 3323 [ label="Ctrl-true" ];
+  3321 -> 3322 [ label="Call" ];
+  3321 -> 3324 [ label="Ctrl-true" ];
+  3325 -> 3326 [ label="Ctrl-true" ];
+  3328 -> 3329 [ label="Call" ];
+  3330 -> 3331 [ label="Call" ];
+  3332 -> 3333 [ label="Ctrl-true" ];
+  3332 -> 3334 [ label="Ctrl-true" ];
+  3335 -> 3336 [ label="Call" ];
+  3338 -> 3339 [ label="Ctrl-true" ];
+  3338 -> 3340 [ label="Ctrl-true" ];
+  3337 -> 3338 [ label="Call" ];
+  3337 -> 3341 [ label="Ctrl-true" ];
+  3337 -> 3342 [ label="Ctrl-true" ];
+  3343 -> 3344 [ label="Ctrl-true" ];
+  3327 -> 3328 [ label="Ctrl-true" ];
+  3327 -> 3330 [ label="Ctrl-true" ];
+  3327 -> 3332 [ label="Ctrl-true" ];
+  3327 -> 3335 [ label="Ctrl-true" ];
+  3327 -> 3337 [ label="Ctrl-true" ];
+  3327 -> 3343 [ label="Ctrl-true" ];
+  3327 -> 3345 [ label="Ctrl-true" ];
+  3320 -> 3321 [ label="Ctrl-true" ];
+  3320 -> 3325 [ label="Ctrl-true" ];
+  3320 -> 3327 [ label="Ctrl-true" ];
+  3320 -> 3346 [ label="Ctrl-true" ];
+  3349 -> 3350 [ label="Ctrl-true" ];
+  3349 -> 3351 [ label="Ctrl-true" ];
+  3348 -> 3349 [ label="Call" ];
+  3348 -> 3352 [ label="Ctrl-true" ];
+  3348 -> 3353 [ label="Ctrl-true" ];
+  3355 -> 3356 [ label="Ctrl-true" ];
+  3355 -> 3357 [ label="Ctrl-true" ];
+  3354 -> 3355 [ label="Call" ];
+  3354 -> 3358 [ label="Ctrl-true" ];
+  3354 -> 3359 [ label="Ctrl-true" ];
+  3363 -> 3364 [ label="Ctrl-true" ];
+  3366 -> 3367 [ label="Ctrl-true" ];
+  3365 -> 3366 [ label="Call" ];
+  3365 -> 3368 [ label="Ctrl-true" ];
+  3369 -> 3370 [ label="Ctrl-true" ];
+  3369 -> 3371 [ label="Ctrl-true" ];
+  3372 -> 3373 [ label="Call" ];
+  3374 -> 3375 [ label="Ctrl-true" ];
+  3374 -> 3376 [ label="Ctrl-true" ];
+  3360 -> 3361 [ label="Ctrl-true" ];
+  3360 -> 3362 [ label="Ctrl-true" ];
+  3360 -> 3363 [ label="Ctrl-true" ];
+  3360 -> 3365 [ label="Ctrl-true" ];
+  3360 -> 3369 [ label="Ctrl-true" ];
+  3360 -> 3372 [ label="Ctrl-true" ];
+  3360 -> 3374 [ label="Ctrl-true" ];
+  3360 -> 3377 [ label="Ctrl-true" ];
+  3347 -> 3348 [ label="Ctrl-true" ];
+  3347 -> 3354 [ label="Ctrl-true" ];
+  3347 -> 3360 [ label="Ctrl-true" ];
+  3382 -> 3383 [ label="Ctrl-true" ];
+  3381 -> 3382 [ label="Call" ];
+  3381 -> 3384 [ label="Ctrl-true" ];
+  3385 -> 3386 [ label="Ctrl-true" ];
+  3389 -> 3390 [ label="Ctrl-true" ];
+  3389 -> 3391 [ label="Ctrl-true" ];
+  3388 -> 3389 [ label="Call" ];
+  3388 -> 3392 [ label="Ctrl-true" ];
+  3388 -> 3393 [ label="Ctrl-true" ];
+  3394 -> 3395 [ label="Ctrl-true" ];
+  3394 -> 3396 [ label="Ctrl-true" ];
+  3399 -> 3400 [ label="Ctrl-true" ];
+  3402 -> 3379 [ label="Data" ];
+  3378 -> 3379 [ label="Ctrl-true" ];
+  3378 -> 3380 [ label="Ctrl-true" ];
+  3378 -> 3381 [ label="Ctrl-true" ];
+  3378 -> 3385 [ label="Ctrl-true" ];
+  3378 -> 3387 [ label="Ctrl-true" ];
+  3378 -> 3388 [ label="Ctrl-true" ];
+  3378 -> 3394 [ label="Ctrl-true" ];
+  3378 -> 3397 [ label="Ctrl-true" ];
+  3378 -> 3398 [ label="Ctrl-true" ];
+  3378 -> 3399 [ label="Ctrl-true" ];
+  3378 -> 3401 [ label="Ctrl-true" ];
+  3378 -> 3402 [ label="Ctrl-true" ];
+  3405 -> 3406 [ label="Call" ];
+  3407 -> 3408 [ label="Ctrl-true" ];
+  3410 -> 3411 [ label="Ctrl-true" ];
+  3410 -> 3412 [ label="Ctrl-true" ];
+  3409 -> 3410 [ label="Call" ];
+  3409 -> 3413 [ label="Ctrl-true" ];
+  3409 -> 3414 [ label="Ctrl-true" ];
+  3416 -> 3417 [ label="Ctrl-true" ];
+  3415 -> 3416 [ label="Call" ];
+  3415 -> 3418 [ label="Ctrl-true" ];
+  3419 -> 3404 [ label="Data" ];
+  3403 -> 3404 [ label="Ctrl-true" ];
+  3403 -> 3405 [ label="Ctrl-true" ];
+  3403 -> 3407 [ label="Ctrl-true" ];
+  3403 -> 3409 [ label="Ctrl-true" ];
+  3403 -> 3415 [ label="Ctrl-true" ];
+  3403 -> 3419 [ label="Ctrl-true" ];
+  3424 -> 3425 [ label="Ctrl-true" ];
+  3423 -> 3424 [ label="Call" ];
+  3423 -> 3426 [ label="Ctrl-true" ];
+  3427 -> 3428 [ label="Ctrl-true" ];
+  3431 -> 3432 [ label="Ctrl-true" ];
+  3431 -> 3433 [ label="Ctrl-true" ];
+  3430 -> 3431 [ label="Call" ];
+  3430 -> 3434 [ label="Ctrl-true" ];
+  3430 -> 3435 [ label="Ctrl-true" ];
+  3436 -> 3437 [ label="Ctrl-true" ];
+  3436 -> 3438 [ label="Ctrl-true" ];
+  3439 -> 3421 [ label="Data" ];
+  3420 -> 3421 [ label="Ctrl-true" ];
+  3420 -> 3422 [ label="Ctrl-true" ];
+  3420 -> 3423 [ label="Ctrl-true" ];
+  3420 -> 3427 [ label="Ctrl-true" ];
+  3420 -> 3429 [ label="Ctrl-true" ];
+  3420 -> 3430 [ label="Ctrl-true" ];
+  3420 -> 3436 [ label="Ctrl-true" ];
+  3420 -> 3439 [ label="Ctrl-true" ];
+  3443 -> 3444 [ label="Ctrl-true" ];
+  3443 -> 3445 [ label="Ctrl-true" ];
+  3442 -> 3443 [ label="Call" ];
+  3442 -> 3446 [ label="Ctrl-true" ];
+  3442 -> 3447 [ label="Ctrl-true" ];
+  3448 -> 3441 [ label="Data" ];
+  3440 -> 3441 [ label="Ctrl-true" ];
+  3440 -> 3442 [ label="Ctrl-true" ];
+  3440 -> 3448 [ label="Ctrl-true" ];
+  3255 -> 3256 [ label="Member-of" ];
+  3255 -> 3266 [ label="Member-of" ];
+  3255 -> 3288 [ label="Member-of" ];
+  3255 -> 3289 [ label="Member-of" ];
+  3255 -> 3291 [ label="Member-of" ];
+  3255 -> 3299 [ label="Member-of" ];
+  3255 -> 3320 [ label="Member-of" ];
+  3255 -> 3347 [ label="Member-of" ];
+  3255 -> 3378 [ label="Member-of" ];
+  3255 -> 3403 [ label="Member-of" ];
+  3255 -> 3420 [ label="Member-of" ];
+  3255 -> 3440 [ label="Member-of" ];
+  3405 -> 3440 [ label="Call" ];
+  3406 -> 3440 [ label="Call" ];
+  3415 -> 3420 [ label="Call" ];
+  3418 -> 3422 [ label="Param-in" ];
+  3416 -> 3420 [ label="Call" ];
+  3417 -> 3422 [ label="Param-in" ];
+  3346 -> 3347 [ label="Call" ];
+  3260 -> 3403 [ label="Call" ];
+  3261 -> 3403 [ label="Call" ];
+  3366 -> 3378 [ label="Call" ];
+  3367 -> 3380 [ label="Param-in" ];
+  3365 -> 3378 [ label="Call" ];
+  3368 -> 3380 [ label="Param-in" ];
+  3258 -> 3262 [ label="Data" ];
+  3263 -> 3265 [ label="Data" ];
+  3269 -> 3277 [ label="Data" ];
+  3268 -> 3280 [ label="Data" ];
+  3268 -> 3283 [ label="Data" ];
+  3284 -> 3286 [ label="Data" ];
+  3305 -> 3307 [ label="Data" ];
+  3315 -> 3317 [ label="Data" ];
+  3305 -> 3318 [ label="Data" ];
+  3325 -> 3327 [ label="Data" ];
+  3343 -> 3345 [ label="Data" ];
+  3361 -> 3364 [ label="Data" ];
+  3361 -> 3368 [ label="Data" ];
+  3374 -> 3377 [ label="Data" ];
+  3385 -> 3387 [ label="Data" ];
+  3387 -> 3396 [ label="Data" ];
+  3397 -> 3398 [ label="Data" ];
+  3394 -> 3398 [ label="Data" ];
+  3380 -> 3400 [ label="Data" ];
+  3399 -> 3401 [ label="Data" ];
+  3397 -> 3402 [ label="Data" ];
+  3427 -> 3429 [ label="Data" ];
+  3429 -> 3438 [ label="Data" ];
+  3436 -> 3439 [ label="Data" ];
+  3422 -> 3439 [ label="Data" ];
+  3404 -> 3260 [ label="Param-out" ];
+  3260 -> 3262 [ label="Data" ];
+  3292 -> 3298 [ label="Data" ];
+  3335 -> 3344 [ label="Data" ];
+  3348 -> 3372 [ label="Data" ];
+  3354 -> 3360 [ label="Data" ];
+  3354 -> 3369 [ label="Output" ];
+  3379 -> 3365 [ label="Param-out" ];
+  3365 -> 3370 [ label="Data" ];
+  3369 -> 3376 [ label="Data" ];
+  3441 -> 3405 [ label="Param-out" ];
+  3405 -> 3407 [ label="Data" ];
+  3405 -> 3413 [ label="Data" ];
+  3409 -> 3418 [ label="Data" ];
+  3421 -> 3415 [ label="Param-out" ];
+  3415 -> 3419 [ label="Data" ];
+  3442 -> 3448 [ label="Data" ];
+}

@@ -1,0 +1,8 @@
+era_bcb_sample/
+.DS_Store
+.classpath
+.gradle
+.project
+.settings/
+/build/
+/bin/

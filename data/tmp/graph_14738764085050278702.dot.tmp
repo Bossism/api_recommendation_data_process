@@ -1,0 +1,399 @@
+digraph G {
+  7764 [ label="0-Class
+FastJson37Issue" shape="oval" line="9" fontname="helvetica" ];
+  7765 [ label="1-Entry
+gh1422" shape="oval" line="61" fontname="helvetica" ];
+  7766 [ label="2-Assign
+strOk = '{\'v\': 111}'" shape="oval" line="62" fontname="helvetica" ];
+  7767 [ label="3-Assign
+ok = JSON.parseObject(strOk, BoolVal.class)" shape="oval" line="63" fontname="helvetica" ];
+  7768 [ label="4-Call
+JSON.parseObject(strOk, BoolVal.class)" shape="oval" line="63" fontname="helvetica" ];
+  7769 [ label="5-Actual-in
+strOk" shape="oval" line="63" fontname="helvetica" ];
+  7770 [ label="6-Actual-in
+BoolVal.class" shape="oval" line="63" fontname="helvetica" ];
+  7771 [ label="7-Actual-in
+strOk" shape="oval" line="63" fontname="helvetica" ];
+  7772 [ label="8-Actual-in
+BoolVal.class" shape="oval" line="63" fontname="helvetica" ];
+  7773 [ label="9-Call
+System.out.println('ok:' + ok)" shape="oval" line="64" fontname="helvetica" ];
+  7774 [ label="10-Actual-in
+'ok:' + ok" shape="oval" line="64" fontname="helvetica" ];
+  7775 [ label="11-Assign
+strBad = '{\'v\':111}'" shape="oval" line="66" fontname="helvetica" ];
+  7776 [ label="12-Assign
+bad = JSON.parseObject(strBad, BoolVal.class)" shape="oval" line="67" fontname="helvetica" ];
+  7777 [ label="13-Call
+JSON.parseObject(strBad, BoolVal.class)" shape="oval" line="67" fontname="helvetica" ];
+  7778 [ label="14-Actual-in
+strBad" shape="oval" line="67" fontname="helvetica" ];
+  7779 [ label="15-Actual-in
+BoolVal.class" shape="oval" line="67" fontname="helvetica" ];
+  7780 [ label="16-Actual-in
+strBad" shape="oval" line="67" fontname="helvetica" ];
+  7781 [ label="17-Actual-in
+BoolVal.class" shape="oval" line="67" fontname="helvetica" ];
+  7782 [ label="18-Call
+System.out.println('bad' + bad)" shape="oval" line="68" fontname="helvetica" ];
+  7783 [ label="19-Actual-in
+'bad' + bad" shape="oval" line="68" fontname="helvetica" ];
+  7784 [ label="20-Entry
+gh1423" shape="oval" line="71" fontname="helvetica" ];
+  7785 [ label="21-Assign
+n = new BigInteger(String.valueOf(Long.MAX_VALUE)).add(new BigInteger('1'))" shape="oval" line="72" fontname="helvetica" ];
+  7786 [ label="22-Call
+new BigInteger(String.valueOf(Long.MAX_VALUE)).add(new BigInteger('1'))" shape="oval" line="72" fontname="helvetica" ];
+  7787 [ label="23-Actual-in
+new BigInteger('1')" shape="oval" line="72" fontname="helvetica" ];
+  7788 [ label="24-Actual-in
+new BigInteger('1')" shape="oval" line="72" fontname="helvetica" ];
+  7789 [ label="25-Assign
+map = new HashMap<>()" shape="oval" line="73" fontname="helvetica" ];
+  7790 [ label="26-Call
+map.put('v', n)" shape="oval" line="74" fontname="helvetica" ];
+  7791 [ label="27-Actual-in
+'v'" shape="oval" line="74" fontname="helvetica" ];
+  7792 [ label="28-Actual-in
+n" shape="oval" line="74" fontname="helvetica" ];
+  7793 [ label="29-Assign
+strBad = JSON.toJSONString(map)" shape="oval" line="75" fontname="helvetica" ];
+  7794 [ label="30-Call
+JSON.toJSONString(map)" shape="oval" line="75" fontname="helvetica" ];
+  7795 [ label="31-Actual-in
+map" shape="oval" line="75" fontname="helvetica" ];
+  7796 [ label="32-Actual-in
+map" shape="oval" line="75" fontname="helvetica" ];
+  7797 [ label="33-Call
+System.out.println('prepare to parse: ' + strBad)" shape="oval" line="76" fontname="helvetica" ];
+  7798 [ label="34-Actual-in
+'prepare to parse: ' + strBad" shape="oval" line="76" fontname="helvetica" ];
+  7799 [ label="35-Call
+System.out.println('We expect the following line to raise NumberFormatException, but it will print out something:')" shape="oval" line="78" fontname="helvetica" ];
+  7800 [ label="36-Actual-in
+'We expect the following line to raise NumberFormatException, but it will print out something:'" shape="oval" line="78" fontname="helvetica" ];
+  7801 [ label="37-Call
+System.out.println(JSON.parseObject(strBad, LongVal.class))" shape="oval" line="79" fontname="helvetica" ];
+  7802 [ label="38-Actual-in
+JSON.parseObject(strBad, LongVal.class)" shape="oval" line="79" fontname="helvetica" ];
+  7803 [ label="39-Call
+System.out.println('While Long.parseLong(String) call does raise NumberFormatException:')" shape="oval" line="81" fontname="helvetica" ];
+  7804 [ label="40-Actual-in
+'While Long.parseLong(String) call does raise NumberFormatException:'" shape="oval" line="81" fontname="helvetica" ];
+  7805 [ label="41-Call
+System.out.println(Long.parseLong(n.toString()))" shape="oval" line="82" fontname="helvetica" ];
+  7806 [ label="42-Actual-in
+Long.parseLong(n.toString())" shape="oval" line="82" fontname="helvetica" ];
+  7807 [ label="43-Entry
+main" shape="oval" line="85" fontname="helvetica" ];
+  7808 [ label="44-Formal-in
+args" shape="oval" line="85" fontname="helvetica" ];
+  7809 [ label="45-Assign
+fastJsonVersion = JSON.VERSION" shape="oval" line="86" fontname="helvetica" ];
+  7810 [ label="46-Call
+System.out.println('fastjson version: ' + fastJsonVersion)" shape="oval" line="87" fontname="helvetica" ];
+  7811 [ label="47-Actual-in
+'fastjson version: ' + fastJsonVersion" shape="oval" line="87" fontname="helvetica" ];
+  7812 [ label="48-Assign
+intOverflowMap = new HashMap<>()" shape="oval" line="89" fontname="helvetica" ];
+  7813 [ label="49-Assign
+intOverflow = Integer.MAX_VALUE" shape="oval" line="90" fontname="helvetica" ];
+  7814 [ label="50-Call
+intOverflowMap.put('v', intOverflow + 1)" shape="oval" line="91" fontname="helvetica" ];
+  7815 [ label="51-Actual-in
+'v'" shape="oval" line="91" fontname="helvetica" ];
+  7816 [ label="52-Actual-in
+intOverflow + 1" shape="oval" line="91" fontname="helvetica" ];
+  7817 [ label="53-Assign
+sIntOverflow = JSON.toJSONString(intOverflowMap)" shape="oval" line="92" fontname="helvetica" ];
+  7818 [ label="54-Call
+JSON.toJSONString(intOverflowMap)" shape="oval" line="92" fontname="helvetica" ];
+  7819 [ label="55-Actual-in
+intOverflowMap" shape="oval" line="92" fontname="helvetica" ];
+  7820 [ label="56-Actual-in
+intOverflowMap" shape="oval" line="92" fontname="helvetica" ];
+  7821 [ label="57-Call
+System.out.println('prepare to parse overflow int val: ' + sIntOverflow)" shape="oval" line="93" fontname="helvetica" ];
+  7822 [ label="58-Actual-in
+'prepare to parse overflow int val: ' + sIntOverflow" shape="oval" line="93" fontname="helvetica" ];
+  7823 [ label="59-Try
+try" shape="oval" line="94" fontname="helvetica" ];
+  7824 [ label="60-Call
+JSON.parseObject(sIntOverflow, IntegerVal.class)" shape="oval" line="95" fontname="helvetica" ];
+  7825 [ label="61-Actual-in
+sIntOverflow" shape="oval" line="95" fontname="helvetica" ];
+  7826 [ label="62-Actual-in
+IntegerVal.class" shape="oval" line="95" fontname="helvetica" ];
+  7827 [ label="63-Catch
+Exception e" shape="oval" line="96" fontname="helvetica" ];
+  7828 [ label="64-Call
+System.out.println('We captured the Exception: ' + e.getMessage())" shape="oval" line="97" fontname="helvetica" ];
+  7829 [ label="65-Actual-in
+'We captured the Exception: ' + e.getMessage()" shape="oval" line="97" fontname="helvetica" ];
+  7830 [ label="66-Assign
+floatOverflowMap = new HashMap<>()" shape="oval" line="100" fontname="helvetica" ];
+  7831 [ label="67-Assign
+floatOverflow = Float.MAX_VALUE" shape="oval" line="101" fontname="helvetica" ];
+  7832 [ label="68-Call
+floatOverflowMap.put('v', floatOverflow + floatOverflow)" shape="oval" line="102" fontname="helvetica" ];
+  7833 [ label="69-Actual-in
+'v'" shape="oval" line="102" fontname="helvetica" ];
+  7834 [ label="70-Actual-in
+floatOverflow + floatOverflow" shape="oval" line="102" fontname="helvetica" ];
+  7835 [ label="71-Assign
+sFloatOverflow = JSON.toJSONString(floatOverflowMap)" shape="oval" line="103" fontname="helvetica" ];
+  7836 [ label="72-Call
+JSON.toJSONString(floatOverflowMap)" shape="oval" line="103" fontname="helvetica" ];
+  7837 [ label="73-Actual-in
+floatOverflowMap" shape="oval" line="103" fontname="helvetica" ];
+  7838 [ label="74-Actual-in
+floatOverflowMap" shape="oval" line="103" fontname="helvetica" ];
+  7839 [ label="75-Call
+System.out.println('prepare to parse overflow float val: ' + sIntOverflow)" shape="oval" line="104" fontname="helvetica" ];
+  7840 [ label="76-Actual-in
+'prepare to parse overflow float val: ' + sIntOverflow" shape="oval" line="104" fontname="helvetica" ];
+  7841 [ label="77-Assign
+floatVal = JSON.parseObject(sFloatOverflow, FloatVal.class)" shape="oval" line="105" fontname="helvetica" ];
+  7842 [ label="78-Call
+JSON.parseObject(sFloatOverflow, FloatVal.class)" shape="oval" line="105" fontname="helvetica" ];
+  7843 [ label="79-Actual-in
+sFloatOverflow" shape="oval" line="105" fontname="helvetica" ];
+  7844 [ label="80-Actual-in
+FloatVal.class" shape="oval" line="105" fontname="helvetica" ];
+  7845 [ label="81-Actual-in
+sFloatOverflow" shape="oval" line="105" fontname="helvetica" ];
+  7846 [ label="82-Actual-in
+FloatVal.class" shape="oval" line="105" fontname="helvetica" ];
+  7847 [ label="83-Call
+System.out.println('We expect an exception raised, but found it parsed out an invalid value: ' + floatVal)" shape="oval" line="106" fontname="helvetica" ];
+  7848 [ label="84-Actual-in
+'We expect an exception raised, but found it parsed out an invalid value: ' + floatVal" shape="oval" line="106" fontname="helvetica" ];
+  7849 [ label="85-Class
+BoolVal" shape="oval" line="11" fontname="helvetica" ];
+  7850 [ label="86-Entry
+setV" shape="oval" line="13" fontname="helvetica" ];
+  7851 [ label="87-Formal-in
+v" shape="oval" line="13" fontname="helvetica" ];
+  7852 [ label="88-Assign
+this.v = v" shape="oval" line="14" fontname="helvetica" ];
+  7853 [ label="89-Entry
+toString" shape="oval" line="17" fontname="helvetica" ];
+  7854 [ label="90-Formal-out
+" shape="oval" line="17" fontname="helvetica" ];
+  7855 [ label="91-Return
+return String.valueOf(v)" shape="oval" line="19" fontname="helvetica" ];
+  7856 [ label="92-Class
+LongVal" shape="oval" line="23" fontname="helvetica" ];
+  7857 [ label="93-Entry
+setV" shape="oval" line="25" fontname="helvetica" ];
+  7858 [ label="94-Formal-in
+v" shape="oval" line="25" fontname="helvetica" ];
+  7859 [ label="95-Assign
+this.v = v" shape="oval" line="26" fontname="helvetica" ];
+  7860 [ label="96-Entry
+toString" shape="oval" line="29" fontname="helvetica" ];
+  7861 [ label="97-Formal-out
+" shape="oval" line="29" fontname="helvetica" ];
+  7862 [ label="98-Return
+return String.valueOf(v)" shape="oval" line="31" fontname="helvetica" ];
+  7863 [ label="99-Class
+IntegerVal" shape="oval" line="35" fontname="helvetica" ];
+  7864 [ label="100-Entry
+setV" shape="oval" line="38" fontname="helvetica" ];
+  7865 [ label="101-Formal-in
+v" shape="oval" line="38" fontname="helvetica" ];
+  7866 [ label="102-Assign
+this.v = v" shape="oval" line="39" fontname="helvetica" ];
+  7867 [ label="103-Entry
+toString" shape="oval" line="42" fontname="helvetica" ];
+  7868 [ label="104-Formal-out
+" shape="oval" line="42" fontname="helvetica" ];
+  7869 [ label="105-Return
+return String.valueOf(v)" shape="oval" line="44" fontname="helvetica" ];
+  7870 [ label="106-Class
+FloatVal" shape="oval" line="48" fontname="helvetica" ];
+  7871 [ label="107-Entry
+setV" shape="oval" line="51" fontname="helvetica" ];
+  7872 [ label="108-Formal-in
+v" shape="oval" line="51" fontname="helvetica" ];
+  7873 [ label="109-Assign
+this.v = v" shape="oval" line="52" fontname="helvetica" ];
+  7874 [ label="110-Entry
+toString" shape="oval" line="55" fontname="helvetica" ];
+  7875 [ label="111-Formal-out
+" shape="oval" line="55" fontname="helvetica" ];
+  7876 [ label="112-Return
+return String.valueOf(v)" shape="oval" line="57" fontname="helvetica" ];
+  7768 -> 7769 [ label="Ctrl-true" ];
+  7768 -> 7770 [ label="Ctrl-true" ];
+  7767 -> 7768 [ label="Call" ];
+  7767 -> 7771 [ label="Ctrl-true" ];
+  7767 -> 7772 [ label="Ctrl-true" ];
+  7773 -> 7774 [ label="Ctrl-true" ];
+  7777 -> 7778 [ label="Ctrl-true" ];
+  7777 -> 7779 [ label="Ctrl-true" ];
+  7776 -> 7777 [ label="Call" ];
+  7776 -> 7780 [ label="Ctrl-true" ];
+  7776 -> 7781 [ label="Ctrl-true" ];
+  7782 -> 7783 [ label="Ctrl-true" ];
+  7765 -> 7766 [ label="Ctrl-true" ];
+  7765 -> 7767 [ label="Ctrl-true" ];
+  7765 -> 7773 [ label="Ctrl-true" ];
+  7765 -> 7775 [ label="Ctrl-true" ];
+  7765 -> 7776 [ label="Ctrl-true" ];
+  7765 -> 7782 [ label="Ctrl-true" ];
+  7786 -> 7787 [ label="Ctrl-true" ];
+  7785 -> 7786 [ label="Call" ];
+  7785 -> 7788 [ label="Ctrl-true" ];
+  7790 -> 7791 [ label="Ctrl-true" ];
+  7790 -> 7792 [ label="Ctrl-true" ];
+  7794 -> 7795 [ label="Ctrl-true" ];
+  7793 -> 7794 [ label="Call" ];
+  7793 -> 7796 [ label="Ctrl-true" ];
+  7797 -> 7798 [ label="Ctrl-true" ];
+  7799 -> 7800 [ label="Ctrl-true" ];
+  7801 -> 7802 [ label="Ctrl-true" ];
+  7803 -> 7804 [ label="Ctrl-true" ];
+  7805 -> 7806 [ label="Ctrl-true" ];
+  7784 -> 7785 [ label="Ctrl-true" ];
+  7784 -> 7789 [ label="Ctrl-true" ];
+  7784 -> 7790 [ label="Ctrl-true" ];
+  7784 -> 7793 [ label="Ctrl-true" ];
+  7784 -> 7797 [ label="Ctrl-true" ];
+  7784 -> 7799 [ label="Ctrl-true" ];
+  7784 -> 7801 [ label="Ctrl-true" ];
+  7784 -> 7803 [ label="Ctrl-true" ];
+  7784 -> 7805 [ label="Ctrl-true" ];
+  7810 -> 7811 [ label="Ctrl-true" ];
+  7814 -> 7815 [ label="Ctrl-true" ];
+  7814 -> 7816 [ label="Ctrl-true" ];
+  7818 -> 7819 [ label="Ctrl-true" ];
+  7817 -> 7818 [ label="Call" ];
+  7817 -> 7820 [ label="Ctrl-true" ];
+  7821 -> 7822 [ label="Ctrl-true" ];
+  7824 -> 7825 [ label="Ctrl-true" ];
+  7824 -> 7826 [ label="Ctrl-true" ];
+  7828 -> 7829 [ label="Ctrl-true" ];
+  7827 -> 7828 [ label="Ctrl-true" ];
+  7823 -> 7824 [ label="Ctrl-true" ];
+  7823 -> 7827 [ label="Ctrl-true" ];
+  7832 -> 7833 [ label="Ctrl-true" ];
+  7832 -> 7834 [ label="Ctrl-true" ];
+  7836 -> 7837 [ label="Ctrl-true" ];
+  7835 -> 7836 [ label="Call" ];
+  7835 -> 7838 [ label="Ctrl-true" ];
+  7839 -> 7840 [ label="Ctrl-true" ];
+  7842 -> 7843 [ label="Ctrl-true" ];
+  7842 -> 7844 [ label="Ctrl-true" ];
+  7841 -> 7842 [ label="Call" ];
+  7841 -> 7845 [ label="Ctrl-true" ];
+  7841 -> 7846 [ label="Ctrl-true" ];
+  7847 -> 7848 [ label="Ctrl-true" ];
+  7807 -> 7808 [ label="Ctrl-true" ];
+  7807 -> 7809 [ label="Ctrl-true" ];
+  7807 -> 7810 [ label="Ctrl-true" ];
+  7807 -> 7812 [ label="Ctrl-true" ];
+  7807 -> 7813 [ label="Ctrl-true" ];
+  7807 -> 7814 [ label="Ctrl-true" ];
+  7807 -> 7817 [ label="Ctrl-true" ];
+  7807 -> 7821 [ label="Ctrl-true" ];
+  7807 -> 7823 [ label="Ctrl-true" ];
+  7807 -> 7830 [ label="Ctrl-true" ];
+  7807 -> 7831 [ label="Ctrl-true" ];
+  7807 -> 7832 [ label="Ctrl-true" ];
+  7807 -> 7835 [ label="Ctrl-true" ];
+  7807 -> 7839 [ label="Ctrl-true" ];
+  7807 -> 7841 [ label="Ctrl-true" ];
+  7807 -> 7847 [ label="Ctrl-true" ];
+  7850 -> 7851 [ label="Ctrl-true" ];
+  7850 -> 7852 [ label="Ctrl-true" ];
+  7855 -> 7854 [ label="Data" ];
+  7853 -> 7854 [ label="Ctrl-true" ];
+  7853 -> 7855 [ label="Ctrl-true" ];
+  7849 -> 7765 [ label="Member-of" ];
+  7849 -> 7784 [ label="Member-of" ];
+  7849 -> 7807 [ label="Member-of" ];
+  7849 -> 7850 [ label="Member-of" ];
+  7849 -> 7853 [ label="Member-of" ];
+  7857 -> 7858 [ label="Ctrl-true" ];
+  7857 -> 7859 [ label="Ctrl-true" ];
+  7862 -> 7861 [ label="Data" ];
+  7860 -> 7861 [ label="Ctrl-true" ];
+  7860 -> 7862 [ label="Ctrl-true" ];
+  7856 -> 7765 [ label="Member-of" ];
+  7856 -> 7784 [ label="Member-of" ];
+  7856 -> 7807 [ label="Member-of" ];
+  7856 -> 7850 [ label="Member-of" ];
+  7856 -> 7853 [ label="Member-of" ];
+  7856 -> 7857 [ label="Member-of" ];
+  7856 -> 7860 [ label="Member-of" ];
+  7864 -> 7865 [ label="Ctrl-true" ];
+  7864 -> 7866 [ label="Ctrl-true" ];
+  7869 -> 7868 [ label="Data" ];
+  7867 -> 7868 [ label="Ctrl-true" ];
+  7867 -> 7869 [ label="Ctrl-true" ];
+  7863 -> 7765 [ label="Member-of" ];
+  7863 -> 7784 [ label="Member-of" ];
+  7863 -> 7807 [ label="Member-of" ];
+  7863 -> 7850 [ label="Member-of" ];
+  7863 -> 7853 [ label="Member-of" ];
+  7863 -> 7857 [ label="Member-of" ];
+  7863 -> 7860 [ label="Member-of" ];
+  7863 -> 7864 [ label="Member-of" ];
+  7863 -> 7867 [ label="Member-of" ];
+  7871 -> 7872 [ label="Ctrl-true" ];
+  7871 -> 7873 [ label="Ctrl-true" ];
+  7876 -> 7875 [ label="Data" ];
+  7874 -> 7875 [ label="Ctrl-true" ];
+  7874 -> 7876 [ label="Ctrl-true" ];
+  7870 -> 7765 [ label="Member-of" ];
+  7870 -> 7784 [ label="Member-of" ];
+  7870 -> 7807 [ label="Member-of" ];
+  7870 -> 7850 [ label="Member-of" ];
+  7870 -> 7853 [ label="Member-of" ];
+  7870 -> 7857 [ label="Member-of" ];
+  7870 -> 7860 [ label="Member-of" ];
+  7870 -> 7864 [ label="Member-of" ];
+  7870 -> 7867 [ label="Member-of" ];
+  7870 -> 7871 [ label="Member-of" ];
+  7870 -> 7874 [ label="Member-of" ];
+  7764 -> 7765 [ label="Member-of" ];
+  7764 -> 7784 [ label="Member-of" ];
+  7764 -> 7807 [ label="Member-of" ];
+  7764 -> 7850 [ label="Member-of" ];
+  7764 -> 7853 [ label="Member-of" ];
+  7764 -> 7857 [ label="Member-of" ];
+  7764 -> 7860 [ label="Member-of" ];
+  7764 -> 7864 [ label="Member-of" ];
+  7764 -> 7867 [ label="Member-of" ];
+  7764 -> 7871 [ label="Member-of" ];
+  7764 -> 7874 [ label="Member-of" ];
+  7766 -> 7771 [ label="Data" ];
+  7775 -> 7780 [ label="Data" ];
+  7790 -> 7796 [ label="Data" ];
+  7809 -> 7811 [ label="Data" ];
+  7813 -> 7816 [ label="Data" ];
+  7814 -> 7820 [ label="Data" ];
+  7831 -> 7834 [ label="Data" ];
+  7832 -> 7838 [ label="Data" ];
+  7851 -> 7852 [ label="Data" ];
+  7858 -> 7859 [ label="Data" ];
+  7865 -> 7866 [ label="Data" ];
+  7872 -> 7873 [ label="Data" ];
+  7851 -> 7852 [ label="Output" ];
+  7858 -> 7859 [ label="Output" ];
+  7865 -> 7866 [ label="Output" ];
+  7872 -> 7873 [ label="Output" ];
+  7767 -> 7774 [ label="Data" ];
+  7776 -> 7783 [ label="Data" ];
+  7785 -> 7792 [ label="Data" ];
+  7785 -> 7806 [ label="Data" ];
+  7793 -> 7798 [ label="Data" ];
+  7793 -> 7802 [ label="Data" ];
+  7817 -> 7822 [ label="Data" ];
+  7817 -> 7825 [ label="Data" ];
+  7817 -> 7840 [ label="Data" ];
+  7835 -> 7845 [ label="Data" ];
+  7841 -> 7848 [ label="Data" ];
+}

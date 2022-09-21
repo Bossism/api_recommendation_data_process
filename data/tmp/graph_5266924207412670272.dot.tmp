@@ -1,0 +1,136 @@
+digraph G {
+  7160 [ label="0-Class
+MiscsTestBed" shape="oval" line="17" fontname="helvetica" ];
+  7161 [ label="1-Entry
+testReadContentRaw" shape="oval" line="21" fontname="helvetica" ];
+  7162 [ label="2-Formal-out
+" shape="oval" line="21" fontname="helvetica" ];
+  7163 [ label="3-Formal-in
+content" shape="oval" line="22" fontname="helvetica" ];
+  7164 [ label="4-Return
+return IO.readContentAsString(content)" shape="oval" line="23" fontname="helvetica" ];
+  7165 [ label="5-Entry
+testReadContentMercy" shape="oval" line="26" fontname="helvetica" ];
+  7166 [ label="6-Formal-out
+" shape="oval" line="26" fontname="helvetica" ];
+  7167 [ label="7-Formal-in
+content" shape="oval" line="29" fontname="helvetica" ];
+  7168 [ label="8-Return
+return content" shape="oval" line="31" fontname="helvetica" ];
+  7169 [ label="9-Entry
+testReadLinesMercy" shape="oval" line="34" fontname="helvetica" ];
+  7170 [ label="10-Formal-out
+" shape="oval" line="34" fontname="helvetica" ];
+  7171 [ label="11-Formal-in
+lines" shape="oval" line="37" fontname="helvetica" ];
+  7172 [ label="12-Return
+return lines" shape="oval" line="39" fontname="helvetica" ];
+  7173 [ label="13-Entry
+testReadContent" shape="oval" line="42" fontname="helvetica" ];
+  7174 [ label="14-Formal-out
+" shape="oval" line="42" fontname="helvetica" ];
+  7175 [ label="15-Formal-in
+content" shape="oval" line="45" fontname="helvetica" ];
+  7176 [ label="16-Return
+return content" shape="oval" line="47" fontname="helvetica" ];
+  7177 [ label="17-Entry
+testReadLines" shape="oval" line="50" fontname="helvetica" ];
+  7178 [ label="18-Formal-out
+" shape="oval" line="50" fontname="helvetica" ];
+  7179 [ label="19-Formal-in
+lines" shape="oval" line="53" fontname="helvetica" ];
+  7180 [ label="20-Return
+return lines" shape="oval" line="55" fontname="helvetica" ];
+  7181 [ label="21-Entry
+testMultiFileRead" shape="oval" line="58" fontname="helvetica" ];
+  7182 [ label="22-Formal-out
+" shape="oval" line="58" fontname="helvetica" ];
+  7183 [ label="23-Formal-in
+file1" shape="oval" line="60" fontname="helvetica" ];
+  7184 [ label="24-Formal-in
+file2" shape="oval" line="61" fontname="helvetica" ];
+  7185 [ label="25-Formal-in
+file3" shape="oval" line="62" fontname="helvetica" ];
+  7186 [ label="26-Assign
+c1 = file1" shape="oval" line="64" fontname="helvetica" ];
+  7187 [ label="27-Assign
+c2 = IO.readContentAsString(file2)" shape="oval" line="65" fontname="helvetica" ];
+  7188 [ label="28-Call
+IO.readContentAsString(file2)" shape="oval" line="65" fontname="helvetica" ];
+  7189 [ label="29-Actual-in
+file2" shape="oval" line="65" fontname="helvetica" ];
+  7190 [ label="30-Actual-in
+file2" shape="oval" line="65" fontname="helvetica" ];
+  7191 [ label="31-Assign
+c3 = IO.readContentAsString(file3.asInputStream())" shape="oval" line="66" fontname="helvetica" ];
+  7192 [ label="32-Call
+IO.readContentAsString(file3.asInputStream())" shape="oval" line="66" fontname="helvetica" ];
+  7193 [ label="33-Actual-in
+file3.asInputStream()" shape="oval" line="66" fontname="helvetica" ];
+  7194 [ label="34-Call
+file3.asInputStream()" shape="oval" line="66" fontname="helvetica" ];
+  7195 [ label="35-Actual-in
+file3.asInputStream()" shape="oval" line="66" fontname="helvetica" ];
+  7196 [ label="36-Return
+return render(c1, c2, c3)" shape="oval" line="67" fontname="helvetica" ];
+  7197 [ label="37-Entry
+testMultiUpload" shape="oval" line="71" fontname="helvetica" ];
+  7198 [ label="38-Formal-out
+" shape="oval" line="71" fontname="helvetica" ];
+  7199 [ label="39-Formal-in
+files" shape="oval" line="72" fontname="helvetica" ];
+  7200 [ label="40-Return
+return C.list(files).map(IO::readContentAsString)" shape="oval" line="73" fontname="helvetica" ];
+  7164 -> 7162 [ label="Data" ];
+  7161 -> 7162 [ label="Ctrl-true" ];
+  7161 -> 7163 [ label="Ctrl-true" ];
+  7161 -> 7164 [ label="Ctrl-true" ];
+  7168 -> 7166 [ label="Data" ];
+  7165 -> 7166 [ label="Ctrl-true" ];
+  7165 -> 7167 [ label="Ctrl-true" ];
+  7165 -> 7168 [ label="Ctrl-true" ];
+  7172 -> 7170 [ label="Data" ];
+  7169 -> 7170 [ label="Ctrl-true" ];
+  7169 -> 7171 [ label="Ctrl-true" ];
+  7169 -> 7172 [ label="Ctrl-true" ];
+  7176 -> 7174 [ label="Data" ];
+  7173 -> 7174 [ label="Ctrl-true" ];
+  7173 -> 7175 [ label="Ctrl-true" ];
+  7173 -> 7176 [ label="Ctrl-true" ];
+  7180 -> 7178 [ label="Data" ];
+  7177 -> 7178 [ label="Ctrl-true" ];
+  7177 -> 7179 [ label="Ctrl-true" ];
+  7177 -> 7180 [ label="Ctrl-true" ];
+  7188 -> 7189 [ label="Ctrl-true" ];
+  7187 -> 7188 [ label="Call" ];
+  7187 -> 7190 [ label="Ctrl-true" ];
+  7192 -> 7193 [ label="Ctrl-true" ];
+  7191 -> 7192 [ label="Call" ];
+  7191 -> 7194 [ label="Call" ];
+  7191 -> 7195 [ label="Ctrl-true" ];
+  7196 -> 7182 [ label="Data" ];
+  7181 -> 7182 [ label="Ctrl-true" ];
+  7181 -> 7183 [ label="Ctrl-true" ];
+  7181 -> 7184 [ label="Ctrl-true" ];
+  7181 -> 7185 [ label="Ctrl-true" ];
+  7181 -> 7186 [ label="Ctrl-true" ];
+  7181 -> 7187 [ label="Ctrl-true" ];
+  7181 -> 7191 [ label="Ctrl-true" ];
+  7181 -> 7196 [ label="Ctrl-true" ];
+  7200 -> 7198 [ label="Data" ];
+  7197 -> 7198 [ label="Ctrl-true" ];
+  7197 -> 7199 [ label="Ctrl-true" ];
+  7197 -> 7200 [ label="Ctrl-true" ];
+  7160 -> 7161 [ label="Member-of" ];
+  7160 -> 7165 [ label="Member-of" ];
+  7160 -> 7169 [ label="Member-of" ];
+  7160 -> 7173 [ label="Member-of" ];
+  7160 -> 7177 [ label="Member-of" ];
+  7160 -> 7181 [ label="Member-of" ];
+  7160 -> 7197 [ label="Member-of" ];
+  7184 -> 7190 [ label="Data" ];
+  7186 -> 7196 [ label="Data" ];
+  7199 -> 7200 [ label="Data" ];
+  7187 -> 7196 [ label="Data" ];
+  7191 -> 7196 [ label="Data" ];
+}

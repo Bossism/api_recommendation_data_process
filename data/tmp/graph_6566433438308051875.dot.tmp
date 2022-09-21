@@ -1,0 +1,619 @@
+digraph G {
+  5127 [ label="0-Class
+SampleQueryBuilder" shape="oval" line="42" fontname="helvetica" ];
+  5128 [ label="1-Entry
+doWork" shape="oval" line="57" fontname="helvetica" ];
+  5129 [ label="2-Formal-in
+resourceResolver" shape="oval" line="57" fontname="helvetica" ];
+  5130 [ label="3-Assign
+iso8601 = new SimpleDateFormat(ISO8601_DATE)" shape="oval" line="58" fontname="helvetica" ];
+  5131 [ label="4-Assign
+fulltext = 'Some word or phrase'" shape="oval" line="60" fontname="helvetica" ];
+  5132 [ label="5-Assign
+map = new HashMap<String, String>()" shape="oval" line="62" fontname="helvetica" ];
+  5133 [ label="6-Call
+map.put('type', 'cq:Page')" shape="oval" line="65" fontname="helvetica" ];
+  5134 [ label="7-Actual-in
+'type'" shape="oval" line="65" fontname="helvetica" ];
+  5135 [ label="8-Actual-in
+'cq:Page'" shape="oval" line="65" fontname="helvetica" ];
+  5136 [ label="9-Call
+map.put('path', '/content')" shape="oval" line="68" fontname="helvetica" ];
+  5137 [ label="10-Actual-in
+'path'" shape="oval" line="68" fontname="helvetica" ];
+  5138 [ label="11-Actual-in
+'/content'" shape="oval" line="68" fontname="helvetica" ];
+  5139 [ label="12-Call
+map.put('path.exact', 'true')" shape="oval" line="69" fontname="helvetica" ];
+  5140 [ label="13-Actual-in
+'path.exact'" shape="oval" line="69" fontname="helvetica" ];
+  5141 [ label="14-Actual-in
+'true'" shape="oval" line="69" fontname="helvetica" ];
+  5142 [ label="15-Call
+map.put('path.flat', 'true')" shape="oval" line="70" fontname="helvetica" ];
+  5143 [ label="16-Actual-in
+'path.flat'" shape="oval" line="70" fontname="helvetica" ];
+  5144 [ label="17-Actual-in
+'true'" shape="oval" line="70" fontname="helvetica" ];
+  5145 [ label="18-Call
+map.put('path.self', 'true')" shape="oval" line="71" fontname="helvetica" ];
+  5146 [ label="19-Actual-in
+'path.self'" shape="oval" line="71" fontname="helvetica" ];
+  5147 [ label="20-Actual-in
+'true'" shape="oval" line="71" fontname="helvetica" ];
+  5148 [ label="21-Call
+map.put('fulltext', fulltext)" shape="oval" line="74" fontname="helvetica" ];
+  5149 [ label="22-Actual-in
+'fulltext'" shape="oval" line="74" fontname="helvetica" ];
+  5150 [ label="23-Actual-in
+fulltext" shape="oval" line="74" fontname="helvetica" ];
+  5151 [ label="24-Call
+map.put('fulltext.relPath', 'jcr:content')" shape="oval" line="75" fontname="helvetica" ];
+  5152 [ label="25-Actual-in
+'fulltext.relPath'" shape="oval" line="75" fontname="helvetica" ];
+  5153 [ label="26-Actual-in
+'jcr:content'" shape="oval" line="75" fontname="helvetica" ];
+  5154 [ label="27-Call
+map.put('boolproperty', 'jcr:content/hideInNav')" shape="oval" line="79" fontname="helvetica" ];
+  5155 [ label="28-Actual-in
+'boolproperty'" shape="oval" line="79" fontname="helvetica" ];
+  5156 [ label="29-Actual-in
+'jcr:content/hideInNav'" shape="oval" line="79" fontname="helvetica" ];
+  5157 [ label="30-Call
+map.put('boolproperty.value', 'false')" shape="oval" line="80" fontname="helvetica" ];
+  5158 [ label="31-Actual-in
+'boolproperty.value'" shape="oval" line="80" fontname="helvetica" ];
+  5159 [ label="32-Actual-in
+'false'" shape="oval" line="80" fontname="helvetica" ];
+  5160 [ label="33-Call
+map.put('property', 'jcr:content/jcr:title')" shape="oval" line="83" fontname="helvetica" ];
+  5161 [ label="34-Actual-in
+'property'" shape="oval" line="83" fontname="helvetica" ];
+  5162 [ label="35-Actual-in
+'jcr:content/jcr:title'" shape="oval" line="83" fontname="helvetica" ];
+  5163 [ label="36-Call
+map.put('property.depth', '2')" shape="oval" line="84" fontname="helvetica" ];
+  5164 [ label="37-Actual-in
+'property.depth'" shape="oval" line="84" fontname="helvetica" ];
+  5165 [ label="38-Actual-in
+'2'" shape="oval" line="84" fontname="helvetica" ];
+  5166 [ label="39-Call
+map.put('property.value', 'the value to match')" shape="oval" line="85" fontname="helvetica" ];
+  5167 [ label="40-Actual-in
+'property.value'" shape="oval" line="85" fontname="helvetica" ];
+  5168 [ label="41-Actual-in
+'the value to match'" shape="oval" line="85" fontname="helvetica" ];
+  5169 [ label="42-Call
+map.put('property.1_value', 'another value to match')" shape="oval" line="86" fontname="helvetica" ];
+  5170 [ label="43-Actual-in
+'property.1_value'" shape="oval" line="86" fontname="helvetica" ];
+  5171 [ label="44-Actual-in
+'another value to match'" shape="oval" line="86" fontname="helvetica" ];
+  5172 [ label="45-Call
+map.put('property.and', 'true')" shape="oval" line="87" fontname="helvetica" ];
+  5173 [ label="46-Actual-in
+'property.and'" shape="oval" line="87" fontname="helvetica" ];
+  5174 [ label="47-Actual-in
+'true'" shape="oval" line="87" fontname="helvetica" ];
+  5175 [ label="48-Call
+map.put('property.operation', 'equals')" shape="oval" line="88" fontname="helvetica" ];
+  5176 [ label="49-Actual-in
+'property.operation'" shape="oval" line="88" fontname="helvetica" ];
+  5177 [ label="50-Actual-in
+'equals'" shape="oval" line="88" fontname="helvetica" ];
+  5178 [ label="51-Call
+map.put('daterange.property', 'jcr:content/cq:lastModified')" shape="oval" line="91" fontname="helvetica" ];
+  5179 [ label="52-Actual-in
+'daterange.property'" shape="oval" line="91" fontname="helvetica" ];
+  5180 [ label="53-Actual-in
+'jcr:content/cq:lastModified'" shape="oval" line="91" fontname="helvetica" ];
+  5181 [ label="54-Call
+map.put('daterange.lowerBound', iso8601.format(new Date(10000)))" shape="oval" line="92" fontname="helvetica" ];
+  5182 [ label="55-Actual-in
+'daterange.lowerBound'" shape="oval" line="92" fontname="helvetica" ];
+  5183 [ label="56-Actual-in
+iso8601.format(new Date(10000))" shape="oval" line="92" fontname="helvetica" ];
+  5184 [ label="57-Call
+map.put('daterange.lowerOperation', '>')" shape="oval" line="93" fontname="helvetica" ];
+  5185 [ label="58-Actual-in
+'daterange.lowerOperation'" shape="oval" line="93" fontname="helvetica" ];
+  5186 [ label="59-Actual-in
+'>'" shape="oval" line="93" fontname="helvetica" ];
+  5187 [ label="60-Call
+map.put('daterange.upperBound', iso8601.format(new Date(20000)))" shape="oval" line="94" fontname="helvetica" ];
+  5188 [ label="61-Actual-in
+'daterange.upperBound'" shape="oval" line="94" fontname="helvetica" ];
+  5189 [ label="62-Actual-in
+iso8601.format(new Date(20000))" shape="oval" line="94" fontname="helvetica" ];
+  5190 [ label="63-Call
+map.put('daterange.upperOperation', '<')" shape="oval" line="95" fontname="helvetica" ];
+  5191 [ label="64-Actual-in
+'daterange.upperOperation'" shape="oval" line="95" fontname="helvetica" ];
+  5192 [ label="65-Actual-in
+'<'" shape="oval" line="95" fontname="helvetica" ];
+  5193 [ label="66-Call
+map.put('daterange.timeZone', '-5')" shape="oval" line="96" fontname="helvetica" ];
+  5194 [ label="67-Actual-in
+'daterange.timeZone'" shape="oval" line="96" fontname="helvetica" ];
+  5195 [ label="68-Actual-in
+'-5'" shape="oval" line="96" fontname="helvetica" ];
+  5196 [ label="69-Call
+map.put('rangeproperty.property', 'jcr:content/score')" shape="oval" line="100" fontname="helvetica" ];
+  5197 [ label="70-Actual-in
+'rangeproperty.property'" shape="oval" line="100" fontname="helvetica" ];
+  5198 [ label="71-Actual-in
+'jcr:content/score'" shape="oval" line="100" fontname="helvetica" ];
+  5199 [ label="72-Call
+map.put('rangeproperty.lowerBound', '10.0001')" shape="oval" line="101" fontname="helvetica" ];
+  5200 [ label="73-Actual-in
+'rangeproperty.lowerBound'" shape="oval" line="101" fontname="helvetica" ];
+  5201 [ label="74-Actual-in
+'10.0001'" shape="oval" line="101" fontname="helvetica" ];
+  5202 [ label="75-Call
+map.put('rangeproperty.lowerOperation', '>')" shape="oval" line="102" fontname="helvetica" ];
+  5203 [ label="76-Actual-in
+'rangeproperty.lowerOperation'" shape="oval" line="102" fontname="helvetica" ];
+  5204 [ label="77-Actual-in
+'>'" shape="oval" line="102" fontname="helvetica" ];
+  5205 [ label="78-Call
+map.put('rangeproperty.upperBound', '99')" shape="oval" line="103" fontname="helvetica" ];
+  5206 [ label="79-Actual-in
+'rangeproperty.upperBound'" shape="oval" line="103" fontname="helvetica" ];
+  5207 [ label="80-Actual-in
+'99'" shape="oval" line="103" fontname="helvetica" ];
+  5208 [ label="81-Call
+map.put('rangeproperty.upperOperation', '<')" shape="oval" line="104" fontname="helvetica" ];
+  5209 [ label="82-Actual-in
+'rangeproperty.upperOperation'" shape="oval" line="104" fontname="helvetica" ];
+  5210 [ label="83-Actual-in
+'<'" shape="oval" line="104" fontname="helvetica" ];
+  5211 [ label="84-Call
+map.put('rangeproperty.decimal', 'true')" shape="oval" line="105" fontname="helvetica" ];
+  5212 [ label="85-Actual-in
+'rangeproperty.decimal'" shape="oval" line="105" fontname="helvetica" ];
+  5213 [ label="86-Actual-in
+'true'" shape="oval" line="105" fontname="helvetica" ];
+  5214 [ label="87-Call
+map.put('relativedaterange.property', 'jcr:content/cq:lastModified')" shape="oval" line="110" fontname="helvetica" ];
+  5215 [ label="88-Actual-in
+'relativedaterange.property'" shape="oval" line="110" fontname="helvetica" ];
+  5216 [ label="89-Actual-in
+'jcr:content/cq:lastModified'" shape="oval" line="110" fontname="helvetica" ];
+  5217 [ label="90-Call
+map.put('relativedaterange.lowerBound', '60000')" shape="oval" line="111" fontname="helvetica" ];
+  5218 [ label="91-Actual-in
+'relativedaterange.lowerBound'" shape="oval" line="111" fontname="helvetica" ];
+  5219 [ label="92-Actual-in
+'60000'" shape="oval" line="111" fontname="helvetica" ];
+  5220 [ label="93-Call
+map.put('relativedaterange.lowerOperation', '>')" shape="oval" line="112" fontname="helvetica" ];
+  5221 [ label="94-Actual-in
+'relativedaterange.lowerOperation'" shape="oval" line="112" fontname="helvetica" ];
+  5222 [ label="95-Actual-in
+'>'" shape="oval" line="112" fontname="helvetica" ];
+  5223 [ label="96-Call
+map.put('relativedaterange.upperBound', '4h 30m 10s')" shape="oval" line="113" fontname="helvetica" ];
+  5224 [ label="97-Actual-in
+'relativedaterange.upperBound'" shape="oval" line="113" fontname="helvetica" ];
+  5225 [ label="98-Actual-in
+'4h 30m 10s'" shape="oval" line="113" fontname="helvetica" ];
+  5226 [ label="99-Call
+map.put('relativedaterange.upperOperation', '<')" shape="oval" line="114" fontname="helvetica" ];
+  5227 [ label="100-Actual-in
+'relativedaterange.upperOperation'" shape="oval" line="114" fontname="helvetica" ];
+  5228 [ label="101-Actual-in
+'<'" shape="oval" line="114" fontname="helvetica" ];
+  5229 [ label="102-Call
+map.put('tagid.property', 'jcr:content/cq:tags')" shape="oval" line="118" fontname="helvetica" ];
+  5230 [ label="103-Actual-in
+'tagid.property'" shape="oval" line="118" fontname="helvetica" ];
+  5231 [ label="104-Actual-in
+'jcr:content/cq:tags'" shape="oval" line="118" fontname="helvetica" ];
+  5232 [ label="105-Call
+map.put('tagid.1_value', 'namespace-a:some/tag')" shape="oval" line="119" fontname="helvetica" ];
+  5233 [ label="106-Actual-in
+'tagid.1_value'" shape="oval" line="119" fontname="helvetica" ];
+  5234 [ label="107-Actual-in
+'namespace-a:some/tag'" shape="oval" line="119" fontname="helvetica" ];
+  5235 [ label="108-Call
+map.put('tagid.2_value', 'namespace-a:some/other/tag')" shape="oval" line="120" fontname="helvetica" ];
+  5236 [ label="109-Actual-in
+'tagid.2_value'" shape="oval" line="120" fontname="helvetica" ];
+  5237 [ label="110-Actual-in
+'namespace-a:some/other/tag'" shape="oval" line="120" fontname="helvetica" ];
+  5238 [ label="111-Call
+map.put('tagid.3_value', 'namespace-z:something/else')" shape="oval" line="121" fontname="helvetica" ];
+  5239 [ label="112-Actual-in
+'tagid.3_value'" shape="oval" line="121" fontname="helvetica" ];
+  5240 [ label="113-Actual-in
+'namespace-z:something/else'" shape="oval" line="121" fontname="helvetica" ];
+  5241 [ label="114-Call
+map.put('tagid.and', 'true')" shape="oval" line="122" fontname="helvetica" ];
+  5242 [ label="115-Actual-in
+'tagid.and'" shape="oval" line="122" fontname="helvetica" ];
+  5243 [ label="116-Actual-in
+'true'" shape="oval" line="122" fontname="helvetica" ];
+  5244 [ label="117-Call
+map.put('similar', '/content/site/products/product-x')" shape="oval" line="125" fontname="helvetica" ];
+  5245 [ label="118-Actual-in
+'similar'" shape="oval" line="125" fontname="helvetica" ];
+  5246 [ label="119-Actual-in
+'/content/site/products/product-x'" shape="oval" line="125" fontname="helvetica" ];
+  5247 [ label="120-Call
+map.put('similar.local', '.')" shape="oval" line="126" fontname="helvetica" ];
+  5248 [ label="121-Actual-in
+'similar.local'" shape="oval" line="126" fontname="helvetica" ];
+  5249 [ label="122-Actual-in
+'.'" shape="oval" line="126" fontname="helvetica" ];
+  5250 [ label="123-Call
+map.put('nodename', 'some-node-name')" shape="oval" line="129" fontname="helvetica" ];
+  5251 [ label="124-Actual-in
+'nodename'" shape="oval" line="129" fontname="helvetica" ];
+  5252 [ label="125-Actual-in
+'some-node-name'" shape="oval" line="129" fontname="helvetica" ];
+  5253 [ label="126-Call
+map.put('hasPermission', 'crx:replicate,jcr:write,jcr:removeNode')" shape="oval" line="132" fontname="helvetica" ];
+  5254 [ label="127-Actual-in
+'hasPermission'" shape="oval" line="132" fontname="helvetica" ];
+  5255 [ label="128-Actual-in
+'crx:replicate,jcr:write,jcr:removeNode'" shape="oval" line="132" fontname="helvetica" ];
+  5256 [ label="129-Call
+map.put('p.excerpt', 'true')" shape="oval" line="140" fontname="helvetica" ];
+  5257 [ label="130-Actual-in
+'p.excerpt'" shape="oval" line="140" fontname="helvetica" ];
+  5258 [ label="131-Actual-in
+'true'" shape="oval" line="140" fontname="helvetica" ];
+  5259 [ label="132-Call
+map.put('orderby', '@jcr:content/jcr:lastModified')" shape="oval" line="143" fontname="helvetica" ];
+  5260 [ label="133-Actual-in
+'orderby'" shape="oval" line="143" fontname="helvetica" ];
+  5261 [ label="134-Actual-in
+'@jcr:content/jcr:lastModified'" shape="oval" line="143" fontname="helvetica" ];
+  5262 [ label="135-Call
+map.put('orderby.sort', 'desc')" shape="oval" line="144" fontname="helvetica" ];
+  5263 [ label="136-Actual-in
+'orderby.sort'" shape="oval" line="144" fontname="helvetica" ];
+  5264 [ label="137-Actual-in
+'desc'" shape="oval" line="144" fontname="helvetica" ];
+  5265 [ label="138-Call
+map.put('orderby.case', 'ignore')" shape="oval" line="145" fontname="helvetica" ];
+  5266 [ label="139-Actual-in
+'orderby.case'" shape="oval" line="145" fontname="helvetica" ];
+  5267 [ label="140-Actual-in
+'ignore'" shape="oval" line="145" fontname="helvetica" ];
+  5268 [ label="141-Call
+map.put('p.offset', '0')" shape="oval" line="148" fontname="helvetica" ];
+  5269 [ label="142-Actual-in
+'p.offset'" shape="oval" line="148" fontname="helvetica" ];
+  5270 [ label="143-Actual-in
+'0'" shape="oval" line="148" fontname="helvetica" ];
+  5271 [ label="144-Call
+map.put('p.limit', '20')" shape="oval" line="149" fontname="helvetica" ];
+  5272 [ label="145-Actual-in
+'p.limit'" shape="oval" line="149" fontname="helvetica" ];
+  5273 [ label="146-Actual-in
+'20'" shape="oval" line="149" fontname="helvetica" ];
+  5274 [ label="147-Call
+map.put('p.guessTotal', 'true')" shape="oval" line="152" fontname="helvetica" ];
+  5275 [ label="148-Actual-in
+'p.guessTotal'" shape="oval" line="152" fontname="helvetica" ];
+  5276 [ label="149-Actual-in
+'true'" shape="oval" line="152" fontname="helvetica" ];
+  5277 [ label="150-Assign
+query = queryBuilder.createQuery(PredicateGroup.create(map), resourceResolver.adaptTo(Session.class))" shape="oval" line="154" fontname="helvetica" ];
+  5278 [ label="151-Call
+queryBuilder.createQuery(PredicateGroup.create(map), resourceResolver.adaptTo(Session.class))" shape="oval" line="154" fontname="helvetica" ];
+  5279 [ label="152-Actual-in
+PredicateGroup.create(map)" shape="oval" line="154" fontname="helvetica" ];
+  5280 [ label="153-Actual-in
+resourceResolver.adaptTo(Session.class)" shape="oval" line="154" fontname="helvetica" ];
+  5281 [ label="154-Call
+PredicateGroup.create(map)" shape="oval" line="154" fontname="helvetica" ];
+  5282 [ label="155-Actual-in
+map" shape="oval" line="154" fontname="helvetica" ];
+  5283 [ label="156-Call
+resourceResolver.adaptTo(Session.class)" shape="oval" line="154" fontname="helvetica" ];
+  5284 [ label="157-Actual-in
+Session.class" shape="oval" line="154" fontname="helvetica" ];
+  5285 [ label="158-Actual-in
+PredicateGroup.create(map)" shape="oval" line="154" fontname="helvetica" ];
+  5286 [ label="159-Actual-in
+resourceResolver.adaptTo(Session.class)" shape="oval" line="154" fontname="helvetica" ];
+  5287 [ label="160-Assign
+result = query.getResult()" shape="oval" line="156" fontname="helvetica" ];
+  5288 [ label="161-Call
+query.getResult()" shape="oval" line="156" fontname="helvetica" ];
+  5289 [ label="162-Assign
+leakingResourceResolver = null" shape="oval" line="159" fontname="helvetica" ];
+  5290 [ label="163-Try
+try" shape="oval" line="161" fontname="helvetica" ];
+  5291 [ label="164-Ctrl
+result.getHits()" shape="oval" line="163" fontname="helvetica" ];
+  5292 [ label="165-Ctrl
+leakingResourceResolver == null" shape="oval" line="164" fontname="helvetica" ];
+  5293 [ label="166-Assign
+leakingResourceResolver = hit.getResource().getResourceResolver()" shape="oval" line="166" fontname="helvetica" ];
+  5294 [ label="167-Assign
+path = hit.getPath()" shape="oval" line="169" fontname="helvetica" ];
+  5295 [ label="168-Call
+hit.getPath()" shape="oval" line="169" fontname="helvetica" ];
+  5296 [ label="169-Assign
+resource = resourceResolver.getResource(hit.getPath())" shape="oval" line="172" fontname="helvetica" ];
+  5297 [ label="170-Call
+resourceResolver.getResource(hit.getPath())" shape="oval" line="172" fontname="helvetica" ];
+  5298 [ label="171-Actual-in
+hit.getPath()" shape="oval" line="172" fontname="helvetica" ];
+  5299 [ label="172-Call
+hit.getPath()" shape="oval" line="172" fontname="helvetica" ];
+  5300 [ label="173-Actual-in
+hit.getPath()" shape="oval" line="172" fontname="helvetica" ];
+  5301 [ label="174-Assign
+properties = resource.getValueMap()" shape="oval" line="173" fontname="helvetica" ];
+  5302 [ label="175-Call
+resource.getValueMap()" shape="oval" line="173" fontname="helvetica" ];
+  5303 [ label="176-Assign
+excerpt = hit.getExcerpt()" shape="oval" line="176" fontname="helvetica" ];
+  5304 [ label="177-Call
+hit.getExcerpt()" shape="oval" line="176" fontname="helvetica" ];
+  5305 [ label="178-Assign
+excerpts = hit.getExcerpts()" shape="oval" line="177" fontname="helvetica" ];
+  5306 [ label="179-Call
+hit.getExcerpts()" shape="oval" line="177" fontname="helvetica" ];
+  5307 [ label="180-Assign
+resources = new ArrayList<Resource>()" shape="oval" line="181" fontname="helvetica" ];
+  5308 [ label="181-Ctrl
+result.getHits()" shape="oval" line="182" fontname="helvetica" ];
+  5309 [ label="182-Ctrl
+leakingResourceResolver == null" shape="oval" line="183" fontname="helvetica" ];
+  5310 [ label="183-Assign
+leakingResourceResolver = hit.getResource().getResourceResolver()" shape="oval" line="185" fontname="helvetica" ];
+  5311 [ label="184-Call
+resources.add(resourceResolver.getResource(hit.getPath()))" shape="oval" line="187" fontname="helvetica" ];
+  5312 [ label="185-Actual-in
+resourceResolver.getResource(hit.getPath())" shape="oval" line="187" fontname="helvetica" ];
+  5313 [ label="186-Catch
+RepositoryException e" shape="oval" line="190" fontname="helvetica" ];
+  5314 [ label="187-Call
+log.error('Error collecting search results', e)" shape="oval" line="191" fontname="helvetica" ];
+  5315 [ label="188-Actual-in
+'Error collecting search results'" shape="oval" line="191" fontname="helvetica" ];
+  5316 [ label="189-Actual-in
+e" shape="oval" line="191" fontname="helvetica" ];
+  5317 [ label="190-Finally
+" shape="oval" line="192" fontname="helvetica" ];
+  5318 [ label="191-Ctrl
+leakingResourceResolver != null" shape="oval" line="193" fontname="helvetica" ];
+  5319 [ label="192-Call
+leakingResourceResolver.close()" shape="oval" line="195" fontname="helvetica" ];
+  5320 [ label="193-Entry
+helloWorld" shape="oval" line="200" fontname="helvetica" ];
+  5321 [ label="194-Formal-out
+" shape="oval" line="200" fontname="helvetica" ];
+  5322 [ label="195-Return
+return 'Hello from ' + this.getClass().getName()" shape="oval" line="201" fontname="helvetica" ];
+  5133 -> 5134 [ label="Ctrl-true" ];
+  5133 -> 5135 [ label="Ctrl-true" ];
+  5136 -> 5137 [ label="Ctrl-true" ];
+  5136 -> 5138 [ label="Ctrl-true" ];
+  5139 -> 5140 [ label="Ctrl-true" ];
+  5139 -> 5141 [ label="Ctrl-true" ];
+  5142 -> 5143 [ label="Ctrl-true" ];
+  5142 -> 5144 [ label="Ctrl-true" ];
+  5145 -> 5146 [ label="Ctrl-true" ];
+  5145 -> 5147 [ label="Ctrl-true" ];
+  5148 -> 5149 [ label="Ctrl-true" ];
+  5148 -> 5150 [ label="Ctrl-true" ];
+  5151 -> 5152 [ label="Ctrl-true" ];
+  5151 -> 5153 [ label="Ctrl-true" ];
+  5154 -> 5155 [ label="Ctrl-true" ];
+  5154 -> 5156 [ label="Ctrl-true" ];
+  5157 -> 5158 [ label="Ctrl-true" ];
+  5157 -> 5159 [ label="Ctrl-true" ];
+  5160 -> 5161 [ label="Ctrl-true" ];
+  5160 -> 5162 [ label="Ctrl-true" ];
+  5163 -> 5164 [ label="Ctrl-true" ];
+  5163 -> 5165 [ label="Ctrl-true" ];
+  5166 -> 5167 [ label="Ctrl-true" ];
+  5166 -> 5168 [ label="Ctrl-true" ];
+  5169 -> 5170 [ label="Ctrl-true" ];
+  5169 -> 5171 [ label="Ctrl-true" ];
+  5172 -> 5173 [ label="Ctrl-true" ];
+  5172 -> 5174 [ label="Ctrl-true" ];
+  5175 -> 5176 [ label="Ctrl-true" ];
+  5175 -> 5177 [ label="Ctrl-true" ];
+  5178 -> 5179 [ label="Ctrl-true" ];
+  5178 -> 5180 [ label="Ctrl-true" ];
+  5181 -> 5182 [ label="Ctrl-true" ];
+  5181 -> 5183 [ label="Ctrl-true" ];
+  5184 -> 5185 [ label="Ctrl-true" ];
+  5184 -> 5186 [ label="Ctrl-true" ];
+  5187 -> 5188 [ label="Ctrl-true" ];
+  5187 -> 5189 [ label="Ctrl-true" ];
+  5190 -> 5191 [ label="Ctrl-true" ];
+  5190 -> 5192 [ label="Ctrl-true" ];
+  5193 -> 5194 [ label="Ctrl-true" ];
+  5193 -> 5195 [ label="Ctrl-true" ];
+  5196 -> 5197 [ label="Ctrl-true" ];
+  5196 -> 5198 [ label="Ctrl-true" ];
+  5199 -> 5200 [ label="Ctrl-true" ];
+  5199 -> 5201 [ label="Ctrl-true" ];
+  5202 -> 5203 [ label="Ctrl-true" ];
+  5202 -> 5204 [ label="Ctrl-true" ];
+  5205 -> 5206 [ label="Ctrl-true" ];
+  5205 -> 5207 [ label="Ctrl-true" ];
+  5208 -> 5209 [ label="Ctrl-true" ];
+  5208 -> 5210 [ label="Ctrl-true" ];
+  5211 -> 5212 [ label="Ctrl-true" ];
+  5211 -> 5213 [ label="Ctrl-true" ];
+  5214 -> 5215 [ label="Ctrl-true" ];
+  5214 -> 5216 [ label="Ctrl-true" ];
+  5217 -> 5218 [ label="Ctrl-true" ];
+  5217 -> 5219 [ label="Ctrl-true" ];
+  5220 -> 5221 [ label="Ctrl-true" ];
+  5220 -> 5222 [ label="Ctrl-true" ];
+  5223 -> 5224 [ label="Ctrl-true" ];
+  5223 -> 5225 [ label="Ctrl-true" ];
+  5226 -> 5227 [ label="Ctrl-true" ];
+  5226 -> 5228 [ label="Ctrl-true" ];
+  5229 -> 5230 [ label="Ctrl-true" ];
+  5229 -> 5231 [ label="Ctrl-true" ];
+  5232 -> 5233 [ label="Ctrl-true" ];
+  5232 -> 5234 [ label="Ctrl-true" ];
+  5235 -> 5236 [ label="Ctrl-true" ];
+  5235 -> 5237 [ label="Ctrl-true" ];
+  5238 -> 5239 [ label="Ctrl-true" ];
+  5238 -> 5240 [ label="Ctrl-true" ];
+  5241 -> 5242 [ label="Ctrl-true" ];
+  5241 -> 5243 [ label="Ctrl-true" ];
+  5244 -> 5245 [ label="Ctrl-true" ];
+  5244 -> 5246 [ label="Ctrl-true" ];
+  5247 -> 5248 [ label="Ctrl-true" ];
+  5247 -> 5249 [ label="Ctrl-true" ];
+  5250 -> 5251 [ label="Ctrl-true" ];
+  5250 -> 5252 [ label="Ctrl-true" ];
+  5253 -> 5254 [ label="Ctrl-true" ];
+  5253 -> 5255 [ label="Ctrl-true" ];
+  5256 -> 5257 [ label="Ctrl-true" ];
+  5256 -> 5258 [ label="Ctrl-true" ];
+  5259 -> 5260 [ label="Ctrl-true" ];
+  5259 -> 5261 [ label="Ctrl-true" ];
+  5262 -> 5263 [ label="Ctrl-true" ];
+  5262 -> 5264 [ label="Ctrl-true" ];
+  5265 -> 5266 [ label="Ctrl-true" ];
+  5265 -> 5267 [ label="Ctrl-true" ];
+  5268 -> 5269 [ label="Ctrl-true" ];
+  5268 -> 5270 [ label="Ctrl-true" ];
+  5271 -> 5272 [ label="Ctrl-true" ];
+  5271 -> 5273 [ label="Ctrl-true" ];
+  5274 -> 5275 [ label="Ctrl-true" ];
+  5274 -> 5276 [ label="Ctrl-true" ];
+  5278 -> 5279 [ label="Ctrl-true" ];
+  5278 -> 5280 [ label="Ctrl-true" ];
+  5277 -> 5278 [ label="Call" ];
+  5281 -> 5282 [ label="Ctrl-true" ];
+  5277 -> 5281 [ label="Call" ];
+  5283 -> 5284 [ label="Ctrl-true" ];
+  5277 -> 5283 [ label="Call" ];
+  5277 -> 5285 [ label="Ctrl-true" ];
+  5277 -> 5286 [ label="Ctrl-true" ];
+  5287 -> 5288 [ label="Call" ];
+  5292 -> 5293 [ label="Ctrl-true" ];
+  5294 -> 5295 [ label="Call" ];
+  5297 -> 5298 [ label="Ctrl-true" ];
+  5296 -> 5297 [ label="Call" ];
+  5296 -> 5299 [ label="Call" ];
+  5296 -> 5300 [ label="Ctrl-true" ];
+  5301 -> 5302 [ label="Call" ];
+  5303 -> 5304 [ label="Call" ];
+  5305 -> 5306 [ label="Call" ];
+  5291 -> 5292 [ label="Ctrl-true" ];
+  5291 -> 5294 [ label="Ctrl-true" ];
+  5291 -> 5296 [ label="Ctrl-true" ];
+  5291 -> 5301 [ label="Ctrl-true" ];
+  5291 -> 5303 [ label="Ctrl-true" ];
+  5291 -> 5305 [ label="Ctrl-true" ];
+  5291 -> 5291 [ label="Ctrl-true" ];
+  5309 -> 5310 [ label="Ctrl-true" ];
+  5311 -> 5312 [ label="Ctrl-true" ];
+  5308 -> 5309 [ label="Ctrl-true" ];
+  5308 -> 5311 [ label="Ctrl-true" ];
+  5308 -> 5308 [ label="Ctrl-true" ];
+  5314 -> 5315 [ label="Ctrl-true" ];
+  5314 -> 5316 [ label="Ctrl-true" ];
+  5313 -> 5314 [ label="Ctrl-true" ];
+  5318 -> 5319 [ label="Ctrl-true" ];
+  5317 -> 5318 [ label="Ctrl-true" ];
+  5290 -> 5291 [ label="Ctrl-true" ];
+  5290 -> 5307 [ label="Ctrl-true" ];
+  5290 -> 5308 [ label="Ctrl-true" ];
+  5290 -> 5313 [ label="Ctrl-true" ];
+  5290 -> 5317 [ label="Ctrl-true" ];
+  5128 -> 5129 [ label="Ctrl-true" ];
+  5128 -> 5130 [ label="Ctrl-true" ];
+  5128 -> 5131 [ label="Ctrl-true" ];
+  5128 -> 5132 [ label="Ctrl-true" ];
+  5128 -> 5133 [ label="Ctrl-true" ];
+  5128 -> 5136 [ label="Ctrl-true" ];
+  5128 -> 5139 [ label="Ctrl-true" ];
+  5128 -> 5142 [ label="Ctrl-true" ];
+  5128 -> 5145 [ label="Ctrl-true" ];
+  5128 -> 5148 [ label="Ctrl-true" ];
+  5128 -> 5151 [ label="Ctrl-true" ];
+  5128 -> 5154 [ label="Ctrl-true" ];
+  5128 -> 5157 [ label="Ctrl-true" ];
+  5128 -> 5160 [ label="Ctrl-true" ];
+  5128 -> 5163 [ label="Ctrl-true" ];
+  5128 -> 5166 [ label="Ctrl-true" ];
+  5128 -> 5169 [ label="Ctrl-true" ];
+  5128 -> 5172 [ label="Ctrl-true" ];
+  5128 -> 5175 [ label="Ctrl-true" ];
+  5128 -> 5178 [ label="Ctrl-true" ];
+  5128 -> 5181 [ label="Ctrl-true" ];
+  5128 -> 5184 [ label="Ctrl-true" ];
+  5128 -> 5187 [ label="Ctrl-true" ];
+  5128 -> 5190 [ label="Ctrl-true" ];
+  5128 -> 5193 [ label="Ctrl-true" ];
+  5128 -> 5196 [ label="Ctrl-true" ];
+  5128 -> 5199 [ label="Ctrl-true" ];
+  5128 -> 5202 [ label="Ctrl-true" ];
+  5128 -> 5205 [ label="Ctrl-true" ];
+  5128 -> 5208 [ label="Ctrl-true" ];
+  5128 -> 5211 [ label="Ctrl-true" ];
+  5128 -> 5214 [ label="Ctrl-true" ];
+  5128 -> 5217 [ label="Ctrl-true" ];
+  5128 -> 5220 [ label="Ctrl-true" ];
+  5128 -> 5223 [ label="Ctrl-true" ];
+  5128 -> 5226 [ label="Ctrl-true" ];
+  5128 -> 5229 [ label="Ctrl-true" ];
+  5128 -> 5232 [ label="Ctrl-true" ];
+  5128 -> 5235 [ label="Ctrl-true" ];
+  5128 -> 5238 [ label="Ctrl-true" ];
+  5128 -> 5241 [ label="Ctrl-true" ];
+  5128 -> 5244 [ label="Ctrl-true" ];
+  5128 -> 5247 [ label="Ctrl-true" ];
+  5128 -> 5250 [ label="Ctrl-true" ];
+  5128 -> 5253 [ label="Ctrl-true" ];
+  5128 -> 5256 [ label="Ctrl-true" ];
+  5128 -> 5259 [ label="Ctrl-true" ];
+  5128 -> 5262 [ label="Ctrl-true" ];
+  5128 -> 5265 [ label="Ctrl-true" ];
+  5128 -> 5268 [ label="Ctrl-true" ];
+  5128 -> 5271 [ label="Ctrl-true" ];
+  5128 -> 5274 [ label="Ctrl-true" ];
+  5128 -> 5277 [ label="Ctrl-true" ];
+  5128 -> 5287 [ label="Ctrl-true" ];
+  5128 -> 5289 [ label="Ctrl-true" ];
+  5128 -> 5290 [ label="Ctrl-true" ];
+  5322 -> 5321 [ label="Data" ];
+  5320 -> 5321 [ label="Ctrl-true" ];
+  5320 -> 5322 [ label="Ctrl-true" ];
+  5127 -> 5128 [ label="Member-of" ];
+  5127 -> 5320 [ label="Member-of" ];
+  5131 -> 5150 [ label="Data" ];
+  5130 -> 5183 [ label="Data" ];
+  5130 -> 5189 [ label="Data" ];
+  5274 -> 5285 [ label="Data" ];
+  5129 -> 5286 [ label="Data" ];
+  5289 -> 5292 [ label="Data" ];
+  5289 -> 5309 [ label="Data" ];
+  5129 -> 5312 [ label="Data" ];
+  5313 -> 5316 [ label="Data" ];
+  5289 -> 5318 [ label="Data" ];
+  5289 -> 5319 [ label="Data" ];
+  5289 -> 5293 [ label="Output" ];
+  5289 -> 5310 [ label="Output" ];
+  5277 -> 5287 [ label="Data" ];
+  5287 -> 5291 [ label="Data" ];
+  5287 -> 5308 [ label="Data" ];
+  5293 -> 5292 [ label="Data" ];
+  5293 -> 5309 [ label="Data" ];
+  5293 -> 5318 [ label="Data" ];
+  5293 -> 5319 [ label="Data" ];
+  5293 -> 5293 [ label="Output" ];
+  5293 -> 5310 [ label="Output" ];
+  5296 -> 5301 [ label="Data" ];
+  5310 -> 5309 [ label="Data" ];
+  5310 -> 5318 [ label="Data" ];
+  5310 -> 5319 [ label="Data" ];
+  5310 -> 5310 [ label="Output" ];
+}

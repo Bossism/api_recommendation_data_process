@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+version = '0.1'
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile group: 'org.jgrapht', name: 'jgrapht-core', version: '1.3.0'
+	compile group: 'org.jgrapht', name: 'jgrapht-io', version: '1.3.0'
+    compile group: 'com.github.javaparser', name: 'javaparser-core', version: '3.8.1'
+}

@@ -1,0 +1,54 @@
+digraph G {
+  9679 [ label="0-Class
+ByteActionParameterBindingTest" shape="oval" line="3" fontname="helvetica" ];
+  9680 [ label="1-Entry
+primitiveUrlPath" shape="oval" line="4" fontname="helvetica" ];
+  9681 [ label="2-Formal-out
+" shape="oval" line="4" fontname="helvetica" ];
+  9682 [ label="3-Return
+return 'byte_p'" shape="oval" line="6" fontname="helvetica" ];
+  9683 [ label="4-Entry
+urlPath" shape="oval" line="9" fontname="helvetica" ];
+  9684 [ label="5-Formal-out
+" shape="oval" line="9" fontname="helvetica" ];
+  9685 [ label="6-Return
+return 'byte_w'" shape="oval" line="11" fontname="helvetica" ];
+  9686 [ label="7-Entry
+nonNullValue" shape="oval" line="14" fontname="helvetica" ];
+  9687 [ label="8-Formal-out
+" shape="oval" line="14" fontname="helvetica" ];
+  9688 [ label="9-Return
+return 126" shape="oval" line="16" fontname="helvetica" ];
+  9689 [ label="10-Entry
+primitiveDefValueStr" shape="oval" line="19" fontname="helvetica" ];
+  9690 [ label="11-Formal-out
+" shape="oval" line="19" fontname="helvetica" ];
+  9691 [ label="12-Return
+return '0'" shape="oval" line="21" fontname="helvetica" ];
+  9692 [ label="13-Entry
+outOfScopeValue" shape="oval" line="24" fontname="helvetica" ];
+  9693 [ label="14-Formal-out
+" shape="oval" line="24" fontname="helvetica" ];
+  9694 [ label="15-Return
+return 999" shape="oval" line="26" fontname="helvetica" ];
+  9682 -> 9681 [ label="Data" ];
+  9680 -> 9681 [ label="Ctrl-true" ];
+  9680 -> 9682 [ label="Ctrl-true" ];
+  9685 -> 9684 [ label="Data" ];
+  9683 -> 9684 [ label="Ctrl-true" ];
+  9683 -> 9685 [ label="Ctrl-true" ];
+  9688 -> 9687 [ label="Data" ];
+  9686 -> 9687 [ label="Ctrl-true" ];
+  9686 -> 9688 [ label="Ctrl-true" ];
+  9691 -> 9690 [ label="Data" ];
+  9689 -> 9690 [ label="Ctrl-true" ];
+  9689 -> 9691 [ label="Ctrl-true" ];
+  9694 -> 9693 [ label="Data" ];
+  9692 -> 9693 [ label="Ctrl-true" ];
+  9692 -> 9694 [ label="Ctrl-true" ];
+  9679 -> 9680 [ label="Member-of" ];
+  9679 -> 9683 [ label="Member-of" ];
+  9679 -> 9686 [ label="Member-of" ];
+  9679 -> 9689 [ label="Member-of" ];
+  9679 -> 9692 [ label="Member-of" ];
+}

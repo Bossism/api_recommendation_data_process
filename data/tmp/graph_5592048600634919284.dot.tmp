@@ -1,0 +1,75 @@
+digraph G {
+  9711 [ label="0-Class
+DoubleActionParameterBindingTest" shape="oval" line="5" fontname="helvetica" ];
+  9712 [ label="1-Entry
+primitiveUrlPath" shape="oval" line="6" fontname="helvetica" ];
+  9713 [ label="2-Formal-out
+" shape="oval" line="6" fontname="helvetica" ];
+  9714 [ label="3-Return
+return 'double_p'" shape="oval" line="8" fontname="helvetica" ];
+  9715 [ label="4-Entry
+urlPath" shape="oval" line="11" fontname="helvetica" ];
+  9716 [ label="5-Formal-out
+" shape="oval" line="11" fontname="helvetica" ];
+  9717 [ label="6-Return
+return 'double_w'" shape="oval" line="13" fontname="helvetica" ];
+  9718 [ label="7-Entry
+nonNullValue" shape="oval" line="16" fontname="helvetica" ];
+  9719 [ label="8-Formal-out
+" shape="oval" line="16" fontname="helvetica" ];
+  9720 [ label="9-Return
+return Double.MIN_VALUE" shape="oval" line="18" fontname="helvetica" ];
+  9721 [ label="10-Entry
+primitiveDefValueStr" shape="oval" line="21" fontname="helvetica" ];
+  9722 [ label="11-Formal-out
+" shape="oval" line="21" fontname="helvetica" ];
+  9723 [ label="12-Return
+return '0.0'" shape="oval" line="23" fontname="helvetica" ];
+  9724 [ label="13-Entry
+outOfScopeValue" shape="oval" line="26" fontname="helvetica" ];
+  9725 [ label="14-Formal-out
+" shape="oval" line="26" fontname="helvetica" ];
+  9726 [ label="15-Assign
+dec = BigDecimal.valueOf(Double.MAX_VALUE)" shape="oval" line="28" fontname="helvetica" ];
+  9727 [ label="16-Call
+BigDecimal.valueOf(Double.MAX_VALUE)" shape="oval" line="28" fontname="helvetica" ];
+  9728 [ label="17-Actual-in
+Double.MAX_VALUE" shape="oval" line="28" fontname="helvetica" ];
+  9729 [ label="18-Actual-in
+Double.MAX_VALUE" shape="oval" line="28" fontname="helvetica" ];
+  9730 [ label="19-Assign
+dec = dec.add(dec)" shape="oval" line="29" fontname="helvetica" ];
+  9731 [ label="20-Actual-in
+dec" shape="oval" line="29" fontname="helvetica" ];
+  9732 [ label="21-Return
+return dec" shape="oval" line="30" fontname="helvetica" ];
+  9714 -> 9713 [ label="Data" ];
+  9712 -> 9713 [ label="Ctrl-true" ];
+  9712 -> 9714 [ label="Ctrl-true" ];
+  9717 -> 9716 [ label="Data" ];
+  9715 -> 9716 [ label="Ctrl-true" ];
+  9715 -> 9717 [ label="Ctrl-true" ];
+  9720 -> 9719 [ label="Data" ];
+  9718 -> 9719 [ label="Ctrl-true" ];
+  9718 -> 9720 [ label="Ctrl-true" ];
+  9723 -> 9722 [ label="Data" ];
+  9721 -> 9722 [ label="Ctrl-true" ];
+  9721 -> 9723 [ label="Ctrl-true" ];
+  9727 -> 9728 [ label="Ctrl-true" ];
+  9726 -> 9727 [ label="Call" ];
+  9726 -> 9729 [ label="Ctrl-true" ];
+  9730 -> 9731 [ label="Ctrl-true" ];
+  9732 -> 9725 [ label="Data" ];
+  9724 -> 9725 [ label="Ctrl-true" ];
+  9724 -> 9726 [ label="Ctrl-true" ];
+  9724 -> 9730 [ label="Ctrl-true" ];
+  9724 -> 9732 [ label="Ctrl-true" ];
+  9711 -> 9712 [ label="Member-of" ];
+  9711 -> 9715 [ label="Member-of" ];
+  9711 -> 9718 [ label="Member-of" ];
+  9711 -> 9721 [ label="Member-of" ];
+  9711 -> 9724 [ label="Member-of" ];
+  9726 -> 9731 [ label="Data" ];
+  9726 -> 9730 [ label="Output" ];
+  9730 -> 9732 [ label="Data" ];
+}

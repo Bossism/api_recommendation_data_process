@@ -1,0 +1,930 @@
+digraph G {
+  618930 [ label="0-Class
+JMSFailoverListenerTest" shape="oval" line="65" fontname="helvetica" ];
+  618931 [ label="1-Entry
+testAutomaticFailover" shape="oval" line="95" fontname="helvetica" ];
+  618932 [ label="2-Assign
+jbcf = ActiveMQJMSClient.createConnectionFactoryWithHA(JMSFactoryType.CF, livetc)" shape="oval" line="97" fontname="helvetica" ];
+  618933 [ label="3-Call
+ActiveMQJMSClient.createConnectionFactoryWithHA(JMSFactoryType.CF, livetc)" shape="oval" line="97" fontname="helvetica" ];
+  618934 [ label="4-Actual-in
+JMSFactoryType.CF" shape="oval" line="97" fontname="helvetica" ];
+  618935 [ label="5-Actual-in
+livetc" shape="oval" line="97" fontname="helvetica" ];
+  618936 [ label="6-Actual-in
+JMSFactoryType.CF" shape="oval" line="97" fontname="helvetica" ];
+  618937 [ label="7-Actual-in
+livetc" shape="oval" line="97" fontname="helvetica" ];
+  618938 [ label="8-Call
+jbcf.setReconnectAttempts(-1)" shape="oval" line="98" fontname="helvetica" ];
+  618939 [ label="9-Actual-in
+-1" shape="oval" line="98" fontname="helvetica" ];
+  618940 [ label="10-Call
+jbcf.setRetryInterval(100)" shape="oval" line="99" fontname="helvetica" ];
+  618941 [ label="11-Actual-in
+100" shape="oval" line="99" fontname="helvetica" ];
+  618942 [ label="12-Call
+jbcf.setConnectionTTL(500)" shape="oval" line="100" fontname="helvetica" ];
+  618943 [ label="13-Actual-in
+500" shape="oval" line="100" fontname="helvetica" ];
+  618944 [ label="14-Call
+jbcf.setClientFailureCheckPeriod(100)" shape="oval" line="101" fontname="helvetica" ];
+  618945 [ label="15-Actual-in
+100" shape="oval" line="101" fontname="helvetica" ];
+  618946 [ label="16-Call
+jbcf.setBlockOnDurableSend(true)" shape="oval" line="102" fontname="helvetica" ];
+  618947 [ label="17-Actual-in
+true" shape="oval" line="102" fontname="helvetica" ];
+  618948 [ label="18-Call
+jbcf.setBlockOnNonDurableSend(true)" shape="oval" line="103" fontname="helvetica" ];
+  618949 [ label="19-Actual-in
+true" shape="oval" line="103" fontname="helvetica" ];
+  618950 [ label="20-Call
+jbcf.setCallTimeout(1000)" shape="oval" line="104" fontname="helvetica" ];
+  618951 [ label="21-Actual-in
+1000" shape="oval" line="104" fontname="helvetica" ];
+  618952 [ label="22-Assign
+numMessages = 10" shape="oval" line="110" fontname="helvetica" ];
+  618953 [ label="23-Assign
+bodySize = 1000" shape="oval" line="112" fontname="helvetica" ];
+  618954 [ label="24-Call
+jbcf.setConsumerWindowSize(numMessages * bodySize / 10)" shape="oval" line="114" fontname="helvetica" ];
+  618955 [ label="25-Actual-in
+numMessages * bodySize / 10" shape="oval" line="114" fontname="helvetica" ];
+  618956 [ label="26-Assign
+conn = JMSUtil.createConnectionAndWaitForTopology(jbcf, 2, 5)" shape="oval" line="116" fontname="helvetica" ];
+  618957 [ label="27-Call
+JMSUtil.createConnectionAndWaitForTopology(jbcf, 2, 5)" shape="oval" line="116" fontname="helvetica" ];
+  618958 [ label="28-Actual-in
+jbcf" shape="oval" line="116" fontname="helvetica" ];
+  618959 [ label="29-Actual-in
+2" shape="oval" line="116" fontname="helvetica" ];
+  618960 [ label="30-Actual-in
+5" shape="oval" line="116" fontname="helvetica" ];
+  618961 [ label="31-Actual-in
+jbcf" shape="oval" line="116" fontname="helvetica" ];
+  618962 [ label="32-Actual-in
+2" shape="oval" line="116" fontname="helvetica" ];
+  618963 [ label="33-Actual-in
+5" shape="oval" line="116" fontname="helvetica" ];
+  618964 [ label="34-Assign
+listener = new MyFailoverListener()" shape="oval" line="118" fontname="helvetica" ];
+  618965 [ label="35-Call
+conn.setFailoverListener(listener)" shape="oval" line="120" fontname="helvetica" ];
+  618966 [ label="36-Actual-in
+listener" shape="oval" line="120" fontname="helvetica" ];
+  618967 [ label="37-Assign
+sess = conn.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="122" fontname="helvetica" ];
+  618968 [ label="38-Call
+conn.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="122" fontname="helvetica" ];
+  618969 [ label="39-Actual-in
+false" shape="oval" line="122" fontname="helvetica" ];
+  618970 [ label="40-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="122" fontname="helvetica" ];
+  618971 [ label="41-Actual-in
+false" shape="oval" line="122" fontname="helvetica" ];
+  618972 [ label="42-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="122" fontname="helvetica" ];
+  618973 [ label="43-Assign
+coreSession = ((ActiveMQSession) sess).getCoreSession()" shape="oval" line="124" fontname="helvetica" ];
+  618974 [ label="44-Call
+((ActiveMQSession) sess).getCoreSession()" shape="oval" line="124" fontname="helvetica" ];
+  618975 [ label="45-Assign
+jmsQueueName = new SimpleString('myqueue')" shape="oval" line="126" fontname="helvetica" ];
+  618976 [ label="46-Call
+coreSession.createQueue(new QueueConfiguration(jmsQueueName).setRoutingType(RoutingType.ANYCAST))" shape="oval" line="128" fontname="helvetica" ];
+  618977 [ label="47-Actual-in
+new QueueConfiguration(jmsQueueName).setRoutingType(RoutingType.ANYCAST)" shape="oval" line="128" fontname="helvetica" ];
+  618978 [ label="48-Assign
+queue = sess.createQueue('myqueue')" shape="oval" line="130" fontname="helvetica" ];
+  618979 [ label="49-Call
+sess.createQueue('myqueue')" shape="oval" line="130" fontname="helvetica" ];
+  618980 [ label="50-Actual-in
+'myqueue'" shape="oval" line="130" fontname="helvetica" ];
+  618981 [ label="51-Actual-in
+'myqueue'" shape="oval" line="130" fontname="helvetica" ];
+  618982 [ label="52-Assign
+producer = sess.createProducer(queue)" shape="oval" line="132" fontname="helvetica" ];
+  618983 [ label="53-Call
+sess.createProducer(queue)" shape="oval" line="132" fontname="helvetica" ];
+  618984 [ label="54-Actual-in
+queue" shape="oval" line="132" fontname="helvetica" ];
+  618985 [ label="55-Actual-in
+queue" shape="oval" line="132" fontname="helvetica" ];
+  618986 [ label="56-Call
+producer.setDeliveryMode(DeliveryMode.PERSISTENT)" shape="oval" line="134" fontname="helvetica" ];
+  618987 [ label="57-Actual-in
+DeliveryMode.PERSISTENT" shape="oval" line="134" fontname="helvetica" ];
+  618988 [ label="58-Assign
+consumer = sess.createConsumer(queue)" shape="oval" line="136" fontname="helvetica" ];
+  618989 [ label="59-Call
+sess.createConsumer(queue)" shape="oval" line="136" fontname="helvetica" ];
+  618990 [ label="60-Actual-in
+queue" shape="oval" line="136" fontname="helvetica" ];
+  618991 [ label="61-Actual-in
+queue" shape="oval" line="136" fontname="helvetica" ];
+  618992 [ label="62-Assign
+body = RandomUtil.randomBytes(bodySize)" shape="oval" line="138" fontname="helvetica" ];
+  618993 [ label="63-Call
+RandomUtil.randomBytes(bodySize)" shape="oval" line="138" fontname="helvetica" ];
+  618994 [ label="64-Actual-in
+bodySize" shape="oval" line="138" fontname="helvetica" ];
+  618995 [ label="65-Actual-in
+bodySize" shape="oval" line="138" fontname="helvetica" ];
+  618996 [ label="66-Assign
+i = 0" shape="oval" line="140" fontname="helvetica" ];
+  618997 [ label="67-Ctrl
+i < numMessages" shape="oval" line="140" fontname="helvetica" ];
+  618998 [ label="68-Assign
+i++" shape="oval" line="140" fontname="helvetica" ];
+  618999 [ label="69-Assign
+bm = sess.createBytesMessage()" shape="oval" line="141" fontname="helvetica" ];
+  619000 [ label="70-Call
+sess.createBytesMessage()" shape="oval" line="141" fontname="helvetica" ];
+  619001 [ label="71-Call
+bm.writeBytes(body)" shape="oval" line="143" fontname="helvetica" ];
+  619002 [ label="72-Actual-in
+body" shape="oval" line="143" fontname="helvetica" ];
+  619003 [ label="73-Call
+producer.send(bm)" shape="oval" line="145" fontname="helvetica" ];
+  619004 [ label="74-Actual-in
+bm" shape="oval" line="145" fontname="helvetica" ];
+  619005 [ label="75-Call
+Wait.assertEquals(numMessages, liveServer.locateQueue(jmsQueueName)::getMessageCount)" shape="oval" line="148" fontname="helvetica" ];
+  619006 [ label="76-Actual-in
+numMessages" shape="oval" line="148" fontname="helvetica" ];
+  619007 [ label="77-Actual-in
+liveServer.locateQueue(jmsQueueName)::getMessageCount" shape="oval" line="148" fontname="helvetica" ];
+  619008 [ label="78-Call
+conn.start()" shape="oval" line="150" fontname="helvetica" ];
+  619009 [ label="79-Call
+instanceLog.debug('sent messages and started connection')" shape="oval" line="152" fontname="helvetica" ];
+  619010 [ label="80-Actual-in
+'sent messages and started connection'" shape="oval" line="152" fontname="helvetica" ];
+  619011 [ label="81-Call
+JMSUtil.crash(liveServer, ((ActiveMQSession) sess).getCoreSession())" shape="oval" line="154" fontname="helvetica" ];
+  619012 [ label="82-Actual-in
+liveServer" shape="oval" line="154" fontname="helvetica" ];
+  619013 [ label="83-Actual-in
+((ActiveMQSession) sess).getCoreSession()" shape="oval" line="154" fontname="helvetica" ];
+  619014 [ label="84-Call
+Wait.assertTrue(() -> FailoverEventType.FAILURE_DETECTED == listener.get(0))" shape="oval" line="156" fontname="helvetica" ];
+  619015 [ label="85-Actual-in
+() -> FailoverEventType.FAILURE_DETECTED == listener.get(0)" shape="oval" line="156" fontname="helvetica" ];
+  619016 [ label="86-Assign
+i = 0" shape="oval" line="157" fontname="helvetica" ];
+  619017 [ label="87-Ctrl
+i < numMessages" shape="oval" line="157" fontname="helvetica" ];
+  619018 [ label="88-Assign
+i++" shape="oval" line="157" fontname="helvetica" ];
+  619019 [ label="89-Call
+instanceLog.debug('got message ' + i)" shape="oval" line="158" fontname="helvetica" ];
+  619020 [ label="90-Actual-in
+'got message ' + i" shape="oval" line="158" fontname="helvetica" ];
+  619021 [ label="91-Assign
+bm = (BytesMessage) consumer.receive(1000)" shape="oval" line="160" fontname="helvetica" ];
+  619022 [ label="92-Call
+Assert.assertNotNull(bm)" shape="oval" line="162" fontname="helvetica" ];
+  619023 [ label="93-Actual-in
+bm" shape="oval" line="162" fontname="helvetica" ];
+  619024 [ label="94-Call
+Assert.assertEquals(body.length, bm.getBodyLength())" shape="oval" line="164" fontname="helvetica" ];
+  619025 [ label="95-Actual-in
+body.length" shape="oval" line="164" fontname="helvetica" ];
+  619026 [ label="96-Actual-in
+bm.getBodyLength()" shape="oval" line="164" fontname="helvetica" ];
+  619027 [ label="97-Assign
+tm = (TextMessage) consumer.receiveNoWait()" shape="oval" line="167" fontname="helvetica" ];
+  619028 [ label="98-Call
+Assert.assertNull(tm)" shape="oval" line="169" fontname="helvetica" ];
+  619029 [ label="99-Actual-in
+tm" shape="oval" line="169" fontname="helvetica" ];
+  619030 [ label="100-Call
+Assert.assertEquals(FailoverEventType.FAILOVER_COMPLETED, listener.get(1))" shape="oval" line="170" fontname="helvetica" ];
+  619031 [ label="101-Actual-in
+FailoverEventType.FAILOVER_COMPLETED" shape="oval" line="170" fontname="helvetica" ];
+  619032 [ label="102-Actual-in
+listener.get(1)" shape="oval" line="170" fontname="helvetica" ];
+  619033 [ label="103-Call
+conn.close()" shape="oval" line="172" fontname="helvetica" ];
+  619034 [ label="104-Call
+Assert.assertEquals('Expected 2 FailoverEvents to be triggered', 2, listener.size())" shape="oval" line="173" fontname="helvetica" ];
+  619035 [ label="105-Actual-in
+'Expected 2 FailoverEvents to be triggered'" shape="oval" line="173" fontname="helvetica" ];
+  619036 [ label="106-Actual-in
+2" shape="oval" line="173" fontname="helvetica" ];
+  619037 [ label="107-Actual-in
+listener.size()" shape="oval" line="173" fontname="helvetica" ];
+  619038 [ label="108-Entry
+testManualFailover" shape="oval" line="176" fontname="helvetica" ];
+  619039 [ label="109-Assign
+jbcfLive = ActiveMQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, new TransportConfiguration(INVM_CONNECTOR_FACTORY))" shape="oval" line="178" fontname="helvetica" ];
+  619040 [ label="110-Call
+ActiveMQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, new TransportConfiguration(INVM_CONNECTOR_FACTORY))" shape="oval" line="178" fontname="helvetica" ];
+  619041 [ label="111-Actual-in
+JMSFactoryType.CF" shape="oval" line="178" fontname="helvetica" ];
+  619042 [ label="112-Actual-in
+new TransportConfiguration(INVM_CONNECTOR_FACTORY)" shape="oval" line="178" fontname="helvetica" ];
+  619043 [ label="113-Actual-in
+JMSFactoryType.CF" shape="oval" line="178" fontname="helvetica" ];
+  619044 [ label="114-Actual-in
+new TransportConfiguration(INVM_CONNECTOR_FACTORY)" shape="oval" line="178" fontname="helvetica" ];
+  619045 [ label="115-Call
+jbcfLive.setBlockOnNonDurableSend(true)" shape="oval" line="180" fontname="helvetica" ];
+  619046 [ label="116-Actual-in
+true" shape="oval" line="180" fontname="helvetica" ];
+  619047 [ label="117-Call
+jbcfLive.setBlockOnDurableSend(true)" shape="oval" line="181" fontname="helvetica" ];
+  619048 [ label="118-Actual-in
+true" shape="oval" line="181" fontname="helvetica" ];
+  619049 [ label="119-Call
+jbcfLive.setCallTimeout(1000)" shape="oval" line="182" fontname="helvetica" ];
+  619050 [ label="120-Actual-in
+1000" shape="oval" line="182" fontname="helvetica" ];
+  619051 [ label="121-Assign
+jbcfBackup = ActiveMQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, new TransportConfiguration(INVM_CONNECTOR_FACTORY, backupParams))" shape="oval" line="184" fontname="helvetica" ];
+  619052 [ label="122-Call
+ActiveMQJMSClient.createConnectionFactoryWithoutHA(JMSFactoryType.CF, new TransportConfiguration(INVM_CONNECTOR_FACTORY, backupParams))" shape="oval" line="184" fontname="helvetica" ];
+  619053 [ label="123-Actual-in
+JMSFactoryType.CF" shape="oval" line="184" fontname="helvetica" ];
+  619054 [ label="124-Actual-in
+new TransportConfiguration(INVM_CONNECTOR_FACTORY, backupParams)" shape="oval" line="184" fontname="helvetica" ];
+  619055 [ label="125-Actual-in
+JMSFactoryType.CF" shape="oval" line="184" fontname="helvetica" ];
+  619056 [ label="126-Actual-in
+new TransportConfiguration(INVM_CONNECTOR_FACTORY, backupParams)" shape="oval" line="184" fontname="helvetica" ];
+  619057 [ label="127-Call
+jbcfBackup.setBlockOnNonDurableSend(true)" shape="oval" line="185" fontname="helvetica" ];
+  619058 [ label="128-Actual-in
+true" shape="oval" line="185" fontname="helvetica" ];
+  619059 [ label="129-Call
+jbcfBackup.setBlockOnDurableSend(true)" shape="oval" line="186" fontname="helvetica" ];
+  619060 [ label="130-Actual-in
+true" shape="oval" line="186" fontname="helvetica" ];
+  619061 [ label="131-Call
+jbcfBackup.setInitialConnectAttempts(-1)" shape="oval" line="187" fontname="helvetica" ];
+  619062 [ label="132-Actual-in
+-1" shape="oval" line="187" fontname="helvetica" ];
+  619063 [ label="133-Call
+jbcfBackup.setReconnectAttempts(-1)" shape="oval" line="188" fontname="helvetica" ];
+  619064 [ label="134-Actual-in
+-1" shape="oval" line="188" fontname="helvetica" ];
+  619065 [ label="135-Call
+jbcfBackup.setRetryInterval(100)" shape="oval" line="189" fontname="helvetica" ];
+  619066 [ label="136-Actual-in
+100" shape="oval" line="189" fontname="helvetica" ];
+  619067 [ label="137-Assign
+connLive = (ActiveMQConnection) jbcfLive.createConnection()" shape="oval" line="191" fontname="helvetica" ];
+  619068 [ label="138-Assign
+listener = new MyFailoverListener()" shape="oval" line="193" fontname="helvetica" ];
+  619069 [ label="139-Call
+connLive.setFailoverListener(listener)" shape="oval" line="195" fontname="helvetica" ];
+  619070 [ label="140-Actual-in
+listener" shape="oval" line="195" fontname="helvetica" ];
+  619071 [ label="141-Assign
+sessLive = connLive.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="197" fontname="helvetica" ];
+  619072 [ label="142-Call
+connLive.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="197" fontname="helvetica" ];
+  619073 [ label="143-Actual-in
+false" shape="oval" line="197" fontname="helvetica" ];
+  619074 [ label="144-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="197" fontname="helvetica" ];
+  619075 [ label="145-Actual-in
+false" shape="oval" line="197" fontname="helvetica" ];
+  619076 [ label="146-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="197" fontname="helvetica" ];
+  619077 [ label="147-Assign
+coreSessionLive = ((ActiveMQSession) sessLive).getCoreSession()" shape="oval" line="199" fontname="helvetica" ];
+  619078 [ label="148-Call
+((ActiveMQSession) sessLive).getCoreSession()" shape="oval" line="199" fontname="helvetica" ];
+  619079 [ label="149-Assign
+jmsQueueName = new SimpleString('myqueue')" shape="oval" line="201" fontname="helvetica" ];
+  619080 [ label="150-Call
+coreSessionLive.createQueue(new QueueConfiguration(jmsQueueName).setRoutingType(RoutingType.ANYCAST))" shape="oval" line="203" fontname="helvetica" ];
+  619081 [ label="151-Actual-in
+new QueueConfiguration(jmsQueueName).setRoutingType(RoutingType.ANYCAST)" shape="oval" line="203" fontname="helvetica" ];
+  619082 [ label="152-Assign
+queue = sessLive.createQueue('myqueue')" shape="oval" line="205" fontname="helvetica" ];
+  619083 [ label="153-Call
+sessLive.createQueue('myqueue')" shape="oval" line="205" fontname="helvetica" ];
+  619084 [ label="154-Actual-in
+'myqueue'" shape="oval" line="205" fontname="helvetica" ];
+  619085 [ label="155-Actual-in
+'myqueue'" shape="oval" line="205" fontname="helvetica" ];
+  619086 [ label="156-Assign
+numMessages = 1000" shape="oval" line="207" fontname="helvetica" ];
+  619087 [ label="157-Assign
+producerLive = sessLive.createProducer(queue)" shape="oval" line="209" fontname="helvetica" ];
+  619088 [ label="158-Call
+sessLive.createProducer(queue)" shape="oval" line="209" fontname="helvetica" ];
+  619089 [ label="159-Actual-in
+queue" shape="oval" line="209" fontname="helvetica" ];
+  619090 [ label="160-Actual-in
+queue" shape="oval" line="209" fontname="helvetica" ];
+  619091 [ label="161-Assign
+i = 0" shape="oval" line="211" fontname="helvetica" ];
+  619092 [ label="162-Ctrl
+i < numMessages" shape="oval" line="211" fontname="helvetica" ];
+  619093 [ label="163-Assign
+i++" shape="oval" line="211" fontname="helvetica" ];
+  619094 [ label="164-Assign
+tm = sessLive.createTextMessage('message' + i)" shape="oval" line="212" fontname="helvetica" ];
+  619095 [ label="165-Call
+sessLive.createTextMessage('message' + i)" shape="oval" line="212" fontname="helvetica" ];
+  619096 [ label="166-Actual-in
+'message' + i" shape="oval" line="212" fontname="helvetica" ];
+  619097 [ label="167-Actual-in
+'message' + i" shape="oval" line="212" fontname="helvetica" ];
+  619098 [ label="168-Call
+producerLive.send(tm)" shape="oval" line="214" fontname="helvetica" ];
+  619099 [ label="169-Actual-in
+tm" shape="oval" line="214" fontname="helvetica" ];
+  619100 [ label="170-Call
+JMSUtil.crash(liveServer, coreSessionLive)" shape="oval" line="219" fontname="helvetica" ];
+  619101 [ label="171-Actual-in
+liveServer" shape="oval" line="219" fontname="helvetica" ];
+  619102 [ label="172-Actual-in
+coreSessionLive" shape="oval" line="219" fontname="helvetica" ];
+  619103 [ label="173-Call
+Assert.assertEquals(FailoverEventType.FAILURE_DETECTED, listener.get(0))" shape="oval" line="220" fontname="helvetica" ];
+  619104 [ label="174-Actual-in
+FailoverEventType.FAILURE_DETECTED" shape="oval" line="220" fontname="helvetica" ];
+  619105 [ label="175-Actual-in
+listener.get(0)" shape="oval" line="220" fontname="helvetica" ];
+  619106 [ label="176-Call
+connLive.close()" shape="oval" line="221" fontname="helvetica" ];
+  619107 [ label="177-Assign
+connBackup = jbcfBackup.createConnection()" shape="oval" line="225" fontname="helvetica" ];
+  619108 [ label="178-Call
+jbcfBackup.createConnection()" shape="oval" line="225" fontname="helvetica" ];
+  619109 [ label="179-Assign
+sessBackup = connBackup.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="227" fontname="helvetica" ];
+  619110 [ label="180-Call
+connBackup.createSession(false, Session.AUTO_ACKNOWLEDGE)" shape="oval" line="227" fontname="helvetica" ];
+  619111 [ label="181-Actual-in
+false" shape="oval" line="227" fontname="helvetica" ];
+  619112 [ label="182-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="227" fontname="helvetica" ];
+  619113 [ label="183-Actual-in
+false" shape="oval" line="227" fontname="helvetica" ];
+  619114 [ label="184-Actual-in
+Session.AUTO_ACKNOWLEDGE" shape="oval" line="227" fontname="helvetica" ];
+  619115 [ label="185-Assign
+consumerBackup = sessBackup.createConsumer(queue)" shape="oval" line="229" fontname="helvetica" ];
+  619116 [ label="186-Call
+sessBackup.createConsumer(queue)" shape="oval" line="229" fontname="helvetica" ];
+  619117 [ label="187-Actual-in
+queue" shape="oval" line="229" fontname="helvetica" ];
+  619118 [ label="188-Actual-in
+queue" shape="oval" line="229" fontname="helvetica" ];
+  619119 [ label="189-Call
+connBackup.start()" shape="oval" line="231" fontname="helvetica" ];
+  619120 [ label="190-Assign
+i = 0" shape="oval" line="233" fontname="helvetica" ];
+  619121 [ label="191-Ctrl
+i < numMessages" shape="oval" line="233" fontname="helvetica" ];
+  619122 [ label="192-Assign
+i++" shape="oval" line="233" fontname="helvetica" ];
+  619123 [ label="193-Assign
+tm = (TextMessage) consumerBackup.receive(1000)" shape="oval" line="234" fontname="helvetica" ];
+  619124 [ label="194-Call
+Assert.assertNotNull(tm)" shape="oval" line="236" fontname="helvetica" ];
+  619125 [ label="195-Actual-in
+tm" shape="oval" line="236" fontname="helvetica" ];
+  619126 [ label="196-Call
+Assert.assertEquals('message' + i, tm.getText())" shape="oval" line="238" fontname="helvetica" ];
+  619127 [ label="197-Actual-in
+'message' + i" shape="oval" line="238" fontname="helvetica" ];
+  619128 [ label="198-Actual-in
+tm.getText()" shape="oval" line="238" fontname="helvetica" ];
+  619129 [ label="199-Assign
+tm = (TextMessage) consumerBackup.receiveNoWait()" shape="oval" line="241" fontname="helvetica" ];
+  619130 [ label="200-Call
+Assert.assertEquals(FailoverEventType.FAILOVER_FAILED, listener.get(1))" shape="oval" line="242" fontname="helvetica" ];
+  619131 [ label="201-Actual-in
+FailoverEventType.FAILOVER_FAILED" shape="oval" line="242" fontname="helvetica" ];
+  619132 [ label="202-Actual-in
+listener.get(1)" shape="oval" line="242" fontname="helvetica" ];
+  619133 [ label="203-Call
+Assert.assertEquals('Expected 2 FailoverEvents to be triggered', 2, listener.size())" shape="oval" line="243" fontname="helvetica" ];
+  619134 [ label="204-Actual-in
+'Expected 2 FailoverEvents to be triggered'" shape="oval" line="243" fontname="helvetica" ];
+  619135 [ label="205-Actual-in
+2" shape="oval" line="243" fontname="helvetica" ];
+  619136 [ label="206-Actual-in
+listener.size()" shape="oval" line="243" fontname="helvetica" ];
+  619137 [ label="207-Call
+Assert.assertNull(tm)" shape="oval" line="244" fontname="helvetica" ];
+  619138 [ label="208-Actual-in
+tm" shape="oval" line="244" fontname="helvetica" ];
+  619139 [ label="209-Call
+connBackup.close()" shape="oval" line="246" fontname="helvetica" ];
+  619140 [ label="210-Entry
+setUp" shape="oval" line="253" fontname="helvetica" ];
+  619141 [ label="211-Call
+super.setUp()" shape="oval" line="256" fontname="helvetica" ];
+  619142 [ label="212-Call
+startServers()" shape="oval" line="257" fontname="helvetica" ];
+  619143 [ label="213-Entry
+startServers" shape="oval" line="263" fontname="helvetica" ];
+  619144 [ label="214-Assign
+nodeManager = new InVMNodeManager(false)" shape="oval" line="264" fontname="helvetica" ];
+  619145 [ label="215-Assign
+backuptc = new TransportConfiguration(INVM_CONNECTOR_FACTORY, backupParams)" shape="oval" line="265" fontname="helvetica" ];
+  619146 [ label="216-Assign
+livetc = new TransportConfiguration(INVM_CONNECTOR_FACTORY)" shape="oval" line="266" fontname="helvetica" ];
+  619147 [ label="217-Assign
+liveAcceptortc = new TransportConfiguration(INVM_ACCEPTOR_FACTORY)" shape="oval" line="268" fontname="helvetica" ];
+  619148 [ label="218-Assign
+backupAcceptortc = new TransportConfiguration(INVM_ACCEPTOR_FACTORY, backupParams)" shape="oval" line="269" fontname="helvetica" ];
+  619149 [ label="219-Call
+backupParams.put(TransportConstants.SERVER_ID_PROP_NAME, 1)" shape="oval" line="271" fontname="helvetica" ];
+  619150 [ label="220-Actual-in
+TransportConstants.SERVER_ID_PROP_NAME" shape="oval" line="271" fontname="helvetica" ];
+  619151 [ label="221-Actual-in
+1" shape="oval" line="271" fontname="helvetica" ];
+  619152 [ label="222-Assign
+backupConf = createBasicConfig().addAcceptorConfiguration(backupAcceptortc).addConnectorConfiguration(livetc.getName(), livetc).addConnectorConfiguration(backuptc.getName(), backuptc).setJournalType(getDefaultJournalType()).addAcceptorConfiguration(new TransportConfiguration(INVM_ACCEPTOR_FACTORY, backupParams)).setBindingsDirectory(getBindingsDir()).setJournalMinFiles(2).setJournalDirectory(getJournalDir()).setPagingDirectory(getPageDir()).setLargeMessagesDirectory(getLargeMessagesDir()).setPersistenceEnabled(true).setHAPolicyConfiguration(new SharedStoreSlavePolicyConfiguration()).addClusterConfiguration(basicClusterConnectionConfig(backuptc.getName(), livetc.getName()))" shape="oval" line="273" fontname="helvetica" ];
+  619153 [ label="223-Actual-in
+basicClusterConnectionConfig(backuptc.getName(), livetc.getName())" shape="oval" line="273" fontname="helvetica" ];
+  619154 [ label="224-Call
+backupConf.setConnectionTtlCheckInterval(100)" shape="oval" line="274" fontname="helvetica" ];
+  619155 [ label="225-Actual-in
+100" shape="oval" line="274" fontname="helvetica" ];
+  619156 [ label="226-Assign
+backupServer = addServer(new InVMNodeManagerServer(backupConf, nodeManager))" shape="oval" line="276" fontname="helvetica" ];
+  619157 [ label="227-Actual-in
+new InVMNodeManagerServer(backupConf, nodeManager)" shape="oval" line="276" fontname="helvetica" ];
+  619158 [ label="228-Call
+backupServer.setIdentity('JMSBackup')" shape="oval" line="278" fontname="helvetica" ];
+  619159 [ label="229-Actual-in
+'JMSBackup'" shape="oval" line="278" fontname="helvetica" ];
+  619160 [ label="230-Call
+instanceLog.debug('Starting backup')" shape="oval" line="279" fontname="helvetica" ];
+  619161 [ label="231-Actual-in
+'Starting backup'" shape="oval" line="279" fontname="helvetica" ];
+  619162 [ label="232-Call
+backupServer.start()" shape="oval" line="280" fontname="helvetica" ];
+  619163 [ label="233-Assign
+liveConf = createBasicConfig().setJournalDirectory(getJournalDir()).setBindingsDirectory(getBindingsDir()).addAcceptorConfiguration(liveAcceptortc).setJournalType(getDefaultJournalType()).setBindingsDirectory(getBindingsDir()).setJournalMinFiles(2).setJournalDirectory(getJournalDir()).setPagingDirectory(getPageDir()).setLargeMessagesDirectory(getLargeMessagesDir()).addConnectorConfiguration(livetc.getName(), livetc).setPersistenceEnabled(true).setHAPolicyConfiguration(new SharedStoreMasterPolicyConfiguration()).addClusterConfiguration(basicClusterConnectionConfig(livetc.getName()))" shape="oval" line="282" fontname="helvetica" ];
+  619164 [ label="234-Actual-in
+basicClusterConnectionConfig(livetc.getName())" shape="oval" line="282" fontname="helvetica" ];
+  619165 [ label="235-Call
+liveConf.setConnectionTtlCheckInterval(100)" shape="oval" line="283" fontname="helvetica" ];
+  619166 [ label="236-Actual-in
+100" shape="oval" line="283" fontname="helvetica" ];
+  619167 [ label="237-Assign
+liveServer = addServer(new InVMNodeManagerServer(liveConf, nodeManager))" shape="oval" line="285" fontname="helvetica" ];
+  619168 [ label="238-Actual-in
+new InVMNodeManagerServer(liveConf, nodeManager)" shape="oval" line="285" fontname="helvetica" ];
+  619169 [ label="239-Call
+liveServer.setIdentity('JMSLive')" shape="oval" line="287" fontname="helvetica" ];
+  619170 [ label="240-Actual-in
+'JMSLive'" shape="oval" line="287" fontname="helvetica" ];
+  619171 [ label="241-Call
+instanceLog.debug('Starting life')" shape="oval" line="288" fontname="helvetica" ];
+  619172 [ label="242-Actual-in
+'Starting life'" shape="oval" line="288" fontname="helvetica" ];
+  619173 [ label="243-Call
+liveServer.start()" shape="oval" line="290" fontname="helvetica" ];
+  619174 [ label="244-Call
+JMSUtil.waitForServer(backupServer)" shape="oval" line="292" fontname="helvetica" ];
+  619175 [ label="245-Actual-in
+backupServer" shape="oval" line="292" fontname="helvetica" ];
+  619176 [ label="246-Class
+MyFailoverListener" shape="oval" line="299" fontname="helvetica" ];
+  619177 [ label="247-Entry
+get" shape="oval" line="303" fontname="helvetica" ];
+  619178 [ label="248-Formal-out
+" shape="oval" line="303" fontname="helvetica" ];
+  619179 [ label="249-Formal-in
+element" shape="oval" line="303" fontname="helvetica" ];
+  619180 [ label="250-Call
+waitForElements(element + 1)" shape="oval" line="304" fontname="helvetica" ];
+  619181 [ label="251-Actual-in
+element + 1" shape="oval" line="304" fontname="helvetica" ];
+  619182 [ label="252-Return
+return eventTypeList.get(element)" shape="oval" line="305" fontname="helvetica" ];
+  619183 [ label="253-Entry
+size" shape="oval" line="308" fontname="helvetica" ];
+  619184 [ label="254-Formal-out
+" shape="oval" line="308" fontname="helvetica" ];
+  619185 [ label="255-Return
+return eventTypeList.size()" shape="oval" line="309" fontname="helvetica" ];
+  619186 [ label="256-Entry
+waitForElements" shape="oval" line="312" fontname="helvetica" ];
+  619187 [ label="257-Formal-in
+elements" shape="oval" line="312" fontname="helvetica" ];
+  619188 [ label="258-Assign
+timeout = System.currentTimeMillis() + 5000" shape="oval" line="313" fontname="helvetica" ];
+  619189 [ label="259-Call
+System.currentTimeMillis()" shape="oval" line="313" fontname="helvetica" ];
+  619190 [ label="260-Ctrl
+timeout > System.currentTimeMillis() && eventTypeList.size() < elements" shape="oval" line="314" fontname="helvetica" ];
+  619191 [ label="261-Try
+try" shape="oval" line="315" fontname="helvetica" ];
+  619192 [ label="262-Call
+Thread.sleep(1)" shape="oval" line="316" fontname="helvetica" ];
+  619193 [ label="263-Actual-in
+1" shape="oval" line="316" fontname="helvetica" ];
+  619194 [ label="264-Catch
+Throwable e" shape="oval" line="317" fontname="helvetica" ];
+  619195 [ label="265-Call
+fail(e.getMessage())" shape="oval" line="318" fontname="helvetica" ];
+  619196 [ label="266-Actual-in
+e.getMessage()" shape="oval" line="318" fontname="helvetica" ];
+  619197 [ label="267-Call
+Assert.assertTrue(eventTypeList.size() >= elements)" shape="oval" line="322" fontname="helvetica" ];
+  619198 [ label="268-Actual-in
+eventTypeList.size() >= elements" shape="oval" line="322" fontname="helvetica" ];
+  619199 [ label="269-Entry
+failoverEvent" shape="oval" line="325" fontname="helvetica" ];
+  619200 [ label="270-Formal-in
+eventType" shape="oval" line="326" fontname="helvetica" ];
+  619201 [ label="271-Call
+eventTypeList.add(eventType)" shape="oval" line="327" fontname="helvetica" ];
+  619202 [ label="272-Actual-in
+eventType" shape="oval" line="327" fontname="helvetica" ];
+  618933 -> 618934 [ label="Ctrl-true" ];
+  618933 -> 618935 [ label="Ctrl-true" ];
+  618932 -> 618933 [ label="Call" ];
+  618932 -> 618936 [ label="Ctrl-true" ];
+  618932 -> 618937 [ label="Ctrl-true" ];
+  618938 -> 618939 [ label="Ctrl-true" ];
+  618940 -> 618941 [ label="Ctrl-true" ];
+  618942 -> 618943 [ label="Ctrl-true" ];
+  618944 -> 618945 [ label="Ctrl-true" ];
+  618946 -> 618947 [ label="Ctrl-true" ];
+  618948 -> 618949 [ label="Ctrl-true" ];
+  618950 -> 618951 [ label="Ctrl-true" ];
+  618954 -> 618955 [ label="Ctrl-true" ];
+  618957 -> 618958 [ label="Ctrl-true" ];
+  618957 -> 618959 [ label="Ctrl-true" ];
+  618957 -> 618960 [ label="Ctrl-true" ];
+  618956 -> 618957 [ label="Call" ];
+  618956 -> 618961 [ label="Ctrl-true" ];
+  618956 -> 618962 [ label="Ctrl-true" ];
+  618956 -> 618963 [ label="Ctrl-true" ];
+  618965 -> 618966 [ label="Ctrl-true" ];
+  618968 -> 618969 [ label="Ctrl-true" ];
+  618968 -> 618970 [ label="Ctrl-true" ];
+  618967 -> 618968 [ label="Call" ];
+  618967 -> 618971 [ label="Ctrl-true" ];
+  618967 -> 618972 [ label="Ctrl-true" ];
+  618973 -> 618974 [ label="Call" ];
+  618976 -> 618977 [ label="Ctrl-true" ];
+  618979 -> 618980 [ label="Ctrl-true" ];
+  618978 -> 618979 [ label="Call" ];
+  618978 -> 618981 [ label="Ctrl-true" ];
+  618983 -> 618984 [ label="Ctrl-true" ];
+  618982 -> 618983 [ label="Call" ];
+  618982 -> 618985 [ label="Ctrl-true" ];
+  618986 -> 618987 [ label="Ctrl-true" ];
+  618989 -> 618990 [ label="Ctrl-true" ];
+  618988 -> 618989 [ label="Call" ];
+  618988 -> 618991 [ label="Ctrl-true" ];
+  618993 -> 618994 [ label="Ctrl-true" ];
+  618992 -> 618993 [ label="Call" ];
+  618992 -> 618995 [ label="Ctrl-true" ];
+  618999 -> 619000 [ label="Call" ];
+  619001 -> 619002 [ label="Ctrl-true" ];
+  619003 -> 619004 [ label="Ctrl-true" ];
+  618997 -> 618998 [ label="Ctrl-true" ];
+  618997 -> 618999 [ label="Ctrl-true" ];
+  618997 -> 619001 [ label="Ctrl-true" ];
+  618997 -> 619003 [ label="Ctrl-true" ];
+  618997 -> 618997 [ label="Ctrl-true" ];
+  619005 -> 619006 [ label="Ctrl-true" ];
+  619005 -> 619007 [ label="Ctrl-true" ];
+  619009 -> 619010 [ label="Ctrl-true" ];
+  619011 -> 619012 [ label="Ctrl-true" ];
+  619011 -> 619013 [ label="Ctrl-true" ];
+  619014 -> 619015 [ label="Ctrl-true" ];
+  619019 -> 619020 [ label="Ctrl-true" ];
+  619022 -> 619023 [ label="Ctrl-true" ];
+  619024 -> 619025 [ label="Ctrl-true" ];
+  619024 -> 619026 [ label="Ctrl-true" ];
+  619017 -> 619018 [ label="Ctrl-true" ];
+  619017 -> 619019 [ label="Ctrl-true" ];
+  619017 -> 619021 [ label="Ctrl-true" ];
+  619017 -> 619022 [ label="Ctrl-true" ];
+  619017 -> 619024 [ label="Ctrl-true" ];
+  619017 -> 619017 [ label="Ctrl-true" ];
+  619028 -> 619029 [ label="Ctrl-true" ];
+  619030 -> 619031 [ label="Ctrl-true" ];
+  619030 -> 619032 [ label="Ctrl-true" ];
+  619034 -> 619035 [ label="Ctrl-true" ];
+  619034 -> 619036 [ label="Ctrl-true" ];
+  619034 -> 619037 [ label="Ctrl-true" ];
+  618931 -> 618932 [ label="Ctrl-true" ];
+  618931 -> 618938 [ label="Ctrl-true" ];
+  618931 -> 618940 [ label="Ctrl-true" ];
+  618931 -> 618942 [ label="Ctrl-true" ];
+  618931 -> 618944 [ label="Ctrl-true" ];
+  618931 -> 618946 [ label="Ctrl-true" ];
+  618931 -> 618948 [ label="Ctrl-true" ];
+  618931 -> 618950 [ label="Ctrl-true" ];
+  618931 -> 618952 [ label="Ctrl-true" ];
+  618931 -> 618953 [ label="Ctrl-true" ];
+  618931 -> 618954 [ label="Ctrl-true" ];
+  618931 -> 618956 [ label="Ctrl-true" ];
+  618931 -> 618964 [ label="Ctrl-true" ];
+  618931 -> 618965 [ label="Ctrl-true" ];
+  618931 -> 618967 [ label="Ctrl-true" ];
+  618931 -> 618973 [ label="Ctrl-true" ];
+  618931 -> 618975 [ label="Ctrl-true" ];
+  618931 -> 618976 [ label="Ctrl-true" ];
+  618931 -> 618978 [ label="Ctrl-true" ];
+  618931 -> 618982 [ label="Ctrl-true" ];
+  618931 -> 618986 [ label="Ctrl-true" ];
+  618931 -> 618988 [ label="Ctrl-true" ];
+  618931 -> 618992 [ label="Ctrl-true" ];
+  618931 -> 618996 [ label="Ctrl-true" ];
+  618931 -> 618997 [ label="Ctrl-true" ];
+  618931 -> 619005 [ label="Ctrl-true" ];
+  618931 -> 619008 [ label="Ctrl-true" ];
+  618931 -> 619009 [ label="Ctrl-true" ];
+  618931 -> 619011 [ label="Ctrl-true" ];
+  618931 -> 619014 [ label="Ctrl-true" ];
+  618931 -> 619016 [ label="Ctrl-true" ];
+  618931 -> 619017 [ label="Ctrl-true" ];
+  618931 -> 619027 [ label="Ctrl-true" ];
+  618931 -> 619028 [ label="Ctrl-true" ];
+  618931 -> 619030 [ label="Ctrl-true" ];
+  618931 -> 619033 [ label="Ctrl-true" ];
+  618931 -> 619034 [ label="Ctrl-true" ];
+  619040 -> 619041 [ label="Ctrl-true" ];
+  619040 -> 619042 [ label="Ctrl-true" ];
+  619039 -> 619040 [ label="Call" ];
+  619039 -> 619043 [ label="Ctrl-true" ];
+  619039 -> 619044 [ label="Ctrl-true" ];
+  619045 -> 619046 [ label="Ctrl-true" ];
+  619047 -> 619048 [ label="Ctrl-true" ];
+  619049 -> 619050 [ label="Ctrl-true" ];
+  619052 -> 619053 [ label="Ctrl-true" ];
+  619052 -> 619054 [ label="Ctrl-true" ];
+  619051 -> 619052 [ label="Call" ];
+  619051 -> 619055 [ label="Ctrl-true" ];
+  619051 -> 619056 [ label="Ctrl-true" ];
+  619057 -> 619058 [ label="Ctrl-true" ];
+  619059 -> 619060 [ label="Ctrl-true" ];
+  619061 -> 619062 [ label="Ctrl-true" ];
+  619063 -> 619064 [ label="Ctrl-true" ];
+  619065 -> 619066 [ label="Ctrl-true" ];
+  619069 -> 619070 [ label="Ctrl-true" ];
+  619072 -> 619073 [ label="Ctrl-true" ];
+  619072 -> 619074 [ label="Ctrl-true" ];
+  619071 -> 619072 [ label="Call" ];
+  619071 -> 619075 [ label="Ctrl-true" ];
+  619071 -> 619076 [ label="Ctrl-true" ];
+  619077 -> 619078 [ label="Call" ];
+  619080 -> 619081 [ label="Ctrl-true" ];
+  619083 -> 619084 [ label="Ctrl-true" ];
+  619082 -> 619083 [ label="Call" ];
+  619082 -> 619085 [ label="Ctrl-true" ];
+  619088 -> 619089 [ label="Ctrl-true" ];
+  619087 -> 619088 [ label="Call" ];
+  619087 -> 619090 [ label="Ctrl-true" ];
+  619095 -> 619096 [ label="Ctrl-true" ];
+  619094 -> 619095 [ label="Call" ];
+  619094 -> 619097 [ label="Ctrl-true" ];
+  619098 -> 619099 [ label="Ctrl-true" ];
+  619092 -> 619093 [ label="Ctrl-true" ];
+  619092 -> 619094 [ label="Ctrl-true" ];
+  619092 -> 619098 [ label="Ctrl-true" ];
+  619092 -> 619092 [ label="Ctrl-true" ];
+  619100 -> 619101 [ label="Ctrl-true" ];
+  619100 -> 619102 [ label="Ctrl-true" ];
+  619103 -> 619104 [ label="Ctrl-true" ];
+  619103 -> 619105 [ label="Ctrl-true" ];
+  619107 -> 619108 [ label="Call" ];
+  619110 -> 619111 [ label="Ctrl-true" ];
+  619110 -> 619112 [ label="Ctrl-true" ];
+  619109 -> 619110 [ label="Call" ];
+  619109 -> 619113 [ label="Ctrl-true" ];
+  619109 -> 619114 [ label="Ctrl-true" ];
+  619116 -> 619117 [ label="Ctrl-true" ];
+  619115 -> 619116 [ label="Call" ];
+  619115 -> 619118 [ label="Ctrl-true" ];
+  619124 -> 619125 [ label="Ctrl-true" ];
+  619126 -> 619127 [ label="Ctrl-true" ];
+  619126 -> 619128 [ label="Ctrl-true" ];
+  619121 -> 619122 [ label="Ctrl-true" ];
+  619121 -> 619123 [ label="Ctrl-true" ];
+  619121 -> 619124 [ label="Ctrl-true" ];
+  619121 -> 619126 [ label="Ctrl-true" ];
+  619121 -> 619121 [ label="Ctrl-true" ];
+  619130 -> 619131 [ label="Ctrl-true" ];
+  619130 -> 619132 [ label="Ctrl-true" ];
+  619133 -> 619134 [ label="Ctrl-true" ];
+  619133 -> 619135 [ label="Ctrl-true" ];
+  619133 -> 619136 [ label="Ctrl-true" ];
+  619137 -> 619138 [ label="Ctrl-true" ];
+  619038 -> 619039 [ label="Ctrl-true" ];
+  619038 -> 619045 [ label="Ctrl-true" ];
+  619038 -> 619047 [ label="Ctrl-true" ];
+  619038 -> 619049 [ label="Ctrl-true" ];
+  619038 -> 619051 [ label="Ctrl-true" ];
+  619038 -> 619057 [ label="Ctrl-true" ];
+  619038 -> 619059 [ label="Ctrl-true" ];
+  619038 -> 619061 [ label="Ctrl-true" ];
+  619038 -> 619063 [ label="Ctrl-true" ];
+  619038 -> 619065 [ label="Ctrl-true" ];
+  619038 -> 619067 [ label="Ctrl-true" ];
+  619038 -> 619068 [ label="Ctrl-true" ];
+  619038 -> 619069 [ label="Ctrl-true" ];
+  619038 -> 619071 [ label="Ctrl-true" ];
+  619038 -> 619077 [ label="Ctrl-true" ];
+  619038 -> 619079 [ label="Ctrl-true" ];
+  619038 -> 619080 [ label="Ctrl-true" ];
+  619038 -> 619082 [ label="Ctrl-true" ];
+  619038 -> 619086 [ label="Ctrl-true" ];
+  619038 -> 619087 [ label="Ctrl-true" ];
+  619038 -> 619091 [ label="Ctrl-true" ];
+  619038 -> 619092 [ label="Ctrl-true" ];
+  619038 -> 619100 [ label="Ctrl-true" ];
+  619038 -> 619103 [ label="Ctrl-true" ];
+  619038 -> 619106 [ label="Ctrl-true" ];
+  619038 -> 619107 [ label="Ctrl-true" ];
+  619038 -> 619109 [ label="Ctrl-true" ];
+  619038 -> 619115 [ label="Ctrl-true" ];
+  619038 -> 619119 [ label="Ctrl-true" ];
+  619038 -> 619120 [ label="Ctrl-true" ];
+  619038 -> 619121 [ label="Ctrl-true" ];
+  619038 -> 619129 [ label="Ctrl-true" ];
+  619038 -> 619130 [ label="Ctrl-true" ];
+  619038 -> 619133 [ label="Ctrl-true" ];
+  619038 -> 619137 [ label="Ctrl-true" ];
+  619038 -> 619139 [ label="Ctrl-true" ];
+  619140 -> 619141 [ label="Ctrl-true" ];
+  619140 -> 619142 [ label="Ctrl-true" ];
+  619149 -> 619150 [ label="Ctrl-true" ];
+  619149 -> 619151 [ label="Ctrl-true" ];
+  619152 -> 619153 [ label="Ctrl-true" ];
+  619154 -> 619155 [ label="Ctrl-true" ];
+  619156 -> 619157 [ label="Ctrl-true" ];
+  619158 -> 619159 [ label="Ctrl-true" ];
+  619160 -> 619161 [ label="Ctrl-true" ];
+  619163 -> 619164 [ label="Ctrl-true" ];
+  619165 -> 619166 [ label="Ctrl-true" ];
+  619167 -> 619168 [ label="Ctrl-true" ];
+  619169 -> 619170 [ label="Ctrl-true" ];
+  619171 -> 619172 [ label="Ctrl-true" ];
+  619174 -> 619175 [ label="Ctrl-true" ];
+  619143 -> 619144 [ label="Ctrl-true" ];
+  619143 -> 619145 [ label="Ctrl-true" ];
+  619143 -> 619146 [ label="Ctrl-true" ];
+  619143 -> 619147 [ label="Ctrl-true" ];
+  619143 -> 619148 [ label="Ctrl-true" ];
+  619143 -> 619149 [ label="Ctrl-true" ];
+  619143 -> 619152 [ label="Ctrl-true" ];
+  619143 -> 619154 [ label="Ctrl-true" ];
+  619143 -> 619156 [ label="Ctrl-true" ];
+  619143 -> 619158 [ label="Ctrl-true" ];
+  619143 -> 619160 [ label="Ctrl-true" ];
+  619143 -> 619162 [ label="Ctrl-true" ];
+  619143 -> 619163 [ label="Ctrl-true" ];
+  619143 -> 619165 [ label="Ctrl-true" ];
+  619143 -> 619167 [ label="Ctrl-true" ];
+  619143 -> 619169 [ label="Ctrl-true" ];
+  619143 -> 619171 [ label="Ctrl-true" ];
+  619143 -> 619173 [ label="Ctrl-true" ];
+  619143 -> 619174 [ label="Ctrl-true" ];
+  619180 -> 619181 [ label="Ctrl-true" ];
+  619182 -> 619178 [ label="Data" ];
+  619177 -> 619178 [ label="Ctrl-true" ];
+  619177 -> 619179 [ label="Ctrl-true" ];
+  619177 -> 619180 [ label="Ctrl-true" ];
+  619177 -> 619182 [ label="Ctrl-true" ];
+  619185 -> 619184 [ label="Data" ];
+  619183 -> 619184 [ label="Ctrl-true" ];
+  619183 -> 619185 [ label="Ctrl-true" ];
+  619188 -> 619189 [ label="Call" ];
+  619192 -> 619193 [ label="Ctrl-true" ];
+  619195 -> 619196 [ label="Ctrl-true" ];
+  619194 -> 619195 [ label="Ctrl-true" ];
+  619191 -> 619192 [ label="Ctrl-true" ];
+  619191 -> 619194 [ label="Ctrl-true" ];
+  619190 -> 619191 [ label="Ctrl-true" ];
+  619190 -> 619190 [ label="Ctrl-true" ];
+  619197 -> 619198 [ label="Ctrl-true" ];
+  619186 -> 619187 [ label="Ctrl-true" ];
+  619186 -> 619188 [ label="Ctrl-true" ];
+  619186 -> 619190 [ label="Ctrl-true" ];
+  619186 -> 619197 [ label="Ctrl-true" ];
+  619201 -> 619202 [ label="Ctrl-true" ];
+  619199 -> 619200 [ label="Ctrl-true" ];
+  619199 -> 619201 [ label="Ctrl-true" ];
+  619176 -> 618931 [ label="Member-of" ];
+  619176 -> 619038 [ label="Member-of" ];
+  619176 -> 619140 [ label="Member-of" ];
+  619176 -> 619143 [ label="Member-of" ];
+  619176 -> 619177 [ label="Member-of" ];
+  619176 -> 619183 [ label="Member-of" ];
+  619176 -> 619186 [ label="Member-of" ];
+  619176 -> 619199 [ label="Member-of" ];
+  618930 -> 618931 [ label="Member-of" ];
+  618930 -> 619038 [ label="Member-of" ];
+  618930 -> 619140 [ label="Member-of" ];
+  618930 -> 619143 [ label="Member-of" ];
+  618930 -> 619177 [ label="Member-of" ];
+  618930 -> 619183 [ label="Member-of" ];
+  618930 -> 619186 [ label="Member-of" ];
+  618930 -> 619199 [ label="Member-of" ];
+  619180 -> 619186 [ label="Call" ];
+  619181 -> 619187 [ label="Param-in" ];
+  619142 -> 619143 [ label="Call" ];
+  618953 -> 618955 [ label="Data" ];
+  618952 -> 618955 [ label="Data" ];
+  618954 -> 618961 [ label="Data" ];
+  618964 -> 618966 [ label="Data" ];
+  618975 -> 618977 [ label="Data" ];
+  618953 -> 618995 [ label="Data" ];
+  618996 -> 618997 [ label="Data" ];
+  618998 -> 618997 [ label="Data" ];
+  618952 -> 618997 [ label="Data" ];
+  618996 -> 618998 [ label="Data" ];
+  618998 -> 618998 [ label="Data" ];
+  619001 -> 619004 [ label="Data" ];
+  618952 -> 619006 [ label="Data" ];
+  618975 -> 619007 [ label="Data" ];
+  618965 -> 619008 [ label="Data" ];
+  618964 -> 619015 [ label="Data" ];
+  619016 -> 619017 [ label="Data" ];
+  619018 -> 619017 [ label="Data" ];
+  618952 -> 619017 [ label="Data" ];
+  619016 -> 619018 [ label="Data" ];
+  619018 -> 619018 [ label="Data" ];
+  619016 -> 619020 [ label="Data" ];
+  619018 -> 619020 [ label="Data" ];
+  619021 -> 619023 [ label="Data" ];
+  619021 -> 619026 [ label="Data" ];
+  619027 -> 619029 [ label="Data" ];
+  618964 -> 619032 [ label="Data" ];
+  619008 -> 619033 [ label="Data" ];
+  618964 -> 619037 [ label="Data" ];
+  619049 -> 619067 [ label="Data" ];
+  619068 -> 619070 [ label="Data" ];
+  619079 -> 619081 [ label="Data" ];
+  619091 -> 619092 [ label="Data" ];
+  619093 -> 619092 [ label="Data" ];
+  619086 -> 619092 [ label="Data" ];
+  619091 -> 619093 [ label="Data" ];
+  619093 -> 619093 [ label="Data" ];
+  619091 -> 619097 [ label="Data" ];
+  619093 -> 619097 [ label="Data" ];
+  619080 -> 619102 [ label="Data" ];
+  619068 -> 619105 [ label="Data" ];
+  619069 -> 619106 [ label="Data" ];
+  619065 -> 619107 [ label="Data" ];
+  619122 -> 619121 [ label="Data" ];
+  619120 -> 619121 [ label="Data" ];
+  619086 -> 619121 [ label="Data" ];
+  619122 -> 619122 [ label="Data" ];
+  619120 -> 619122 [ label="Data" ];
+  619123 -> 619125 [ label="Data" ];
+  619122 -> 619127 [ label="Data" ];
+  619120 -> 619127 [ label="Data" ];
+  619123 -> 619128 [ label="Data" ];
+  619068 -> 619132 [ label="Data" ];
+  619068 -> 619136 [ label="Data" ];
+  619129 -> 619138 [ label="Data" ];
+  619119 -> 619139 [ label="Data" ];
+  619146 -> 619153 [ label="Data" ];
+  619145 -> 619153 [ label="Data" ];
+  619144 -> 619157 [ label="Data" ];
+  619154 -> 619157 [ label="Data" ];
+  619158 -> 619162 [ label="Data" ];
+  619146 -> 619164 [ label="Data" ];
+  619165 -> 619168 [ label="Data" ];
+  619144 -> 619168 [ label="Data" ];
+  619169 -> 619173 [ label="Data" ];
+  619162 -> 619175 [ label="Data" ];
+  619179 -> 619181 [ label="Data" ];
+  619179 -> 619182 [ label="Data" ];
+  619187 -> 619190 [ label="Data" ];
+  619188 -> 619190 [ label="Data" ];
+  619187 -> 619198 [ label="Data" ];
+  618996 -> 618998 [ label="Output" ];
+  618998 -> 618998 [ label="Output" ];
+  619016 -> 619018 [ label="Output" ];
+  619018 -> 619018 [ label="Output" ];
+  619091 -> 619093 [ label="Output" ];
+  619093 -> 619093 [ label="Output" ];
+  619122 -> 619122 [ label="Output" ];
+  619120 -> 619122 [ label="Output" ];
+  618967 -> 618999 [ label="Data" ];
+  618967 -> 619013 [ label="Data" ];
+  618978 -> 618985 [ label="Data" ];
+  618978 -> 618991 [ label="Data" ];
+  618988 -> 619021 [ label="Data" ];
+  618988 -> 619027 [ label="Data" ];
+  618992 -> 619002 [ label="Data" ];
+  618992 -> 619025 [ label="Data" ];
+  619082 -> 619090 [ label="Data" ];
+  619082 -> 619118 [ label="Data" ];
+  619094 -> 619099 [ label="Data" ];
+  619107 -> 619119 [ label="Data" ];
+  619115 -> 619123 [ label="Data" ];
+  619115 -> 619129 [ label="Data" ];
+}

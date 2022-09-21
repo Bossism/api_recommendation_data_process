@@ -1,0 +1,185 @@
+digraph G {
+  32225 [ label="0-Class
+ThrottleFilter" shape="oval" line="37" fontname="helvetica" ];
+  32226 [ label="1-Init
+ThrottleFilter" shape="oval" line="50" fontname="helvetica" ];
+  32227 [ label="2-Assign
+app = Act.app()" shape="oval" line="51" fontname="helvetica" ];
+  32228 [ label="3-Call
+Act.app()" shape="oval" line="51" fontname="helvetica" ];
+  32229 [ label="4-Call
+app.jobManager().on(SysEventId.CLASS_LOADER_INITIALIZED, 'ThrottleFilter:initCache', new Runnable() {      @Override     public void run() {         cache = app.cache(CACHE_NAME);     } }, true)" shape="oval" line="52" fontname="helvetica" ];
+  32230 [ label="5-Actual-in
+SysEventId.CLASS_LOADER_INITIALIZED" shape="oval" line="52" fontname="helvetica" ];
+  32231 [ label="6-Actual-in
+'ThrottleFilter:initCache'" shape="oval" line="52" fontname="helvetica" ];
+  32232 [ label="7-Actual-in
+new Runnable() {      @Override     public void run() {         cache = app.cache(CACHE_NAME);     } }" shape="oval" line="52" fontname="helvetica" ];
+  32233 [ label="8-Actual-in
+true" shape="oval" line="57" fontname="helvetica" ];
+  32234 [ label="9-Init
+ThrottleFilter" shape="oval" line="60" fontname="helvetica" ];
+  32235 [ label="10-Formal-in
+throttle" shape="oval" line="60" fontname="helvetica" ];
+  32236 [ label="11-Formal-in
+expireScale" shape="oval" line="60" fontname="helvetica" ];
+  32237 [ label="12-Call
+E.illegalArgumentIf(throttle < 1)" shape="oval" line="61" fontname="helvetica" ];
+  32238 [ label="13-Actual-in
+throttle < 1" shape="oval" line="61" fontname="helvetica" ];
+  32239 [ label="14-Assign
+this.throttle = throttle" shape="oval" line="62" fontname="helvetica" ];
+  32240 [ label="15-Assign
+this.expireScale = expireScale" shape="oval" line="63" fontname="helvetica" ];
+  32241 [ label="16-Assign
+app = Act.app()" shape="oval" line="64" fontname="helvetica" ];
+  32242 [ label="17-Call
+Act.app()" shape="oval" line="64" fontname="helvetica" ];
+  32243 [ label="18-Call
+app.jobManager().on(SysEventId.CLASS_LOADER_INITIALIZED, 'ThrottleFilter:initCache', new Runnable() {      @Override     public void run() {         cache = app.cache(CACHE_NAME);     } }, true)" shape="oval" line="65" fontname="helvetica" ];
+  32244 [ label="19-Actual-in
+SysEventId.CLASS_LOADER_INITIALIZED" shape="oval" line="65" fontname="helvetica" ];
+  32245 [ label="20-Actual-in
+'ThrottleFilter:initCache'" shape="oval" line="65" fontname="helvetica" ];
+  32246 [ label="21-Actual-in
+new Runnable() {      @Override     public void run() {         cache = app.cache(CACHE_NAME);     } }" shape="oval" line="65" fontname="helvetica" ];
+  32247 [ label="22-Actual-in
+true" shape="oval" line="70" fontname="helvetica" ];
+  32248 [ label="23-Entry
+handle" shape="oval" line="73" fontname="helvetica" ];
+  32249 [ label="24-Formal-out
+" shape="oval" line="73" fontname="helvetica" ];
+  32250 [ label="25-Formal-in
+actionContext" shape="oval" line="73" fontname="helvetica" ];
+  32251 [ label="26-Assign
+key = cacheKey(actionContext)" shape="oval" line="74" fontname="helvetica" ];
+  32252 [ label="27-Call
+cacheKey(actionContext)" shape="oval" line="74" fontname="helvetica" ];
+  32253 [ label="28-Actual-in
+actionContext" shape="oval" line="74" fontname="helvetica" ];
+  32254 [ label="29-Actual-in
+actionContext" shape="oval" line="74" fontname="helvetica" ];
+  32255 [ label="30-Ctrl
+!expireScale" shape="oval" line="75" fontname="helvetica" ];
+  32256 [ label="31-Ctrl
+throttle <= cache.incr(key, 1)" shape="oval" line="76" fontname="helvetica" ];
+  32257 [ label="32-Return
+return TooManyRequests.get()" shape="oval" line="77" fontname="helvetica" ];
+  32258 [ label="33-Assign
+curReqCnt = cache.get(key)" shape="oval" line="80" fontname="helvetica" ];
+  32259 [ label="34-Call
+cache.get(key)" shape="oval" line="80" fontname="helvetica" ];
+  32260 [ label="35-Actual-in
+key" shape="oval" line="80" fontname="helvetica" ];
+  32261 [ label="36-Actual-in
+key" shape="oval" line="80" fontname="helvetica" ];
+  32262 [ label="37-Ctrl
+null == curReqCnt" shape="oval" line="81" fontname="helvetica" ];
+  32263 [ label="38-Assign
+curReqCnt = 0" shape="oval" line="82" fontname="helvetica" ];
+  32264 [ label="39-Assign
+timeout = curReqCnt + 1" shape="oval" line="84" fontname="helvetica" ];
+  32265 [ label="40-Call
+cache.incr(key, timeout)" shape="oval" line="85" fontname="helvetica" ];
+  32266 [ label="41-Actual-in
+key" shape="oval" line="85" fontname="helvetica" ];
+  32267 [ label="42-Actual-in
+timeout" shape="oval" line="85" fontname="helvetica" ];
+  32268 [ label="43-Ctrl
+curReqCnt >= throttle" shape="oval" line="86" fontname="helvetica" ];
+  32269 [ label="44-Return
+return TooManyRequests.get()" shape="oval" line="87" fontname="helvetica" ];
+  32270 [ label="45-Return
+return null" shape="oval" line="90" fontname="helvetica" ];
+  32271 [ label="46-Entry
+cacheKey" shape="oval" line="93" fontname="helvetica" ];
+  32272 [ label="47-Formal-out
+" shape="oval" line="93" fontname="helvetica" ];
+  32273 [ label="48-Formal-in
+context" shape="oval" line="93" fontname="helvetica" ];
+  32274 [ label="49-Assign
+req = context.req()" shape="oval" line="94" fontname="helvetica" ];
+  32275 [ label="50-Call
+context.req()" shape="oval" line="94" fontname="helvetica" ];
+  32276 [ label="51-Return
+return S.concat(req.method(), req.url(), req.ip())" shape="oval" line="95" fontname="helvetica" ];
+  32227 -> 32228 [ label="Call" ];
+  32229 -> 32230 [ label="Ctrl-true" ];
+  32229 -> 32231 [ label="Ctrl-true" ];
+  32229 -> 32232 [ label="Ctrl-true" ];
+  32229 -> 32233 [ label="Ctrl-true" ];
+  32226 -> 32227 [ label="Ctrl-true" ];
+  32226 -> 32229 [ label="Ctrl-true" ];
+  32237 -> 32238 [ label="Ctrl-true" ];
+  32241 -> 32242 [ label="Call" ];
+  32243 -> 32244 [ label="Ctrl-true" ];
+  32243 -> 32245 [ label="Ctrl-true" ];
+  32243 -> 32246 [ label="Ctrl-true" ];
+  32243 -> 32247 [ label="Ctrl-true" ];
+  32234 -> 32235 [ label="Ctrl-true" ];
+  32234 -> 32236 [ label="Ctrl-true" ];
+  32234 -> 32237 [ label="Ctrl-true" ];
+  32234 -> 32239 [ label="Ctrl-true" ];
+  32234 -> 32240 [ label="Ctrl-true" ];
+  32234 -> 32241 [ label="Ctrl-true" ];
+  32234 -> 32243 [ label="Ctrl-true" ];
+  32252 -> 32253 [ label="Ctrl-true" ];
+  32251 -> 32252 [ label="Call" ];
+  32251 -> 32254 [ label="Ctrl-true" ];
+  32257 -> 32249 [ label="Data" ];
+  32256 -> 32257 [ label="Ctrl-true" ];
+  32255 -> 32256 [ label="Ctrl-true" ];
+  32259 -> 32260 [ label="Ctrl-true" ];
+  32258 -> 32259 [ label="Call" ];
+  32258 -> 32261 [ label="Ctrl-true" ];
+  32262 -> 32263 [ label="Ctrl-true" ];
+  32265 -> 32266 [ label="Ctrl-true" ];
+  32265 -> 32267 [ label="Ctrl-true" ];
+  32269 -> 32249 [ label="Data" ];
+  32268 -> 32269 [ label="Ctrl-true" ];
+  32255 -> 32258 [ label="Ctrl-false" ];
+  32255 -> 32262 [ label="Ctrl-false" ];
+  32255 -> 32264 [ label="Ctrl-false" ];
+  32255 -> 32265 [ label="Ctrl-false" ];
+  32255 -> 32268 [ label="Ctrl-false" ];
+  32270 -> 32249 [ label="Data" ];
+  32248 -> 32249 [ label="Ctrl-true" ];
+  32248 -> 32250 [ label="Ctrl-true" ];
+  32248 -> 32251 [ label="Ctrl-true" ];
+  32248 -> 32255 [ label="Ctrl-true" ];
+  32248 -> 32270 [ label="Ctrl-true" ];
+  32274 -> 32275 [ label="Call" ];
+  32276 -> 32272 [ label="Data" ];
+  32271 -> 32272 [ label="Ctrl-true" ];
+  32271 -> 32273 [ label="Ctrl-true" ];
+  32271 -> 32274 [ label="Ctrl-true" ];
+  32271 -> 32276 [ label="Ctrl-true" ];
+  32225 -> 32226 [ label="Member-of" ];
+  32225 -> 32234 [ label="Member-of" ];
+  32225 -> 32248 [ label="Member-of" ];
+  32225 -> 32271 [ label="Member-of" ];
+  32251 -> 32271 [ label="Call" ];
+  32254 -> 32273 [ label="Param-in" ];
+  32252 -> 32271 [ label="Call" ];
+  32253 -> 32273 [ label="Param-in" ];
+  32235 -> 32238 [ label="Data" ];
+  32235 -> 32239 [ label="Data" ];
+  32236 -> 32240 [ label="Data" ];
+  32263 -> 32264 [ label="Data" ];
+  32264 -> 32267 [ label="Data" ];
+  32263 -> 32268 [ label="Data" ];
+  32273 -> 32274 [ label="Data" ];
+  32235 -> 32239 [ label="Output" ];
+  32236 -> 32240 [ label="Output" ];
+  32227 -> 32232 [ label="Data" ];
+  32241 -> 32246 [ label="Data" ];
+  32272 -> 32251 [ label="Param-out" ];
+  32251 -> 32256 [ label="Data" ];
+  32251 -> 32261 [ label="Data" ];
+  32251 -> 32266 [ label="Data" ];
+  32258 -> 32262 [ label="Data" ];
+  32258 -> 32264 [ label="Data" ];
+  32258 -> 32268 [ label="Data" ];
+  32258 -> 32263 [ label="Output" ];
+  32274 -> 32276 [ label="Data" ];
+}

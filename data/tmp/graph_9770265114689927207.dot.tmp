@@ -1,0 +1,241 @@
+digraph G {
+  9543 [ label="0-Class
+PojoBindingTest" shape="oval" line="15" fontname="helvetica" ];
+  9544 [ label="1-Entry
+urlContext" shape="oval" line="17" fontname="helvetica" ];
+  9545 [ label="2-Formal-out
+" shape="oval" line="17" fontname="helvetica" ];
+  9546 [ label="3-Return
+return '/pojo'" shape="oval" line="19" fontname="helvetica" ];
+  9547 [ label="4-Entry
+postFullContactMethodFormData" shape="oval" line="22" fontname="helvetica" ];
+  9548 [ label="5-Assign
+contact = prepareFullContact()" shape="oval" line="25" fontname="helvetica" ];
+  9549 [ label="6-Call
+prepareFullContact()" shape="oval" line="25" fontname="helvetica" ];
+  9550 [ label="7-Entry
+testMapPojoBinding" shape="oval" line="29" fontname="helvetica" ];
+  9551 [ label="8-Call
+url('/pojo/fooMap').get('fooMap.x.id', 'abc', 'fooMap.x.bar.id', 'xyz', 'fooMap.y.id', 'a123', 'fooMap.y.bar.id', 'a000')" shape="oval" line="31" fontname="helvetica" ];
+  9552 [ label="9-Actual-in
+'fooMap.x.id'" shape="oval" line="32" fontname="helvetica" ];
+  9553 [ label="10-Actual-in
+'abc'" shape="oval" line="32" fontname="helvetica" ];
+  9554 [ label="11-Actual-in
+'fooMap.x.bar.id'" shape="oval" line="33" fontname="helvetica" ];
+  9555 [ label="12-Actual-in
+'xyz'" shape="oval" line="33" fontname="helvetica" ];
+  9556 [ label="13-Actual-in
+'fooMap.y.id'" shape="oval" line="34" fontname="helvetica" ];
+  9557 [ label="14-Actual-in
+'a123'" shape="oval" line="34" fontname="helvetica" ];
+  9558 [ label="15-Actual-in
+'fooMap.y.bar.id'" shape="oval" line="35" fontname="helvetica" ];
+  9559 [ label="16-Actual-in
+'a000'" shape="oval" line="35" fontname="helvetica" ];
+  9560 [ label="17-Assign
+body = resp().body().string()" shape="oval" line="37" fontname="helvetica" ];
+  9561 [ label="18-Call
+resp().body().string()" shape="oval" line="37" fontname="helvetica" ];
+  9562 [ label="19-Assign
+json = JSONObject.parseObject(body)" shape="oval" line="38" fontname="helvetica" ];
+  9563 [ label="20-Call
+JSONObject.parseObject(body)" shape="oval" line="38" fontname="helvetica" ];
+  9564 [ label="21-Actual-in
+body" shape="oval" line="38" fontname="helvetica" ];
+  9565 [ label="22-Actual-in
+body" shape="oval" line="38" fontname="helvetica" ];
+  9566 [ label="23-Assign
+x = json.getObject('x', Foo.class)" shape="oval" line="39" fontname="helvetica" ];
+  9567 [ label="24-Call
+json.getObject('x', Foo.class)" shape="oval" line="39" fontname="helvetica" ];
+  9568 [ label="25-Actual-in
+'x'" shape="oval" line="39" fontname="helvetica" ];
+  9569 [ label="26-Actual-in
+Foo.class" shape="oval" line="39" fontname="helvetica" ];
+  9570 [ label="27-Actual-in
+'x'" shape="oval" line="39" fontname="helvetica" ];
+  9571 [ label="28-Actual-in
+Foo.class" shape="oval" line="39" fontname="helvetica" ];
+  9572 [ label="29-Call
+eq('abc', x.getId())" shape="oval" line="40" fontname="helvetica" ];
+  9573 [ label="30-Actual-in
+'abc'" shape="oval" line="40" fontname="helvetica" ];
+  9574 [ label="31-Actual-in
+x.getId()" shape="oval" line="40" fontname="helvetica" ];
+  9575 [ label="32-Call
+eq('xyz', x.getBar().getId())" shape="oval" line="41" fontname="helvetica" ];
+  9576 [ label="33-Actual-in
+'xyz'" shape="oval" line="41" fontname="helvetica" ];
+  9577 [ label="34-Actual-in
+x.getBar().getId()" shape="oval" line="41" fontname="helvetica" ];
+  9578 [ label="35-Assign
+y = json.getObject('y', Foo.class)" shape="oval" line="42" fontname="helvetica" ];
+  9579 [ label="36-Call
+json.getObject('y', Foo.class)" shape="oval" line="42" fontname="helvetica" ];
+  9580 [ label="37-Actual-in
+'y'" shape="oval" line="42" fontname="helvetica" ];
+  9581 [ label="38-Actual-in
+Foo.class" shape="oval" line="42" fontname="helvetica" ];
+  9582 [ label="39-Actual-in
+'y'" shape="oval" line="42" fontname="helvetica" ];
+  9583 [ label="40-Actual-in
+Foo.class" shape="oval" line="42" fontname="helvetica" ];
+  9584 [ label="41-Call
+eq('a000', y.getBar().getId())" shape="oval" line="43" fontname="helvetica" ];
+  9585 [ label="42-Actual-in
+'a000'" shape="oval" line="43" fontname="helvetica" ];
+  9586 [ label="43-Actual-in
+y.getBar().getId()" shape="oval" line="43" fontname="helvetica" ];
+  9587 [ label="44-Entry
+postFullContactJsonBody" shape="oval" line="46" fontname="helvetica" ];
+  9588 [ label="45-Assign
+contact = prepareFullContact()" shape="oval" line="48" fontname="helvetica" ];
+  9589 [ label="46-Call
+prepareFullContact()" shape="oval" line="48" fontname="helvetica" ];
+  9590 [ label="47-Call
+context.expected(JSON.toJSONString(contact)).url(processUrl('ctct')).accept(H.Format.JSON).jsonBody(C.Map('contact', contact)).method(EndPointTestContext.RequestMethod.POST_JSON).applyTo(this)" shape="oval" line="49" fontname="helvetica" ];
+  9591 [ label="48-Actual-in
+this" shape="oval" line="54" fontname="helvetica" ];
+  9592 [ label="49-Entry
+prepareNonEmptyKvStore" shape="oval" line="57" fontname="helvetica" ];
+  9593 [ label="50-Formal-out
+" shape="oval" line="57" fontname="helvetica" ];
+  9594 [ label="51-Assign
+kv = new KVStore()" shape="oval" line="58" fontname="helvetica" ];
+  9595 [ label="52-Call
+kv.putValue('foo', 'bar')" shape="oval" line="59" fontname="helvetica" ];
+  9596 [ label="53-Actual-in
+'foo'" shape="oval" line="59" fontname="helvetica" ];
+  9597 [ label="54-Actual-in
+'bar'" shape="oval" line="59" fontname="helvetica" ];
+  9598 [ label="55-Call
+kv.putValue('n', 10)" shape="oval" line="60" fontname="helvetica" ];
+  9599 [ label="56-Actual-in
+'n'" shape="oval" line="60" fontname="helvetica" ];
+  9600 [ label="57-Actual-in
+10" shape="oval" line="60" fontname="helvetica" ];
+  9601 [ label="58-Return
+return kv" shape="oval" line="61" fontname="helvetica" ];
+  9602 [ label="59-Entry
+prepareFullContact" shape="oval" line="64" fontname="helvetica" ];
+  9603 [ label="60-Formal-out
+" shape="oval" line="64" fontname="helvetica" ];
+  9604 [ label="61-Assign
+contact = new Contact()" shape="oval" line="65" fontname="helvetica" ];
+  9605 [ label="62-Call
+contact.setAddress('addr1')" shape="oval" line="66" fontname="helvetica" ];
+  9606 [ label="63-Actual-in
+'addr1'" shape="oval" line="66" fontname="helvetica" ];
+  9607 [ label="64-Call
+contact.setEmail('who@where')" shape="oval" line="67" fontname="helvetica" ];
+  9608 [ label="65-Actual-in
+'who@where'" shape="oval" line="67" fontname="helvetica" ];
+  9609 [ label="66-Call
+contact.setPhone('010101')" shape="oval" line="68" fontname="helvetica" ];
+  9610 [ label="67-Actual-in
+'010101'" shape="oval" line="68" fontname="helvetica" ];
+  9611 [ label="68-Call
+contact.setId('123')" shape="oval" line="69" fontname="helvetica" ];
+  9612 [ label="69-Actual-in
+'123'" shape="oval" line="69" fontname="helvetica" ];
+  9613 [ label="70-Call
+contact.setEmails(C.newSet(C.list('a@where', 'b@where')))" shape="oval" line="70" fontname="helvetica" ];
+  9614 [ label="71-Actual-in
+C.newSet(C.list('a@where', 'b@where'))" shape="oval" line="70" fontname="helvetica" ];
+  9615 [ label="72-Call
+contact.setKv(prepareNonEmptyKvStore())" shape="oval" line="71" fontname="helvetica" ];
+  9616 [ label="73-Actual-in
+prepareNonEmptyKvStore()" shape="oval" line="71" fontname="helvetica" ];
+  9617 [ label="74-Return
+return contact" shape="oval" line="72" fontname="helvetica" ];
+  9546 -> 9545 [ label="Data" ];
+  9544 -> 9545 [ label="Ctrl-true" ];
+  9544 -> 9546 [ label="Ctrl-true" ];
+  9548 -> 9549 [ label="Call" ];
+  9547 -> 9548 [ label="Ctrl-true" ];
+  9551 -> 9552 [ label="Ctrl-true" ];
+  9551 -> 9553 [ label="Ctrl-true" ];
+  9551 -> 9554 [ label="Ctrl-true" ];
+  9551 -> 9555 [ label="Ctrl-true" ];
+  9551 -> 9556 [ label="Ctrl-true" ];
+  9551 -> 9557 [ label="Ctrl-true" ];
+  9551 -> 9558 [ label="Ctrl-true" ];
+  9551 -> 9559 [ label="Ctrl-true" ];
+  9560 -> 9561 [ label="Call" ];
+  9563 -> 9564 [ label="Ctrl-true" ];
+  9562 -> 9563 [ label="Call" ];
+  9562 -> 9565 [ label="Ctrl-true" ];
+  9567 -> 9568 [ label="Ctrl-true" ];
+  9567 -> 9569 [ label="Ctrl-true" ];
+  9566 -> 9567 [ label="Call" ];
+  9566 -> 9570 [ label="Ctrl-true" ];
+  9566 -> 9571 [ label="Ctrl-true" ];
+  9572 -> 9573 [ label="Ctrl-true" ];
+  9572 -> 9574 [ label="Ctrl-true" ];
+  9575 -> 9576 [ label="Ctrl-true" ];
+  9575 -> 9577 [ label="Ctrl-true" ];
+  9579 -> 9580 [ label="Ctrl-true" ];
+  9579 -> 9581 [ label="Ctrl-true" ];
+  9578 -> 9579 [ label="Call" ];
+  9578 -> 9582 [ label="Ctrl-true" ];
+  9578 -> 9583 [ label="Ctrl-true" ];
+  9584 -> 9585 [ label="Ctrl-true" ];
+  9584 -> 9586 [ label="Ctrl-true" ];
+  9550 -> 9551 [ label="Ctrl-true" ];
+  9550 -> 9560 [ label="Ctrl-true" ];
+  9550 -> 9562 [ label="Ctrl-true" ];
+  9550 -> 9566 [ label="Ctrl-true" ];
+  9550 -> 9572 [ label="Ctrl-true" ];
+  9550 -> 9575 [ label="Ctrl-true" ];
+  9550 -> 9578 [ label="Ctrl-true" ];
+  9550 -> 9584 [ label="Ctrl-true" ];
+  9588 -> 9589 [ label="Call" ];
+  9590 -> 9591 [ label="Ctrl-true" ];
+  9587 -> 9588 [ label="Ctrl-true" ];
+  9587 -> 9590 [ label="Ctrl-true" ];
+  9595 -> 9596 [ label="Ctrl-true" ];
+  9595 -> 9597 [ label="Ctrl-true" ];
+  9598 -> 9599 [ label="Ctrl-true" ];
+  9598 -> 9600 [ label="Ctrl-true" ];
+  9601 -> 9593 [ label="Data" ];
+  9592 -> 9593 [ label="Ctrl-true" ];
+  9592 -> 9594 [ label="Ctrl-true" ];
+  9592 -> 9595 [ label="Ctrl-true" ];
+  9592 -> 9598 [ label="Ctrl-true" ];
+  9592 -> 9601 [ label="Ctrl-true" ];
+  9605 -> 9606 [ label="Ctrl-true" ];
+  9607 -> 9608 [ label="Ctrl-true" ];
+  9609 -> 9610 [ label="Ctrl-true" ];
+  9611 -> 9612 [ label="Ctrl-true" ];
+  9613 -> 9614 [ label="Ctrl-true" ];
+  9615 -> 9616 [ label="Ctrl-true" ];
+  9617 -> 9603 [ label="Data" ];
+  9602 -> 9603 [ label="Ctrl-true" ];
+  9602 -> 9604 [ label="Ctrl-true" ];
+  9602 -> 9605 [ label="Ctrl-true" ];
+  9602 -> 9607 [ label="Ctrl-true" ];
+  9602 -> 9609 [ label="Ctrl-true" ];
+  9602 -> 9611 [ label="Ctrl-true" ];
+  9602 -> 9613 [ label="Ctrl-true" ];
+  9602 -> 9615 [ label="Ctrl-true" ];
+  9602 -> 9617 [ label="Ctrl-true" ];
+  9543 -> 9544 [ label="Member-of" ];
+  9543 -> 9547 [ label="Member-of" ];
+  9543 -> 9550 [ label="Member-of" ];
+  9543 -> 9587 [ label="Member-of" ];
+  9543 -> 9592 [ label="Member-of" ];
+  9543 -> 9602 [ label="Member-of" ];
+  9548 -> 9602 [ label="Call" ];
+  9589 -> 9602 [ label="Call" ];
+  9549 -> 9602 [ label="Call" ];
+  9588 -> 9602 [ label="Call" ];
+  9598 -> 9601 [ label="Data" ];
+  9615 -> 9617 [ label="Data" ];
+  9603 -> 9548 [ label="Param-out" ];
+  9560 -> 9565 [ label="Data" ];
+  9566 -> 9574 [ label="Data" ];
+  9566 -> 9577 [ label="Data" ];
+  9578 -> 9586 [ label="Data" ];
+  9603 -> 9588 [ label="Param-out" ];
+}
