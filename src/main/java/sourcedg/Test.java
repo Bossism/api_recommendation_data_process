@@ -10,7 +10,9 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import jdk.nashorn.internal.parser.JSONParser;
 import jdk.nashorn.internal.runtime.JSErrorType;
+import org.json.JSONObject;
 import sourcedg.builder.PDGBuilder;
 import sourcedg.builder.PDGBuilderConfig;
 import sourcedg.graph.PDG;
@@ -20,12 +22,11 @@ import sourcedg.util.GraphExporter;
 
 public class Test {
 
-//	private static Set<String> APIS = new HashSet<>();
-
-
 	public static void main(final String[] args) throws Exception {
 //		generateFiles();
-		generateApiVocab();
+//		generateApiVocab();
+
+		generateTokenVocab();
 //		testSingleFile();
 //		ceshi();
 //		writeCodeTxt("", "", "", 2, "");
@@ -73,7 +74,7 @@ public class Test {
 //		generateCsvGT();
 //		String codePath = "hahaha";
 		String codePath = "C:\\Users\\13416\\Downloads\\APIBench\\APIBench_C\\Java\\Java_Code\\general\\Training\\test";
-		List<File> files = getAllFile(codePath, ".java");
+		List<File> files = getAllFile(codePath, ".java", false);
 		int idx = 0;
 		int graphs_idx = 0;
 		assert files != null;
@@ -232,7 +233,7 @@ public class Test {
 
 	public static void generateApiVocab() throws IOException {
 		String path = "C:\\Users\\13416\\PycharmProjects\\api_recommendation\\code\\raw\\";
-		List<File> files = getAllFile(path, "groundtruth.txt");
+		List<File> files = getAllFile(path, "groundtruth.txt", true);
 		Set<String> apis = new HashSet<>();
 
 		assert files != null;
@@ -274,6 +275,50 @@ public class Test {
 			FileOutputStream fos = new FileOutputStream(file, false);
 			OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
 			osw.write("" + apiIdxInText.get(context));
+			osw.close();
+		}
+	}
+
+	public static void generateTokenVocab() throws IOException {
+		String path = "C:\\Users\\13416\\PycharmProjects\\api_recommendation\\code\\raw\\";
+		List<File> files = getAllFile(path, ".txt", false);
+		Set<String> tokens = new HashSet<>();
+
+		assert files != null;
+		for (File file : files) {
+			FileInputStream is = new FileInputStream(file);
+			byte[] bytes = new byte[(int) file.length()];
+			is.read(bytes);
+			String[] strings = new String(bytes).split(" ");
+			tokens.addAll(Arrays.asList(strings));
+			is.close();
+		}
+		Map<String, Integer> tokenVocab = new HashMap<>();
+		int idx = 0;
+		for (String str : tokens) {
+			tokenVocab.put(str, idx);
+			idx++;
+		}
+		tokenVocab.put("<unknow>", idx);
+		JSONObject jsonObject = new JSONObject(tokenVocab);
+		Writer write = jsonObject.write(new FileWriter("C:\\Users\\13416\\PycharmProjects\\data\\tokens"));
+		write.close();
+
+		// replace idx for tokens
+		for (File file : files) {
+			FileInputStream fis = new FileInputStream(file);
+			byte[] bytes = new byte[(int) file.length()];
+			fis.read(bytes);
+			String[] strings = new String(bytes).split(" ");
+			StringBuffer sb = new StringBuffer();
+			for (String s : strings) {
+				sb.append(tokenVocab.get(s));
+				sb.append(" ");
+			}
+			fis.close();
+			FileOutputStream fos = new FileOutputStream(file, false);
+			OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+			osw.write(sb.toString());
 			osw.close();
 		}
 	}
@@ -614,7 +659,7 @@ public class Test {
 		csvWriter.newLine();
 	}
 
-	public static List<File> getAllFile(String path,  String ex) {
+	public static List<File> getAllFile(String path,  String ex, boolean isGT) {
 
 		File dir = new File(path);
 
@@ -625,7 +670,7 @@ public class Test {
 			return null;
 		}
 
-		getAllFiles(dir, allFileList, ex);
+		getAllFiles(dir, allFileList, ex, isGT);
 
 		for (File file : allFileList) {
 			System.out.println(file.getAbsoluteFile());
@@ -634,7 +679,7 @@ public class Test {
 		return allFileList;
 	}
 
-	private static void getAllFiles(File fileInput, List<File> allFileList, String ex) {
+	private static void getAllFiles(File fileInput, List<File> allFileList, String ex, boolean isGT) {
 
 		File[] fileList = fileInput.listFiles();
 		assert fileList != null;
@@ -643,13 +688,18 @@ public class Test {
 		}
 		for (File file : fileList) {
 			if (file.isDirectory()) {
-				getAllFiles(file, allFileList, ex);
+				getAllFiles(file, allFileList, ex, isGT);
 			} else {
 				if (file.getName().endsWith(ex)) {
-					allFileList.add(file);
+					if (isGT) {
+						allFileList.add(file);
+					} else {
+						if (!file.getName().startsWith("groundtruth")) {
+							allFileList.add(file);
+						}
+					}
 				}
 			}
 		}
 	}
-
 }
